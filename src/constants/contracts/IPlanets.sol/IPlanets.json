@@ -1,0 +1,230 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planet",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidPlanet",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ruler",
+          "type": "uint256"
+        }
+      ],
+      "name": "NotTheOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planet",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum IPlanets.PlanetStatus",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "PlanetAlreadyColonized",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planet",
+          "type": "uint256"
+        }
+      ],
+      "name": "PlanetAlreadyExists",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ruler",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "colonize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "commanderId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "commanderPlanetByIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "create",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "from",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "to",
+          "type": "uint256"
+        }
+      ],
+      "name": "distance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "commanderId",
+          "type": "uint256"
+        }
+      ],
+      "name": "empireSize",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "planet",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "enum IPlanets.PlanetStatus",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ruler",
+              "type": "uint256"
+            },
+            {
+              "internalType": "int80",
+              "name": "x",
+              "type": "int80"
+            },
+            {
+              "internalType": "int80",
+              "name": "y",
+              "type": "int80"
+            },
+            {
+              "internalType": "int80",
+              "name": "z",
+              "type": "int80"
+            },
+            {
+              "internalType": "uint8",
+              "name": "humidity",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct IPlanets.Planet",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum IPlanets.PlanetStatus",
+          "name": "status",
+          "type": "uint8"
+        }
+      ],
+      "name": "setPlanetStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  }
+}
