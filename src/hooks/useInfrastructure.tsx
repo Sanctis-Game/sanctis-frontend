@@ -14,8 +14,8 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
   const toast = useToast();
   const { open } = useConfirmationModal();
   const { resources } = useApprovedObjects();
-  const { fetchPlanet } = useSanctis();
   const { ethereum } = useWallet<ExternalProvider>();
+  const { fetchPlanet } = useSanctis();
   const [loadedInfrastructure, setLoadedInfrastructure] = useState<Infrastructure>(infrastructure);
   const [isFetching, setIsFetching] = useState<boolean>(false);
 
@@ -68,8 +68,7 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
             description: `${infrastructure.name} has been built on Planet ${planetId}`,
           });
         } catch (err: any) {
-          console.log(err);
-          toast({ status: "error", title: "Error", description: `Failed creation: ${err.data.message}` });
+          toast({ status: "error", title: "Error", description: `Failed creation: ${err.message}` });
         }
       });
     },
@@ -84,17 +83,18 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
           const result = await contract.upgrade(planetId);
           await result.wait();
           await fetch();
+          await fetchPlanet(planetId);
           toast({
             status: "success",
             title: "Upgraded",
             description: `${infrastructure.name} has been upgraded on Planet ${planetId}`,
           });
         } catch (err: any) {
-          toast({ status: "error", title: "Error", description: `Failed upgrade: ${err.data.message}` });
+          toast({ status: "error", title: "Error", description: `Failed upgrade: ${err.message}` });
         }
       });
     },
-    [contract, infrastructure, fetch, open, toast]
+    [contract, infrastructure, fetch, fetchPlanet, open, toast]
   );
 
   return {

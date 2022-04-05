@@ -1,6 +1,6 @@
-import { Flex, Image, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react'
 import { BigNumber, ethers } from 'ethers'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { Resource } from '../contexts/Sanctis/types'
 
@@ -9,6 +9,7 @@ const ResourceBadge: React.FC<{ resource: Resource; amount?: BigNumber; size?: "
   amount,
   size = "md",
 }) => {
+  const bgColor = useColorModeValue("gray.400", "gray.600");
   const iconSize = ((size: string) => {
     switch (size) {
       case "sm":
@@ -21,31 +22,43 @@ const ResourceBadge: React.FC<{ resource: Resource; amount?: BigNumber; size?: "
         return "40px";
     }
   })(size);
-  return (
-    <Flex
-      w="100%"
-      background={useColorModeValue("gray.400", "gray.600")}
-      p="1.5"
-      rounded="3xl"
-      shadow={size}
-      align="center"
-    >
-      <Image
-        src={resource.icon}
-        stroke={useColorModeValue("black", "white")}
-        background="black"
-        maxW={iconSize}
-        maxH={iconSize}
-        p={2}
-        rounded="full"
-      />
-      <Flex ml="1">
-        <Text fontWeight="bold" fontSize={size} mr={2} textAlign="center">
-          {amount ? ethers.utils.formatEther(amount) : "???"} {resource.name}
-        </Text>
+  const width = useMemo(() => {
+    switch (size) {
+      case "sm":
+        return "3em";
+      case "md":
+        return "2em";
+      case "lg":
+        return "2em";
+    }
+  }, [size]);
+  const content = useMemo(() => {
+    return (
+      <Flex
+        background={bgColor}
+        p="2"
+        rounded="3xl"
+        w="calc(120%)"
+        shadow={size}
+        align="center"
+        direction={size !== "sm" ? "column" : "row"}
+      >
+        <Image src={resource.icon} background="black" maxW={iconSize} maxH={iconSize} p={2} rounded="full" />
+        <Box ml="1" minW={width} justifyContent={size !== "sm" ? "center" : "start"}>
+          <Text fontWeight="bold" fontSize={size} width="fit-content">
+            {amount ? ethers.utils.formatEther(amount) : "???"}
+          </Text>
+          {size !== "sm" && (
+            <Text fontSize={size} width="fit-content">
+              {resource.name}
+            </Text>
+          )}
+        </Box>
       </Flex>
-    </Flex>
-  );
+    );
+  }, [amount, iconSize, resource, bgColor, size, width]);
+
+  return size !== "sm" ? content : <Tooltip label={resource.name}>{content}</Tooltip>;
 };
 
 export default ResourceBadge;

@@ -2,7 +2,7 @@ import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { useToast } from '@chakra-ui/react'
 import { ExternalProvider } from '@ethersproject/providers'
 import { Contract, providers, utils } from 'ethers'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import SpatioportABI from '../constants/contracts/ISpatioports.sol/ISpatioports.json'
 import { Infrastructure, Ship } from '../contexts/Sanctis/types'
@@ -10,8 +10,9 @@ import useConfirmationModal from './useConfirmationModal'
 import useInfrastructure from './useInfrastructure'
 
 export interface SpatioportCharacteristics extends Infrastructure {
-  nextUpgrade?: number;
-  discount?: number;
+  currentDiscount?: number;
+  nextDiscount?: number;
+  discountFactor?: number;
 }
 
 const useSpatioport = (infrastructure: Infrastructure, planetId: string) => {
@@ -33,17 +34,24 @@ const useSpatioport = (infrastructure: Infrastructure, planetId: string) => {
     setIsFetching(true);
 
     try {
-      const characteristics = await contract.spatioport(planetId);
+      const currentDiscount = await contract.currentDiscount(planetId);
+      const nextDiscount = await contract.nextDiscount(planetId);
+      const discountFactor = await contract.discountFactor();
       setSpatioport({
         ...loadedInfrastructure,
-        level: characteristics.level.toNumber(),
-        nextUpgrade: characteristics.nextUpgrade.toNumber(),
+        currentDiscount: currentDiscount.toNumber(),
+        nextDiscount: nextDiscount.toNumber(),
+        discountFactor: discountFactor.toNumber(),
       });
     } catch (err: any) {
       console.log("Failed fetching resource producer", err);
     }
     setIsFetching(false);
   }, [contract, isFetching, loadedInfrastructure, planetId, setSpatioport]);
+
+  useEffect(() => {
+    if (!spatioport.costsResources) fetch();
+  }, [spatioport, fetch]);
 
   const build: (planetId: string, ship: Ship, quantity: number) => Promise<void> = useCallback(
     async (planetId, ship, quantity) => {

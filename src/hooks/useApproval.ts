@@ -47,7 +47,6 @@ const useApproval = (tokenAddress: string, spenderAddress?: string) => {
 
   useEffect(() => {
     if (allowance && allowance.gt(0)) {
-      console.log(allowance.toString())
       setIsApproved(true);
     }
   }, [allowance, setIsApproved]);

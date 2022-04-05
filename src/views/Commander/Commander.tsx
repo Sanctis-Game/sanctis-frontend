@@ -1,27 +1,19 @@
-import React from "react";
-import { Button, Container, Flex, Link, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import { Button, Container, Flex, Link, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
+import useCommander from 'hooks/useCommander'
+import React from 'react'
+import { BiArrowBack } from 'react-icons/bi'
+import { useParams } from 'react-router-dom'
 
-import { useParams } from "react-router-dom";
-import useCommander from "hooks/useCommander";
-import ColonizeCard from "./ColonizeCard";
-import PlanetCard from "./PlanetCard";
-import useSanctis from "hooks/useSanctis";
-import { BiArrowBack } from "react-icons/bi";
+import ColonizeCard from './ColonizeCard'
+import PlanetCard from './PlanetCard'
 
 const Commander: React.FC = () => {
-  const { id } = useParams()
-  const { planets } = useSanctis()
-  const commander = useCommander(Number(id))
-
-  console.log(commander, planets)
+  const { id } = useParams();
+  const commander = useCommander(Number(id));
 
   return (
     <Container maxW={"5xl"}>
-      <Button
-        rightIcon={<BiArrowBack />}
-        as={Link}
-        href={"#/commanders"}
-      >
+      <Button rightIcon={<BiArrowBack />} as={Link} href={"#/commanders"}>
         Back
       </Button>
       <Flex
@@ -35,13 +27,15 @@ const Commander: React.FC = () => {
         shadow="2xl"
         boxShadow="inner"
       >
-        <Text fontSize="lg" fontWeight="bold">{commander?.name}'s planets</Text>
-        <Wrap spacing={5} mt='2'>
-          {commander?.planets?.map(e =>
+        <Text fontSize="lg" fontWeight="bold">
+          {commander?.name}'s planets
+        </Text>
+        <Wrap spacing={5} mt="2">
+          {commander?.planets?.map((e) => (
             <WrapItem key={e} shadow="xl">
               <PlanetCard planetId={e} />
             </WrapItem>
-          )}
+          ))}
         </Wrap>
       </Flex>
       {commander && <ColonizeCard colonizer={commander?.id} />}

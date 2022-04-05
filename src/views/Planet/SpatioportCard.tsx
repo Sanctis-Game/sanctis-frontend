@@ -1,11 +1,13 @@
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Divider, Input, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
+import { Button, Divider, Flex, Input, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
 import ResourceBadge from 'components/ResourceBadge'
-import { BigNumber } from 'ethers'
+import { BigNumber, ethers } from 'ethers'
 import React, { useState } from 'react'
 
+import ShipStatBadge from '../../components/ShipStatBadge'
 import { Infrastructure, Planet, Ship } from '../../contexts/Sanctis/types'
 import useApprovedObjects from '../../hooks/useApprovedObjects'
+import useShip from '../../hooks/useShip'
 import useSpatioport from '../../hooks/useSpatioport'
 
 const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet }> = ({ infrastructure, planet }) => {
@@ -13,7 +15,9 @@ const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet 
   const { getBlockNumber } = useWallet();
   const { spatioport, upgrade, build } = useSpatioport(infrastructure, planet.id);
   const [choice, setChoice] = useState<Ship>(ships[0]);
+  const { ship } = useShip(choice);
   const [quantity, setQuantity] = useState<number>(0);
+  console.log(spatioport);
 
   return (
     <Stack spacing={3} background={useColorModeValue("white", "gray.800")} p="5" rounded="xl" shadow={"xl"}>
@@ -33,7 +37,30 @@ const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet 
           </option>
         ))}
       </Select>
-      <Input type="number" onChange={(e) => setQuantity(Number(e.target.value))} />
+      <Input
+        type="number"
+        placeholder="Number of ships to build..."
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      />
+      <Text fontSize="md" textAlign="start">
+        Ship statistics:
+      </Text>
+      <Flex>
+        <ShipStatBadge type="speed" amount={ship.speed} />
+        <ShipStatBadge type="offense" amount={ship.offensivePower} />
+        <ShipStatBadge type="defense" amount={ship.defensivePower} />
+        <ShipStatBadge type="capacity" amount={Number(ethers.utils.formatEther(ship.capacity || 0))} />
+      </Flex>
+      <Text fontSize="md" textAlign="start">
+        Costs per ship:
+      </Text>
+      <Wrap>
+        {ship.costsResources?.map((resource, i) => (
+          <WrapItem key={resource.name}>
+            <ResourceBadge resource={resource} amount={ship.costs![i]} size="sm" />
+          </WrapItem>
+        ))}
+      </Wrap>
       <Button
         rounded={"full"}
         px={6}
@@ -51,9 +78,9 @@ const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet 
           Upgrade costs:
         </Text>
         <Wrap>
-          {(infrastructure.nextCosts || []).map((cost, i) => (
-            <WrapItem key={infrastructure.costsResources![i].name}>
-              <ResourceBadge resource={infrastructure.costsResources![i]} amount={BigNumber.from(cost)} />
+          {(spatioport.nextCosts || []).map((cost, i) => (
+            <WrapItem key={spatioport.costsResources![i].name}>
+              <ResourceBadge resource={spatioport.costsResources![i]} amount={BigNumber.from(cost)} size="sm" />
             </WrapItem>
           ))}
         </Wrap>

@@ -38,6 +38,12 @@ export interface Ship {
   address: string
   name: string
   description: string
+  costsResources?: Resource[]
+  costs?: BigNumber[]
+  speed?: number
+  offensivePower?: number
+  defensivePower?: number
+  capacity?: BigNumber
 }
 
 export enum PlanetStatus {

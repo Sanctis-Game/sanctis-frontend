@@ -11,8 +11,8 @@ const CreateInfrastuctureCard: React.FC<{ planet: Planet }> = ({ planet }) => {
   const choices = useMemo(() => {
     return planet.infrastructures.filter((e) => !e.level);
   }, [planet.infrastructures]);
-  const [choice, setChoice] = useState<Infrastructure>(choices[0] || infrastructures[0]);
-  const { infrastructure, create } = useInfrastructure(choice, planet.id);
+  const [choice, setChoice] = useState<Infrastructure | undefined>(choices[0]);
+  const { infrastructure, create } = useInfrastructure(choice || infrastructures[0], planet.id);
 
   const handleSelect = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
@@ -37,7 +37,7 @@ const CreateInfrastuctureCard: React.FC<{ planet: Planet }> = ({ planet }) => {
           </option>
         ))}
       </Select>
-      {infrastructure && (
+      {choice && infrastructure && (
         <>
           <Text fontSize="lg">{infrastructure.description}</Text>
           {infrastructure.nextCosts && infrastructure.costsResources ? (
