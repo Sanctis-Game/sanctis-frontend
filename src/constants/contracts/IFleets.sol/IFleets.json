@@ -39,22 +39,11 @@
           "internalType": "uint256",
           "name": "fleetId",
           "type": "uint256"
-        }
-      ],
-      "name": "FleetTooWeak",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "fleetId",
-          "type": "uint256"
         },
         {
-          "internalType": "enum IFleets.FleetStatus",
+          "internalType": "uint256",
           "name": "status",
-          "type": "uint8"
+          "type": "uint256"
         }
       ],
       "name": "InvalidFleetStatus",
@@ -115,36 +104,29 @@
       "type": "error"
     },
     {
+      "anonymous": false,
       "inputs": [
         {
+          "indexed": false,
           "internalType": "uint256",
-          "name": "planetId",
+          "name": "fleet",
           "type": "uint256"
         },
         {
+          "indexed": false,
           "internalType": "uint256",
-          "name": "received",
+          "name": "from",
           "type": "uint256"
         },
         {
+          "indexed": false,
           "internalType": "uint256",
-          "name": "required",
+          "name": "to",
           "type": "uint256"
         }
       ],
-      "name": "PlanetTooWeak",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        }
-      ],
-      "name": "PlunderingTooEarly",
-      "type": "error"
+      "name": "Moved",
+      "type": "event"
     },
     {
       "inputs": [
@@ -177,6 +159,65 @@
           "type": "uint256"
         },
         {
+          "internalType": "contract IResource",
+          "name": "resource",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "allowedLoad",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fleetId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract IResource",
+          "name": "resource",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "allowedUnload",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "newSanctis",
+          "type": "address"
+        }
+      ],
+      "name": "changeSanctis",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fleetId",
+          "type": "uint256"
+        },
+        {
           "internalType": "uint256",
           "name": "commanderId",
           "type": "uint256"
@@ -188,24 +229,6 @@
         }
       ],
       "name": "createFleet",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "fleetId",
-          "type": "uint256"
-        }
-      ],
-      "name": "defendPlanet",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -268,9 +291,9 @@
               "type": "uint256"
             },
             {
-              "internalType": "enum IFleets.FleetStatus",
+              "internalType": "uint256",
               "name": "status",
-              "type": "uint8"
+              "type": "uint256"
             }
           ],
           "internalType": "struct IFleets.Fleet",
@@ -279,6 +302,75 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "fleetOnPlanetByIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "fleetsOnPlanet",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "key",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fleetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "land",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -330,8 +422,13 @@
           "type": "uint256"
         }
       ],
-      "name": "nextPlundering",
+      "name": "planet",
       "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
         {
           "internalType": "uint256",
           "name": "",
@@ -347,42 +444,11 @@
           "internalType": "uint256",
           "name": "fleetId",
           "type": "uint256"
-        },
-        {
-          "internalType": "contract IResource",
-          "name": "resource",
-          "type": "address"
         }
       ],
-      "name": "plunder",
+      "name": "putInOrbit",
       "outputs": [],
       "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "plunderPeriod",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "plunderRate",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -406,6 +472,43 @@
       "name": "removeFromFleet",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IResource",
+          "name": "resource",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "fleetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "resourceInFleet",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -463,9 +566,9 @@
               "type": "uint256"
             },
             {
-              "internalType": "enum IFleets.FleetStatus",
+              "internalType": "uint256",
               "name": "status",
-              "type": "uint8"
+              "type": "uint256"
             }
           ],
           "internalType": "struct IFleets.Fleet",
@@ -548,5 +651,2670 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/IFleets.sol",
+    "exportedSymbols": {
+      "IFleets": [
+        14754
+      ],
+      "IResource": [
+        17380
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ],
+      "IShip": [
+        17589
+      ]
+    },
+    "id": 14755,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14530,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:51"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisExtension.sol",
+        "file": "../ISanctisExtension.sol",
+        "id": 14531,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14755,
+        "sourceUnit": 11708,
+        "src": "60:34:51",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ships/IShip.sol",
+        "file": "../ships/IShip.sol",
+        "id": 14532,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14755,
+        "sourceUnit": 17590,
+        "src": "96:28:51",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 14533,
+              "name": "ISanctisExtension",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11707,
+              "src": "149:17:51"
+            },
+            "id": 14534,
+            "nodeType": "InheritanceSpecifier",
+            "src": "149:17:51"
+          }
+        ],
+        "canonicalName": "IFleets",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 14754,
+        "linearizedBaseContracts": [
+          14754,
+          11707,
+          11723
+        ],
+        "name": "IFleets",
+        "nameLocation": "138:7:51",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 14538,
+            "name": "NotCommanderOwner",
+            "nameLocation": "180:17:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14536,
+                  "mutability": "mutable",
+                  "name": "commanderId",
+                  "nameLocation": "206:11:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14538,
+                  "src": "198:19:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14535,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "198:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "197:21:51"
+            },
+            "src": "174:45:51"
+          },
+          {
+            "id": 14544,
+            "name": "NotRuler",
+            "nameLocation": "231:8:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14543,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14540,
+                  "mutability": "mutable",
+                  "name": "commanderId",
+                  "nameLocation": "248:11:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14544,
+                  "src": "240:19:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14539,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "240:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14542,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "269:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14544,
+                  "src": "261:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14541,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "239:39:51"
+            },
+            "src": "225:54:51"
+          },
+          {
+            "id": 14550,
+            "name": "InvalidFleetStatus",
+            "nameLocation": "291:18:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14546,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "318:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14550,
+                  "src": "310:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14545,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "310:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14548,
+                  "mutability": "mutable",
+                  "name": "status",
+                  "nameLocation": "335:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14550,
+                  "src": "327:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14547,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "327:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "309:33:51"
+            },
+            "src": "285:58:51"
+          },
+          {
+            "id": 14556,
+            "name": "NotEnoughCapacity",
+            "nameLocation": "355:17:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14555,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14552,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "381:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14556,
+                  "src": "373:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14551,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14554,
+                  "mutability": "mutable",
+                  "name": "capacity",
+                  "nameLocation": "398:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14556,
+                  "src": "390:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14553,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "390:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "372:35:51"
+            },
+            "src": "349:59:51"
+          },
+          {
+            "id": 14560,
+            "name": "AlreadyExists",
+            "nameLocation": "420:13:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14559,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14558,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "442:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14560,
+                  "src": "434:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14557,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "434:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "433:17:51"
+            },
+            "src": "414:37:51"
+          },
+          {
+            "id": 14564,
+            "name": "AlreadyMoving",
+            "nameLocation": "463:13:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14563,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14562,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "485:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14564,
+                  "src": "477:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14561,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "476:17:51"
+            },
+            "src": "457:37:51"
+          },
+          {
+            "id": 14568,
+            "name": "EmptyFleet",
+            "nameLocation": "506:10:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14567,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14566,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "525:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14568,
+                  "src": "517:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14565,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "517:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "516:17:51"
+            },
+            "src": "500:34:51"
+          },
+          {
+            "id": 14572,
+            "name": "NotArrivedYet",
+            "nameLocation": "546:13:51",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14571,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14570,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "568:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14572,
+                  "src": "560:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14569,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "560:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "559:17:51"
+            },
+            "src": "540:37:51"
+          },
+          {
+            "anonymous": false,
+            "id": 14580,
+            "name": "Moved",
+            "nameLocation": "591:5:51",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 14579,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14574,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "fleet",
+                  "nameLocation": "605:5:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14580,
+                  "src": "597:13:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14573,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14576,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nameLocation": "620:4:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14580,
+                  "src": "612:12:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14575,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "612:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14578,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "634:2:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14580,
+                  "src": "626:10:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14577,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "626:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:41:51"
+            },
+            "src": "585:53:51"
+          },
+          {
+            "canonicalName": "IFleets.Fleet",
+            "id": 14601,
+            "members": [
+              {
+                "constant": false,
+                "id": 14582,
+                "mutability": "mutable",
+                "name": "commander",
+                "nameLocation": "678:9:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "670:17:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14581,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "670:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14584,
+                "mutability": "mutable",
+                "name": "fromPlanetId",
+                "nameLocation": "706:12:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "698:20:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14583,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "698:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14586,
+                "mutability": "mutable",
+                "name": "toPlanetId",
+                "nameLocation": "737:10:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "729:18:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14585,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "729:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14588,
+                "mutability": "mutable",
+                "name": "totalSpeed",
+                "nameLocation": "766:10:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "758:18:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14587,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "758:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14590,
+                "mutability": "mutable",
+                "name": "totalOffensivePower",
+                "nameLocation": "795:19:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "787:27:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14589,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "787:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14592,
+                "mutability": "mutable",
+                "name": "totalDefensivePower",
+                "nameLocation": "833:19:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "825:27:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14591,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "825:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14594,
+                "mutability": "mutable",
+                "name": "capacity",
+                "nameLocation": "871:8:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "863:16:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14593,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "863:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14596,
+                "mutability": "mutable",
+                "name": "ships",
+                "nameLocation": "898:5:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "890:13:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14595,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "890:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14598,
+                "mutability": "mutable",
+                "name": "arrivalBlock",
+                "nameLocation": "922:12:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "914:20:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14597,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "914:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14600,
+                "mutability": "mutable",
+                "name": "status",
+                "nameLocation": "953:6:51",
+                "nodeType": "VariableDeclaration",
+                "scope": 14601,
+                "src": "945:14:51",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14599,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "945:7:51",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Fleet",
+            "nameLocation": "653:5:51",
+            "nodeType": "StructDefinition",
+            "scope": 14754,
+            "src": "646:321:51",
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "7419e9a2",
+            "id": 14609,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fleet",
+            "nameLocation": "984:5:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14604,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14603,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "998:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14609,
+                  "src": "990:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14602,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "990:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "989:17:51"
+            },
+            "returnParameters": {
+              "id": 14608,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14607,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14609,
+                  "src": "1030:12:51",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Fleet_$14601_memory_ptr",
+                    "typeString": "struct IFleets.Fleet"
+                  },
+                  "typeName": {
+                    "id": 14606,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14605,
+                      "name": "Fleet",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 14601,
+                      "src": "1030:5:51"
+                    },
+                    "referencedDeclaration": 14601,
+                    "src": "1030:5:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fleet_$14601_storage_ptr",
+                      "typeString": "struct IFleets.Fleet"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1029:14:51"
+            },
+            "scope": 14754,
+            "src": "975:69:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "181c1bc4",
+            "id": 14618,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "planet",
+            "nameLocation": "1061:6:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14612,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14611,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "1076:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14618,
+                  "src": "1068:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14610,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1068:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1067:18:51"
+            },
+            "returnParameters": {
+              "id": 14617,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14614,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14618,
+                  "src": "1109:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14613,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1109:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14616,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14618,
+                  "src": "1118:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14615,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1118:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1108:18:51"
+            },
+            "scope": 14754,
+            "src": "1052:75:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "12f41e15",
+            "id": 14628,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "shipsInFleet",
+            "nameLocation": "1144:12:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14621,
+                  "mutability": "mutable",
+                  "name": "ship",
+                  "nameLocation": "1163:4:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14628,
+                  "src": "1157:10:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IShip_$17589",
+                    "typeString": "contract IShip"
+                  },
+                  "typeName": {
+                    "id": 14620,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14619,
+                      "name": "IShip",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17589,
+                      "src": "1157:5:51"
+                    },
+                    "referencedDeclaration": 17589,
+                    "src": "1157:5:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IShip_$17589",
+                      "typeString": "contract IShip"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14623,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1177:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14628,
+                  "src": "1169:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14622,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1169:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1156:29:51"
+            },
+            "returnParameters": {
+              "id": 14627,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14626,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14628,
+                  "src": "1236:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14625,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1236:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1235:9:51"
+            },
+            "scope": 14754,
+            "src": "1135:110:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2b4070e3",
+            "id": 14635,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fleetsOnPlanet",
+            "nameLocation": "1262:14:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14631,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14630,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "1285:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14635,
+                  "src": "1277:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14629,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1277:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1276:18:51"
+            },
+            "returnParameters": {
+              "id": 14634,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14633,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14635,
+                  "src": "1318:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14632,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1318:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1317:9:51"
+            },
+            "scope": 14754,
+            "src": "1253:74:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0f0cec7c",
+            "id": 14644,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fleetOnPlanetByIndex",
+            "nameLocation": "1344:20:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14640,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14637,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "1373:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14644,
+                  "src": "1365:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14636,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1365:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14639,
+                  "mutability": "mutable",
+                  "name": "index",
+                  "nameLocation": "1391:5:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14644,
+                  "src": "1383:13:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14638,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1383:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1364:33:51"
+            },
+            "returnParameters": {
+              "id": 14643,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14642,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14644,
+                  "src": "1448:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14641,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1448:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1447:9:51"
+            },
+            "scope": 14754,
+            "src": "1335:122:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "bed660bc",
+            "id": 14654,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resourceInFleet",
+            "nameLocation": "1474:15:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14650,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14647,
+                  "mutability": "mutable",
+                  "name": "resource",
+                  "nameLocation": "1500:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14654,
+                  "src": "1490:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IResource_$17380",
+                    "typeString": "contract IResource"
+                  },
+                  "typeName": {
+                    "id": 14646,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14645,
+                      "name": "IResource",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17380,
+                      "src": "1490:9:51"
+                    },
+                    "referencedDeclaration": 17380,
+                    "src": "1490:9:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IResource_$17380",
+                      "typeString": "contract IResource"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14649,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1518:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14654,
+                  "src": "1510:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14648,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1510:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1489:37:51"
+            },
+            "returnParameters": {
+              "id": 14653,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14652,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14654,
+                  "src": "1577:7:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14651,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1577:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1576:9:51"
+            },
+            "scope": 14754,
+            "src": "1465:121:51",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "a3dc0ed3",
+            "id": 14663,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createFleet",
+            "nameLocation": "1603:11:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14661,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14656,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1633:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14663,
+                  "src": "1625:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14655,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1625:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14658,
+                  "mutability": "mutable",
+                  "name": "commanderId",
+                  "nameLocation": "1659:11:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14663,
+                  "src": "1651:19:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14657,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1651:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14660,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "1689:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14663,
+                  "src": "1681:16:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14659,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1681:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1614:90:51"
+            },
+            "returnParameters": {
+              "id": 14662,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1713:0:51"
+            },
+            "scope": 14754,
+            "src": "1594:120:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "9b80fbf1",
+            "id": 14673,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addToFleet",
+            "nameLocation": "1731:10:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14671,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14665,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1760:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14673,
+                  "src": "1752:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14664,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1752:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14668,
+                  "mutability": "mutable",
+                  "name": "ship",
+                  "nameLocation": "1784:4:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14673,
+                  "src": "1778:10:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IShip_$17589",
+                    "typeString": "contract IShip"
+                  },
+                  "typeName": {
+                    "id": 14667,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14666,
+                      "name": "IShip",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17589,
+                      "src": "1778:5:51"
+                    },
+                    "referencedDeclaration": 17589,
+                    "src": "1778:5:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IShip_$17589",
+                      "typeString": "contract IShip"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14670,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1807:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14673,
+                  "src": "1799:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14669,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1799:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1741:79:51"
+            },
+            "returnParameters": {
+              "id": 14672,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1829:0:51"
+            },
+            "scope": 14754,
+            "src": "1722:108:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0a2055a8",
+            "id": 14683,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeFromFleet",
+            "nameLocation": "1847:15:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14681,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14675,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1881:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14683,
+                  "src": "1873:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14674,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1873:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14678,
+                  "mutability": "mutable",
+                  "name": "ship",
+                  "nameLocation": "1905:4:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14683,
+                  "src": "1899:10:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IShip_$17589",
+                    "typeString": "contract IShip"
+                  },
+                  "typeName": {
+                    "id": 14677,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14676,
+                      "name": "IShip",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17589,
+                      "src": "1899:5:51"
+                    },
+                    "referencedDeclaration": 17589,
+                    "src": "1899:5:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IShip_$17589",
+                      "typeString": "contract IShip"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14680,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1928:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14683,
+                  "src": "1920:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14679,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1920:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1862:79:51"
+            },
+            "returnParameters": {
+              "id": 14682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1950:0:51"
+            },
+            "scope": 14754,
+            "src": "1838:113:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "45e14066",
+            "id": 14688,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "putInOrbit",
+            "nameLocation": "1968:10:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14686,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14685,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "1987:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14688,
+                  "src": "1979:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14684,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1979:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1978:17:51"
+            },
+            "returnParameters": {
+              "id": 14687,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2004:0:51"
+            },
+            "scope": 14754,
+            "src": "1959:46:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "861e4656",
+            "id": 14693,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "land",
+            "nameLocation": "2022:4:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14691,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14690,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2035:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14693,
+                  "src": "2027:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14689,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2027:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2026:17:51"
+            },
+            "returnParameters": {
+              "id": 14692,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2052:0:51"
+            },
+            "scope": 14754,
+            "src": "2013:40:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "dbbd0735",
+            "id": 14700,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "moveFleet",
+            "nameLocation": "2070:9:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14695,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2088:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14700,
+                  "src": "2080:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2080:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14697,
+                  "mutability": "mutable",
+                  "name": "toPlanetId",
+                  "nameLocation": "2105:10:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14700,
+                  "src": "2097:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14696,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2097:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2079:37:51"
+            },
+            "returnParameters": {
+              "id": 14699,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2125:0:51"
+            },
+            "scope": 14754,
+            "src": "2061:65:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "a090658c",
+            "id": 14705,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "settleFleet",
+            "nameLocation": "2143:11:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14702,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2163:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14705,
+                  "src": "2155:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14701,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2155:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2154:17:51"
+            },
+            "returnParameters": {
+              "id": 14704,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2180:0:51"
+            },
+            "scope": 14754,
+            "src": "2134:47:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "755677b9",
+            "id": 14715,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "load",
+            "nameLocation": "2198:4:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14713,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14707,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2221:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14715,
+                  "src": "2213:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14706,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2213:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14710,
+                  "mutability": "mutable",
+                  "name": "resource",
+                  "nameLocation": "2249:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14715,
+                  "src": "2239:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IResource_$17380",
+                    "typeString": "contract IResource"
+                  },
+                  "typeName": {
+                    "id": 14709,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14708,
+                      "name": "IResource",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17380,
+                      "src": "2239:9:51"
+                    },
+                    "referencedDeclaration": 17380,
+                    "src": "2239:9:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IResource_$17380",
+                      "typeString": "contract IResource"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14712,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2276:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14715,
+                  "src": "2268:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14711,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2268:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2202:87:51"
+            },
+            "returnParameters": {
+              "id": 14714,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2298:0:51"
+            },
+            "scope": 14754,
+            "src": "2189:110:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "02e7a998",
+            "id": 14725,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "unload",
+            "nameLocation": "2316:6:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14717,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2341:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14725,
+                  "src": "2333:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14716,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2333:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14720,
+                  "mutability": "mutable",
+                  "name": "resource",
+                  "nameLocation": "2369:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14725,
+                  "src": "2359:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IResource_$17380",
+                    "typeString": "contract IResource"
+                  },
+                  "typeName": {
+                    "id": 14719,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14718,
+                      "name": "IResource",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17380,
+                      "src": "2359:9:51"
+                    },
+                    "referencedDeclaration": 17380,
+                    "src": "2359:9:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IResource_$17380",
+                      "typeString": "contract IResource"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14722,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2396:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14725,
+                  "src": "2388:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14721,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2388:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2322:87:51"
+            },
+            "returnParameters": {
+              "id": 14724,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2418:0:51"
+            },
+            "scope": 14754,
+            "src": "2307:112:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "a0e0f099",
+            "id": 14735,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "allowedLoad",
+            "nameLocation": "2436:11:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14733,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14727,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2466:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14735,
+                  "src": "2458:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14726,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2458:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14730,
+                  "mutability": "mutable",
+                  "name": "resource",
+                  "nameLocation": "2494:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14735,
+                  "src": "2484:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IResource_$17380",
+                    "typeString": "contract IResource"
+                  },
+                  "typeName": {
+                    "id": 14729,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14728,
+                      "name": "IResource",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17380,
+                      "src": "2484:9:51"
+                    },
+                    "referencedDeclaration": 17380,
+                    "src": "2484:9:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IResource_$17380",
+                      "typeString": "contract IResource"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14732,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2521:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14735,
+                  "src": "2513:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14731,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2513:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2447:87:51"
+            },
+            "returnParameters": {
+              "id": 14734,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2543:0:51"
+            },
+            "scope": 14754,
+            "src": "2427:117:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "fce1ffe6",
+            "id": 14745,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "allowedUnload",
+            "nameLocation": "2561:13:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14743,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14737,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2593:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14745,
+                  "src": "2585:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14736,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2585:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14740,
+                  "mutability": "mutable",
+                  "name": "resource",
+                  "nameLocation": "2621:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14745,
+                  "src": "2611:18:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IResource_$17380",
+                    "typeString": "contract IResource"
+                  },
+                  "typeName": {
+                    "id": 14739,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14738,
+                      "name": "IResource",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17380,
+                      "src": "2611:9:51"
+                    },
+                    "referencedDeclaration": 17380,
+                    "src": "2611:9:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IResource_$17380",
+                      "typeString": "contract IResource"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14742,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "2648:6:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14745,
+                  "src": "2640:14:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14741,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2640:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2574:87:51"
+            },
+            "returnParameters": {
+              "id": 14744,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2670:0:51"
+            },
+            "scope": 14754,
+            "src": "2552:119:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "f8606e62",
+            "id": 14753,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setFleet",
+            "nameLocation": "2688:8:51",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14747,
+                  "mutability": "mutable",
+                  "name": "fleetId",
+                  "nameLocation": "2705:7:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14753,
+                  "src": "2697:15:51",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14746,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2697:7:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14750,
+                  "mutability": "mutable",
+                  "name": "newFleet",
+                  "nameLocation": "2727:8:51",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14753,
+                  "src": "2714:21:51",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Fleet_$14601_memory_ptr",
+                    "typeString": "struct IFleets.Fleet"
+                  },
+                  "typeName": {
+                    "id": 14749,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14748,
+                      "name": "Fleet",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 14601,
+                      "src": "2714:5:51"
+                    },
+                    "referencedDeclaration": 14601,
+                    "src": "2714:5:51",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Fleet_$14601_storage_ptr",
+                      "typeString": "struct IFleets.Fleet"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2696:40:51"
+            },
+            "returnParameters": {
+              "id": 14752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2745:0:51"
+            },
+            "scope": 14754,
+            "src": "2679:67:51",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14755,
+        "src": "128:2621:51",
+        "usedErrors": [
+          14538,
+          14544,
+          14550,
+          14556,
+          14560,
+          14564,
+          14568,
+          14572
+        ]
+      }
+    ],
+    "src": "33:2718:51"
   }
 }

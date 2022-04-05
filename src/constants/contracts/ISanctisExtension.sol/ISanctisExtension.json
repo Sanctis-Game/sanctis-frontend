@@ -18,9 +18,22 @@
       "name": "key",
       "outputs": [
         {
-          "internalType": "string",
+          "internalType": "bytes32",
           "name": "",
-          "type": "string"
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -36,5 +49,136 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisExtension.sol",
+    "exportedSymbols": {
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ]
+    },
+    "id": 11708,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11698,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:41"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisModule.sol",
+        "file": "./ISanctisModule.sol",
+        "id": 11699,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 11708,
+        "sourceUnit": 11724,
+        "src": "60:30:41",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 11700,
+              "name": "ISanctisModule",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11723,
+              "src": "125:14:41"
+            },
+            "id": 11701,
+            "nodeType": "InheritanceSpecifier",
+            "src": "125:14:41"
+          }
+        ],
+        "canonicalName": "ISanctisExtension",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 11707,
+        "linearizedBaseContracts": [
+          11707,
+          11723
+        ],
+        "name": "ISanctisExtension",
+        "nameLocation": "104:17:41",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "3943380c",
+            "id": 11706,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "key",
+            "nameLocation": "156:3:41",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11702,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "159:2:41"
+            },
+            "returnParameters": {
+              "id": 11705,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11704,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11706,
+                  "src": "185:7:41",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11703,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "185:7:41",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "184:9:41"
+            },
+            "scope": 11707,
+            "src": "147:47:41",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11708,
+        "src": "94:103:41",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:166:41"
   }
 }

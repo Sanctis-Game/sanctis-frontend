@@ -17,6 +17,7 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
   const { fetchPlanet } = useSanctis();
   const { ethereum } = useWallet<ExternalProvider>();
   const [loadedInfrastructure, setLoadedInfrastructure] = useState<Infrastructure>(infrastructure);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
 
   const contract = useMemo(() => {
     if (!ethereum) return;
@@ -29,23 +30,28 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
   }, [ethereum, infrastructure]);
 
   const fetch = useCallback(async () => {
-    if (!contract) return;
+    if (!contract || isFetching) return;
+    setIsFetching(true);
 
     const level = await contract.level(planetId);
-    const [costsResources, nextCosts] = await contract.costsNextLevel(planetId);
+    const [costsResources, nextCosts] = await contract.costs(planetId);
+    const nextUpgrade = await contract.nextUpgrade(planetId);
     setLoadedInfrastructure({
       ...infrastructure,
-      level,
+      level: level.toNumber(),
+      nextUpgrade: nextUpgrade.toNumber(),
       costsResources: costsResources.map((e: string) =>
         resources.find((a) => ethers.utils.getAddress(e) === ethers.utils.getAddress(a.address))
       ),
       nextCosts,
     });
-  }, [infrastructure, planetId, resources, contract, setLoadedInfrastructure]);
+
+    setIsFetching(false);
+  }, [isFetching, infrastructure, planetId, resources, contract, setLoadedInfrastructure]);
 
   useEffect(() => {
-    if (!loadedInfrastructure.costsResources || !loadedInfrastructure.nextCosts) fetch();
-  }, [loadedInfrastructure, fetch]);
+    if (!loadedInfrastructure.nextCosts || loadedInfrastructure.address !== infrastructure.address) fetch();
+  }, [loadedInfrastructure, infrastructure, fetch]);
 
   const create = useCallback(
     async (planetId: string) => {
@@ -62,6 +68,7 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
             description: `${infrastructure.name} has been built on Planet ${planetId}`,
           });
         } catch (err: any) {
+          console.log(err);
           toast({ status: "error", title: "Error", description: `Failed creation: ${err.data.message}` });
         }
       });

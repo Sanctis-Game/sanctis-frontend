@@ -67,5 +67,3344 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/test/Planets.t.sol",
+    "exportedSymbols": {
+      "AccessControl": [
+        2000
+      ],
+      "Address": [
+        8992
+      ],
+      "CheatCodes": [
+        19529
+      ],
+      "Commanders": [
+        13283
+      ],
+      "Context": [
+        9014
+      ],
+      "Counters": [
+        9088
+      ],
+      "DSTest": [
+        1680
+      ],
+      "DoubleEndedQueue": [
+        10924
+      ],
+      "ECDSA": [
+        9912
+      ],
+      "EIP712": [
+        10066
+      ],
+      "ERC165": [
+        10090
+      ],
+      "ERC20": [
+        6356
+      ],
+      "ERC20Permit": [
+        7265
+      ],
+      "ERC20Votes": [
+        7071
+      ],
+      "ERC721": [
+        8167
+      ],
+      "ERC721Enumerable": [
+        8639
+      ],
+      "EnumerableSet": [
+        11523
+      ],
+      "FixedPointMathLib": [
+        11642
+      ],
+      "Fleets": [
+        14470
+      ],
+      "Governor": [
+        3178
+      ],
+      "GovernorCompatibilityBravo": [
+        4974
+      ],
+      "GovernorTimelockControl": [
+        5502
+      ],
+      "GovernorVotes": [
+        5542
+      ],
+      "GovernorVotesQuorumFraction": [
+        5649
+      ],
+      "Humans": [
+        17195
+      ],
+      "IAccessControl": [
+        2073
+      ],
+      "ICommanders": [
+        14528
+      ],
+      "IERC165": [
+        10102
+      ],
+      "IERC20": [
+        6434
+      ],
+      "IERC20Metadata": [
+        7096
+      ],
+      "IERC20Permit": [
+        7301
+      ],
+      "IERC721": [
+        8283
+      ],
+      "IERC721Enumerable": [
+        8670
+      ],
+      "IERC721Metadata": [
+        8697
+      ],
+      "IERC721Receiver": [
+        8301
+      ],
+      "IFleets": [
+        14754
+      ],
+      "IGovernor": [
+        3414
+      ],
+      "IGovernorCompatibilityBravo": [
+        5125
+      ],
+      "IGovernorTimelock": [
+        5690
+      ],
+      "IInfrastructure": [
+        15479
+      ],
+      "IPlanets": [
+        14836
+      ],
+      "IRace": [
+        17206
+      ],
+      "IResource": [
+        17380
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ],
+      "IShip": [
+        17589
+      ],
+      "ISpaceCredits": [
+        14860
+      ],
+      "ISpatioports": [
+        15604
+      ],
+      "IVotes": [
+        5768
+      ],
+      "Infrastructure": [
+        16057
+      ],
+      "Math": [
+        10190
+      ],
+      "Ownable": [
+        2178
+      ],
+      "Parliament": [
+        11962
+      ],
+      "Planets": [
+        15294
+      ],
+      "PlanetsTest": [
+        19748
+      ],
+      "Race": [
+        17244
+      ],
+      "SafeCast": [
+        10583
+      ],
+      "Sanctis": [
+        12125
+      ],
+      "SanctisExtension": [
+        12160
+      ],
+      "SanctisModule": [
+        12265
+      ],
+      "SpaceCredits": [
+        15406
+      ],
+      "Spatioports": [
+        16732
+      ],
+      "Strings": [
+        9291
+      ],
+      "TimelockController": [
+        4193
+      ],
+      "Timers": [
+        9505
+      ]
+    },
+    "id": 19749,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 19495,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:77"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/ds-test/src/test.sol",
+        "file": "ds-test/test.sol",
+        "id": 19496,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 1681,
+        "src": "57:26:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/governance/extensions/GovernorTimelockControl.sol",
+        "file": "openzeppelin-contracts/contracts/governance/extensions/GovernorTimelockControl.sol",
+        "id": 19497,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 5503,
+        "src": "84:92:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Votes.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Votes.sol",
+        "id": 19498,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 7072,
+        "src": "177:80:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/Sanctis.sol",
+        "file": "../Sanctis.sol",
+        "id": 19499,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 12126,
+        "src": "259:24:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/ISpaceCredits.sol",
+        "file": "../extensions/ISpaceCredits.sol",
+        "id": 19500,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 14861,
+        "src": "284:41:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/SpaceCredits.sol",
+        "file": "../extensions/SpaceCredits.sol",
+        "id": 19501,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 15407,
+        "src": "326:40:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/Commanders.sol",
+        "file": "../extensions/Commanders.sol",
+        "id": 19502,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 13284,
+        "src": "367:38:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/Planets.sol",
+        "file": "../extensions/Planets.sol",
+        "id": 19503,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 15295,
+        "src": "406:35:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/Fleets.sol",
+        "file": "../extensions/Fleets.sol",
+        "id": 19504,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 14471,
+        "src": "442:34:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/Humans.sol",
+        "file": "../races/Humans.sol",
+        "id": 19505,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 17196,
+        "src": "477:29:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/infrastructures/Spatioports.sol",
+        "file": "../infrastructures/Spatioports.sol",
+        "id": 19506,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 19749,
+        "sourceUnit": 16733,
+        "src": "507:44:77",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "CheatCodes",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 19529,
+        "linearizedBaseContracts": [
+          19529
+        ],
+        "name": "CheatCodes",
+        "nameLocation": "563:10:77",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "47e50cce",
+            "id": 19513,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "prank",
+            "nameLocation": "696:5:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19511,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19508,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19513,
+                  "src": "702:7:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19507,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "702:7:77",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19510,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19513,
+                  "src": "711:7:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 19509,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "711:7:77",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "701:18:77"
+            },
+            "returnParameters": {
+              "id": 19512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "728:0:77"
+            },
+            "scope": 19529,
+            "src": "687:42:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "1f7b4f30",
+            "id": 19518,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "roll",
+            "nameLocation": "768:4:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19515,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19518,
+                  "src": "773:7:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19514,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "773:7:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "772:9:77"
+            },
+            "returnParameters": {
+              "id": 19517,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "790:0:77"
+            },
+            "scope": 19529,
+            "src": "759:32:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e5d6bf02",
+            "id": 19523,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "warp",
+            "nameLocation": "833:4:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19521,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19520,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19523,
+                  "src": "838:7:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19519,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "838:7:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "837:9:77"
+            },
+            "returnParameters": {
+              "id": 19522,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "855:0:77"
+            },
+            "scope": 19529,
+            "src": "824:32:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4c63e562",
+            "id": 19528,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "assume",
+            "nameLocation": "935:6:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19525,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19528,
+                  "src": "942:4:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 19524,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "942:4:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "941:6:77"
+            },
+            "returnParameters": {
+              "id": 19527,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "956:0:77"
+            },
+            "scope": 19529,
+            "src": "926:31:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 19749,
+        "src": "553:406:77",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 19530,
+              "name": "DSTest",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1680,
+              "src": "985:6:77"
+            },
+            "id": 19531,
+            "nodeType": "InheritanceSpecifier",
+            "src": "985:6:77"
+          }
+        ],
+        "canonicalName": "PlanetsTest",
+        "contractDependencies": [
+          12125,
+          13283,
+          15294,
+          15406,
+          17195
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 19748,
+        "linearizedBaseContracts": [
+          19748,
+          1680
+        ],
+        "name": "PlanetsTest",
+        "nameLocation": "970:11:77",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 19537,
+            "mutability": "mutable",
+            "name": "cheats",
+            "nameLocation": "1009:6:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "998:44:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CheatCodes_$19529",
+              "typeString": "contract CheatCodes"
+            },
+            "typeName": {
+              "id": 19533,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19532,
+                "name": "CheatCodes",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 19529,
+                "src": "998:10:77"
+              },
+              "referencedDeclaration": 19529,
+              "src": "998:10:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CheatCodes_$19529",
+                "typeString": "contract CheatCodes"
+              }
+            },
+            "value": {
+              "arguments": [
+                {
+                  "id": 19535,
+                  "name": "HEVM_ADDRESS",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 107,
+                  "src": "1029:12:77",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                ],
+                "id": 19534,
+                "name": "CheatCodes",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 19529,
+                "src": "1018:10:77",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_contract$_CheatCodes_$19529_$",
+                  "typeString": "type(contract CheatCodes)"
+                }
+              },
+              "id": 19536,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "1018:24:77",
+              "tryCall": false,
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CheatCodes_$19529",
+                "typeString": "contract CheatCodes"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 19540,
+            "mutability": "mutable",
+            "name": "sanctis",
+            "nameLocation": "1057:7:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "1049:15:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Sanctis_$12125",
+              "typeString": "contract Sanctis"
+            },
+            "typeName": {
+              "id": 19539,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19538,
+                "name": "Sanctis",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 12125,
+                "src": "1049:7:77"
+              },
+              "referencedDeclaration": 12125,
+              "src": "1049:7:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Sanctis_$12125",
+                "typeString": "contract Sanctis"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 19543,
+            "mutability": "mutable",
+            "name": "credits",
+            "nameLocation": "1083:7:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "1070:20:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+              "typeString": "contract SpaceCredits"
+            },
+            "typeName": {
+              "id": 19542,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19541,
+                "name": "SpaceCredits",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 15406,
+                "src": "1070:12:77"
+              },
+              "referencedDeclaration": 15406,
+              "src": "1070:12:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                "typeString": "contract SpaceCredits"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 19546,
+            "mutability": "mutable",
+            "name": "commanders",
+            "nameLocation": "1107:10:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "1096:21:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Commanders_$13283",
+              "typeString": "contract Commanders"
+            },
+            "typeName": {
+              "id": 19545,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19544,
+                "name": "Commanders",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 13283,
+                "src": "1096:10:77"
+              },
+              "referencedDeclaration": 13283,
+              "src": "1096:10:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Commanders_$13283",
+                "typeString": "contract Commanders"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 19549,
+            "mutability": "mutable",
+            "name": "planets",
+            "nameLocation": "1131:7:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "1123:15:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Planets_$15294",
+              "typeString": "contract Planets"
+            },
+            "typeName": {
+              "id": 19548,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19547,
+                "name": "Planets",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 15294,
+                "src": "1123:7:77"
+              },
+              "referencedDeclaration": 15294,
+              "src": "1123:7:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Planets_$15294",
+                "typeString": "contract Planets"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 19552,
+            "mutability": "mutable",
+            "name": "humans",
+            "nameLocation": "1151:6:77",
+            "nodeType": "VariableDeclaration",
+            "scope": 19748,
+            "src": "1144:13:77",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Humans_$17195",
+              "typeString": "contract Humans"
+            },
+            "typeName": {
+              "id": 19551,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 19550,
+                "name": "Humans",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 17195,
+                "src": "1144:6:77"
+              },
+              "referencedDeclaration": 17195,
+              "src": "1144:6:77",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Humans_$17195",
+                "typeString": "contract Humans"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 19632,
+              "nodeType": "Block",
+              "src": "1188:471:77",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 19560,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19555,
+                      "name": "sanctis",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19540,
+                      "src": "1198:7:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Sanctis_$12125",
+                        "typeString": "contract Sanctis"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 19558,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1208:11:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_Sanctis_$12125_$",
+                          "typeString": "function () returns (contract Sanctis)"
+                        },
+                        "typeName": {
+                          "id": 19557,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19556,
+                            "name": "Sanctis",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 12125,
+                            "src": "1212:7:77"
+                          },
+                          "referencedDeclaration": 12125,
+                          "src": "1212:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        }
+                      },
+                      "id": 19559,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1208:13:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Sanctis_$12125",
+                        "typeString": "contract Sanctis"
+                      }
+                    },
+                    "src": "1198:23:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Sanctis_$12125",
+                      "typeString": "contract Sanctis"
+                    }
+                  },
+                  "id": 19561,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1198:23:77"
+                },
+                {
+                  "expression": {
+                    "id": 19568,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19562,
+                      "name": "credits",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19543,
+                      "src": "1231:7:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                        "typeString": "contract SpaceCredits"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 19566,
+                          "name": "sanctis",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19540,
+                          "src": "1258:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        ],
+                        "id": 19565,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1241:16:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISanctis_$11696_$returns$_t_contract$_SpaceCredits_$15406_$",
+                          "typeString": "function (contract ISanctis) returns (contract SpaceCredits)"
+                        },
+                        "typeName": {
+                          "id": 19564,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19563,
+                            "name": "SpaceCredits",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 15406,
+                            "src": "1245:12:77"
+                          },
+                          "referencedDeclaration": 15406,
+                          "src": "1245:12:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                            "typeString": "contract SpaceCredits"
+                          }
+                        }
+                      },
+                      "id": 19567,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1241:25:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                        "typeString": "contract SpaceCredits"
+                      }
+                    },
+                    "src": "1231:35:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                      "typeString": "contract SpaceCredits"
+                    }
+                  },
+                  "id": 19569,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1231:35:77"
+                },
+                {
+                  "expression": {
+                    "id": 19576,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19570,
+                      "name": "commanders",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19546,
+                      "src": "1276:10:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Commanders_$13283",
+                        "typeString": "contract Commanders"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 19574,
+                          "name": "sanctis",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19540,
+                          "src": "1304:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        ],
+                        "id": 19573,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1289:14:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISanctis_$11696_$returns$_t_contract$_Commanders_$13283_$",
+                          "typeString": "function (contract ISanctis) returns (contract Commanders)"
+                        },
+                        "typeName": {
+                          "id": 19572,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19571,
+                            "name": "Commanders",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 13283,
+                            "src": "1293:10:77"
+                          },
+                          "referencedDeclaration": 13283,
+                          "src": "1293:10:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Commanders_$13283",
+                            "typeString": "contract Commanders"
+                          }
+                        }
+                      },
+                      "id": 19575,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1289:23:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Commanders_$13283",
+                        "typeString": "contract Commanders"
+                      }
+                    },
+                    "src": "1276:36:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Commanders_$13283",
+                      "typeString": "contract Commanders"
+                    }
+                  },
+                  "id": 19577,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1276:36:77"
+                },
+                {
+                  "expression": {
+                    "id": 19585,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19578,
+                      "name": "planets",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19549,
+                      "src": "1322:7:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Planets_$15294",
+                        "typeString": "contract Planets"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 19582,
+                          "name": "sanctis",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19540,
+                          "src": "1344:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        },
+                        {
+                          "hexValue": "30",
+                          "id": 19583,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1353:1:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 19581,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1332:11:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISanctis_$11696_$_t_uint256_$returns$_t_contract$_Planets_$15294_$",
+                          "typeString": "function (contract ISanctis,uint256) returns (contract Planets)"
+                        },
+                        "typeName": {
+                          "id": 19580,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19579,
+                            "name": "Planets",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 15294,
+                            "src": "1336:7:77"
+                          },
+                          "referencedDeclaration": 15294,
+                          "src": "1336:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Planets_$15294",
+                            "typeString": "contract Planets"
+                          }
+                        }
+                      },
+                      "id": 19584,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1332:23:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Planets_$15294",
+                        "typeString": "contract Planets"
+                      }
+                    },
+                    "src": "1322:33:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Planets_$15294",
+                      "typeString": "contract Planets"
+                    }
+                  },
+                  "id": 19586,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1322:33:77"
+                },
+                {
+                  "expression": {
+                    "id": 19593,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19587,
+                      "name": "humans",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19552,
+                      "src": "1365:6:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Humans_$17195",
+                        "typeString": "contract Humans"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 19591,
+                          "name": "sanctis",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19540,
+                          "src": "1385:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        ],
+                        "id": 19590,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1374:10:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISanctis_$11696_$returns$_t_contract$_Humans_$17195_$",
+                          "typeString": "function (contract ISanctis) returns (contract Humans)"
+                        },
+                        "typeName": {
+                          "id": 19589,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19588,
+                            "name": "Humans",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 17195,
+                            "src": "1378:6:77"
+                          },
+                          "referencedDeclaration": 17195,
+                          "src": "1378:6:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Humans_$17195",
+                            "typeString": "contract Humans"
+                          }
+                        }
+                      },
+                      "id": 19592,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1374:19:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Humans_$17195",
+                        "typeString": "contract Humans"
+                      }
+                    },
+                    "src": "1365:28:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Humans_$17195",
+                      "typeString": "contract Humans"
+                    }
+                  },
+                  "id": 19594,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1365:28:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 19600,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "1442:4:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_PlanetsTest_$19748",
+                              "typeString": "contract PlanetsTest"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_PlanetsTest_$19748",
+                              "typeString": "contract PlanetsTest"
+                            }
+                          ],
+                          "id": 19599,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1434:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 19598,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1434:7:77",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 19601,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1434:13:77",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19595,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "1404:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19597,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setParliamentExecutor",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12006,
+                      "src": "1404:29:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 19602,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1404:44:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19603,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1404:44:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 19607,
+                        "name": "credits",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19543,
+                        "src": "1490:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                          "typeString": "contract SpaceCredits"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                          "typeString": "contract SpaceCredits"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19604,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "1458:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19606,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertAndAllowExtension",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12075,
+                      "src": "1458:31:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ISanctisExtension_$11707_$returns$__$",
+                        "typeString": "function (contract ISanctisExtension) external"
+                      }
+                    },
+                    "id": 19608,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1458:40:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19609,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1458:40:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 19613,
+                        "name": "commanders",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19546,
+                        "src": "1540:10:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Commanders_$13283",
+                          "typeString": "contract Commanders"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Commanders_$13283",
+                          "typeString": "contract Commanders"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19610,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "1508:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19612,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertAndAllowExtension",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12075,
+                      "src": "1508:31:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ISanctisExtension_$11707_$returns$__$",
+                        "typeString": "function (contract ISanctisExtension) external"
+                      }
+                    },
+                    "id": 19614,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1508:43:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19615,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1508:43:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 19619,
+                        "name": "planets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19549,
+                        "src": "1593:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19616,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "1561:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19618,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertAndAllowExtension",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12075,
+                      "src": "1561:31:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ISanctisExtension_$11707_$returns$__$",
+                        "typeString": "function (contract ISanctisExtension) external"
+                      }
+                    },
+                    "id": 19620,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1561:40:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19621,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1561:40:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 19627,
+                            "name": "humans",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19552,
+                            "src": "1638:6:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Humans_$17195",
+                              "typeString": "contract Humans"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Humans_$17195",
+                              "typeString": "contract Humans"
+                            }
+                          ],
+                          "id": 19626,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "1630:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 19625,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "1630:7:77",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 19628,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1630:15:77",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "hexValue": "74727565",
+                        "id": 19629,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1647:4:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "true"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19622,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "1611:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19624,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setAllowed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12034,
+                      "src": "1611:18:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_bool_$returns$__$",
+                        "typeString": "function (address,bool) external"
+                      }
+                    },
+                    "id": 19630,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1611:41:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19631,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1611:41:77"
+                }
+              ]
+            },
+            "functionSelector": "0a9254e4",
+            "id": 19633,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setUp",
+            "nameLocation": "1173:5:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19553,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1178:2:77"
+            },
+            "returnParameters": {
+              "id": 19554,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1188:0:77"
+            },
+            "scope": 19748,
+            "src": "1164:495:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 19667,
+              "nodeType": "Block",
+              "src": "1717:155:77",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 19651,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 19643,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 19641,
+                            "name": "homeworld",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19635,
+                            "src": "1741:9:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "!=",
+                          "rightExpression": {
+                            "hexValue": "30",
+                            "id": 19642,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1754:1:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "1741:14:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 19650,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 19644,
+                            "name": "homeworld",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19635,
+                            "src": "1759:9:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<",
+                          "rightExpression": {
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 19647,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "1776:7:77",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_uint240_$",
+                                    "typeString": "type(uint240)"
+                                  },
+                                  "typeName": {
+                                    "id": 19646,
+                                    "name": "uint240",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "1776:7:77",
+                                    "typeDescriptions": {}
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_type$_t_uint240_$",
+                                    "typeString": "type(uint240)"
+                                  }
+                                ],
+                                "id": 19645,
+                                "name": "type",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -27,
+                                "src": "1771:4:77",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
+                                  "typeString": "function () pure"
+                                }
+                              },
+                              "id": 19648,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "1771:13:77",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_meta_type_t_uint240",
+                                "typeString": "type(uint240)"
+                              }
+                            },
+                            "id": 19649,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "max",
+                            "nodeType": "MemberAccess",
+                            "src": "1771:17:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint240",
+                              "typeString": "uint240"
+                            }
+                          },
+                          "src": "1759:29:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1741:47:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19638,
+                        "name": "cheats",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19537,
+                        "src": "1727:6:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CheatCodes_$19529",
+                          "typeString": "contract CheatCodes"
+                        }
+                      },
+                      "id": 19640,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "assume",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 19528,
+                      "src": "1727:13:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_bool_$returns$__$",
+                        "typeString": "function (bool) external"
+                      }
+                    },
+                    "id": 19652,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1727:62:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19653,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1727:62:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "54",
+                        "id": 19657,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1818:3:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_846b7b6deb1cfa110d0ea7ec6162a7123b761785528db70cceed5143183b11fc",
+                          "typeString": "literal_string \"T\""
+                        },
+                        "value": "T"
+                      },
+                      {
+                        "id": 19658,
+                        "name": "humans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19552,
+                        "src": "1823:6:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Humans_$17195",
+                          "typeString": "contract Humans"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_846b7b6deb1cfa110d0ea7ec6162a7123b761785528db70cceed5143183b11fc",
+                          "typeString": "literal_string \"T\""
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_Humans_$17195",
+                          "typeString": "contract Humans"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19654,
+                        "name": "commanders",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19546,
+                        "src": "1800:10:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Commanders_$13283",
+                          "typeString": "contract Commanders"
+                        }
+                      },
+                      "id": 19656,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "create",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13120,
+                      "src": "1800:17:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_contract$_IRace_$17206_$returns$__$",
+                        "typeString": "function (string memory,contract IRace) external"
+                      }
+                    },
+                    "id": 19659,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1800:30:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19660,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1800:30:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 19664,
+                        "name": "homeworld",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19635,
+                        "src": "1855:9:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19661,
+                        "name": "planets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19549,
+                        "src": "1840:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      },
+                      "id": 19663,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "create",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 15064,
+                      "src": "1840:14:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) external"
+                      }
+                    },
+                    "id": 19665,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1840:25:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19666,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1840:25:77"
+                }
+              ]
+            },
+            "functionSelector": "d34ee361",
+            "id": 19668,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testCreatePlanet",
+            "nameLocation": "1674:16:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19636,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19635,
+                  "mutability": "mutable",
+                  "name": "homeworld",
+                  "nameLocation": "1699:9:77",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19668,
+                  "src": "1691:17:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19634,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1691:7:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1690:19:77"
+            },
+            "returnParameters": {
+              "id": 19637,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1717:0:77"
+            },
+            "scope": 19748,
+            "src": "1665:207:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 19746,
+              "nodeType": "Block",
+              "src": "1946:388:77",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 19694,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 19686,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 19682,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 19678,
+                              "name": "cost",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19670,
+                              "src": "1983:4:77",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "<",
+                            "rightExpression": {
+                              "commonType": {
+                                "typeIdentifier": "t_rational_26959946667150639794667015087019630673637144422540572481103610249216_by_1",
+                                "typeString": "int_const 2695...(60 digits omitted)...9216"
+                              },
+                              "id": 19681,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "hexValue": "32",
+                                "id": 19679,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "1990:1:77",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_2_by_1",
+                                  "typeString": "int_const 2"
+                                },
+                                "value": "2"
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "**",
+                              "rightExpression": {
+                                "hexValue": "323234",
+                                "id": 19680,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "1993:3:77",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_224_by_1",
+                                  "typeString": "int_const 224"
+                                },
+                                "value": "224"
+                              },
+                              "src": "1990:6:77",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_26959946667150639794667015087019630673637144422540572481103610249216_by_1",
+                                "typeString": "int_const 2695...(60 digits omitted)...9216"
+                              }
+                            },
+                            "src": "1983:13:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "&&",
+                          "rightExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            },
+                            "id": 19685,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "id": 19683,
+                              "name": "homeworld",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19672,
+                              "src": "2000:9:77",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "!=",
+                            "rightExpression": {
+                              "hexValue": "30",
+                              "id": 19684,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2013:1:77",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            },
+                            "src": "2000:14:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "src": "1983:31:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 19693,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "id": 19687,
+                            "name": "homeworld",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19672,
+                            "src": "2018:9:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<",
+                          "rightExpression": {
+                            "expression": {
+                              "arguments": [
+                                {
+                                  "id": 19690,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "nodeType": "ElementaryTypeNameExpression",
+                                  "src": "2035:7:77",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_type$_t_uint240_$",
+                                    "typeString": "type(uint240)"
+                                  },
+                                  "typeName": {
+                                    "id": 19689,
+                                    "name": "uint240",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "2035:7:77",
+                                    "typeDescriptions": {}
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_type$_t_uint240_$",
+                                    "typeString": "type(uint240)"
+                                  }
+                                ],
+                                "id": 19688,
+                                "name": "type",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": -27,
+                                "src": "2030:4:77",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_metatype_pure$__$returns$__$",
+                                  "typeString": "function () pure"
+                                }
+                              },
+                              "id": 19691,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "2030:13:77",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_meta_type_t_uint240",
+                                "typeString": "type(uint240)"
+                              }
+                            },
+                            "id": 19692,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "max",
+                            "nodeType": "MemberAccess",
+                            "src": "2030:17:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint240",
+                              "typeString": "uint240"
+                            }
+                          },
+                          "src": "2018:29:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1983:64:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19675,
+                        "name": "cheats",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19537,
+                        "src": "1956:6:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CheatCodes_$19529",
+                          "typeString": "contract CheatCodes"
+                        }
+                      },
+                      "id": 19677,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "assume",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 19528,
+                      "src": "1956:13:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_bool_$returns$__$",
+                        "typeString": "function (bool) external"
+                      }
+                    },
+                    "id": 19695,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1956:101:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19696,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1956:101:77"
+                },
+                {
+                  "expression": {
+                    "id": 19704,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 19697,
+                      "name": "planets",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 19549,
+                      "src": "2068:7:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Planets_$15294",
+                        "typeString": "contract Planets"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 19701,
+                          "name": "sanctis",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19540,
+                          "src": "2090:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          }
+                        },
+                        {
+                          "id": 19702,
+                          "name": "cost",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19670,
+                          "src": "2099:4:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_Sanctis_$12125",
+                            "typeString": "contract Sanctis"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 19700,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "2078:11:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_ISanctis_$11696_$_t_uint256_$returns$_t_contract$_Planets_$15294_$",
+                          "typeString": "function (contract ISanctis,uint256) returns (contract Planets)"
+                        },
+                        "typeName": {
+                          "id": 19699,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 19698,
+                            "name": "Planets",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 15294,
+                            "src": "2082:7:77"
+                          },
+                          "referencedDeclaration": 15294,
+                          "src": "2082:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Planets_$15294",
+                            "typeString": "contract Planets"
+                          }
+                        }
+                      },
+                      "id": 19703,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2078:26:77",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Planets_$15294",
+                        "typeString": "contract Planets"
+                      }
+                    },
+                    "src": "2068:36:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Planets_$15294",
+                      "typeString": "contract Planets"
+                    }
+                  },
+                  "id": 19705,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2068:36:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 19709,
+                        "name": "planets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19549,
+                        "src": "2146:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19706,
+                        "name": "sanctis",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19540,
+                        "src": "2114:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Sanctis_$12125",
+                          "typeString": "contract Sanctis"
+                        }
+                      },
+                      "id": 19708,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertAndAllowExtension",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 12075,
+                      "src": "2114:31:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_contract$_ISanctisExtension_$11707_$returns$__$",
+                        "typeString": "function (contract ISanctisExtension) external"
+                      }
+                    },
+                    "id": 19710,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2114:40:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19711,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2114:40:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 19717,
+                            "name": "this",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -28,
+                            "src": "2186:4:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_PlanetsTest_$19748",
+                              "typeString": "contract PlanetsTest"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_PlanetsTest_$19748",
+                              "typeString": "contract PlanetsTest"
+                            }
+                          ],
+                          "id": 19716,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "2178:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 19715,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "2178:7:77",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 19718,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2178:13:77",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 19719,
+                        "name": "cost",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19670,
+                        "src": "2193:4:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19712,
+                        "name": "credits",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19543,
+                        "src": "2165:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                          "typeString": "contract SpaceCredits"
+                        }
+                      },
+                      "id": 19714,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "mint",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 15348,
+                      "src": "2165:12:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 19720,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2165:33:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19721,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2165:33:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "54",
+                        "id": 19725,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2226:3:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_846b7b6deb1cfa110d0ea7ec6162a7123b761785528db70cceed5143183b11fc",
+                          "typeString": "literal_string \"T\""
+                        },
+                        "value": "T"
+                      },
+                      {
+                        "id": 19726,
+                        "name": "humans",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19552,
+                        "src": "2231:6:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Humans_$17195",
+                          "typeString": "contract Humans"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_846b7b6deb1cfa110d0ea7ec6162a7123b761785528db70cceed5143183b11fc",
+                          "typeString": "literal_string \"T\""
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_Humans_$17195",
+                          "typeString": "contract Humans"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19722,
+                        "name": "commanders",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19546,
+                        "src": "2208:10:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Commanders_$13283",
+                          "typeString": "contract Commanders"
+                        }
+                      },
+                      "id": 19724,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "create",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13120,
+                      "src": "2208:17:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_contract$_IRace_$17206_$returns$__$",
+                        "typeString": "function (string memory,contract IRace) external"
+                      }
+                    },
+                    "id": 19727,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2208:30:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19728,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2208:30:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "id": 19734,
+                            "name": "planets",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19549,
+                            "src": "2272:7:77",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Planets_$15294",
+                              "typeString": "contract Planets"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Planets_$15294",
+                              "typeString": "contract Planets"
+                            }
+                          ],
+                          "id": 19733,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "2264:7:77",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_address_$",
+                            "typeString": "type(address)"
+                          },
+                          "typeName": {
+                            "id": 19732,
+                            "name": "address",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "2264:7:77",
+                            "typeDescriptions": {}
+                          }
+                        },
+                        "id": 19735,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "2264:16:77",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 19736,
+                        "name": "cost",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19670,
+                        "src": "2282:4:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19729,
+                        "name": "credits",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19543,
+                        "src": "2248:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_SpaceCredits_$15406",
+                          "typeString": "contract SpaceCredits"
+                        }
+                      },
+                      "id": 19731,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "approve",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5935,
+                      "src": "2248:15:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 19737,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2248:39:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 19738,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2248:39:77"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "hexValue": "30",
+                        "id": 19742,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2314:1:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "id": 19743,
+                        "name": "homeworld",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19672,
+                        "src": "2317:9:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 19739,
+                        "name": "planets",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19549,
+                        "src": "2297:7:77",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Planets_$15294",
+                          "typeString": "contract Planets"
+                        }
+                      },
+                      "id": 19741,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "colonize",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 15151,
+                      "src": "2297:16:77",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256,uint256) external"
+                      }
+                    },
+                    "id": 19744,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2297:30:77",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 19745,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2297:30:77"
+                }
+              ]
+            },
+            "functionSelector": "7bfca65d",
+            "id": 19747,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "testColonizePlanet",
+            "nameLocation": "1887:18:77",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 19673,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19670,
+                  "mutability": "mutable",
+                  "name": "cost",
+                  "nameLocation": "1914:4:77",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19747,
+                  "src": "1906:12:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19669,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1906:7:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19672,
+                  "mutability": "mutable",
+                  "name": "homeworld",
+                  "nameLocation": "1928:9:77",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 19747,
+                  "src": "1920:17:77",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 19671,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1920:7:77",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1905:33:77"
+            },
+            "returnParameters": {
+              "id": 19674,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1946:0:77"
+            },
+            "scope": 19748,
+            "src": "1878:456:77",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 19749,
+        "src": "961:1375:77",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:2305:77"
   }
 }

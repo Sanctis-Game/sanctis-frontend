@@ -61,6 +61,19 @@
     },
     {
       "inputs": [],
+      "name": "s_sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "sanctis",
       "outputs": [
         {
@@ -82,5 +95,462 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/Race.sol",
+    "exportedSymbols": {
+      "Address": [
+        8992
+      ],
+      "Context": [
+        9014
+      ],
+      "ERC165": [
+        10090
+      ],
+      "ERC721": [
+        8167
+      ],
+      "ERC721Enumerable": [
+        8639
+      ],
+      "IERC165": [
+        10102
+      ],
+      "IERC721": [
+        8283
+      ],
+      "IERC721Enumerable": [
+        8670
+      ],
+      "IERC721Metadata": [
+        8697
+      ],
+      "IERC721Receiver": [
+        8301
+      ],
+      "IRace": [
+        17206
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisModule": [
+        11723
+      ],
+      "Race": [
+        17244
+      ],
+      "SanctisModule": [
+        12265
+      ],
+      "Strings": [
+        9291
+      ]
+    },
+    "id": 17245,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17208,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:68"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "file": "openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "id": 17209,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17245,
+        "sourceUnit": 10103,
+        "src": "57:74:68",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "id": 17210,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17245,
+        "sourceUnit": 8671,
+        "src": "132:88:68",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
+        "id": 17211,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17245,
+        "sourceUnit": 8640,
+        "src": "221:87:68",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/SanctisModule.sol",
+        "file": "../SanctisModule.sol",
+        "id": 17212,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17245,
+        "sourceUnit": 12266,
+        "src": "310:30:68",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/IRace.sol",
+        "file": "./IRace.sol",
+        "id": 17213,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17245,
+        "sourceUnit": 17207,
+        "src": "341:21:68",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 17214,
+              "name": "IRace",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 17206,
+              "src": "390:5:68"
+            },
+            "id": 17215,
+            "nodeType": "InheritanceSpecifier",
+            "src": "390:5:68"
+          },
+          {
+            "baseName": {
+              "id": 17216,
+              "name": "SanctisModule",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 12265,
+              "src": "397:13:68"
+            },
+            "id": 17217,
+            "nodeType": "InheritanceSpecifier",
+            "src": "397:13:68"
+          }
+        ],
+        "canonicalName": "Race",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 17244,
+        "linearizedBaseContracts": [
+          17244,
+          12265,
+          17206,
+          11723
+        ],
+        "name": "Race",
+        "nameLocation": "382:4:68",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17219,
+            "mutability": "mutable",
+            "name": "s_name",
+            "nameLocation": "433:6:68",
+            "nodeType": "VariableDeclaration",
+            "scope": 17244,
+            "src": "417:22:68",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 17218,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "417:6:68",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 17234,
+              "nodeType": "Block",
+              "src": "534:31:68",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 17232,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 17230,
+                      "name": "s_name",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17219,
+                      "src": "544:6:68",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 17231,
+                      "name": "name_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17224,
+                      "src": "553:5:68",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "544:14:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 17233,
+                  "nodeType": "ExpressionStatement",
+                  "src": "544:14:68"
+                }
+              ]
+            },
+            "id": 17235,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 17227,
+                    "name": "sanctis_",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17222,
+                    "src": "520:8:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISanctis_$11696",
+                      "typeString": "contract ISanctis"
+                    }
+                  }
+                ],
+                "id": 17228,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 17226,
+                  "name": "SanctisModule",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 12265,
+                  "src": "506:13:68"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "506:23:68"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17225,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17222,
+                  "mutability": "mutable",
+                  "name": "sanctis_",
+                  "nameLocation": "467:8:68",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17235,
+                  "src": "458:17:68",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISanctis_$11696",
+                    "typeString": "contract ISanctis"
+                  },
+                  "typeName": {
+                    "id": 17221,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 17220,
+                      "name": "ISanctis",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 11696,
+                      "src": "458:8:68"
+                    },
+                    "referencedDeclaration": 11696,
+                    "src": "458:8:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISanctis_$11696",
+                      "typeString": "contract ISanctis"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17224,
+                  "mutability": "mutable",
+                  "name": "name_",
+                  "nameLocation": "491:5:68",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17235,
+                  "src": "477:19:68",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17223,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "477:6:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "457:40:68"
+            },
+            "returnParameters": {
+              "id": 17229,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:0:68"
+            },
+            "scope": 17244,
+            "src": "446:119:68",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              17205
+            ],
+            "body": {
+              "id": 17242,
+              "nodeType": "Block",
+              "src": "677:30:68",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 17240,
+                    "name": "s_name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17219,
+                    "src": "694:6:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 17239,
+                  "id": 17241,
+                  "nodeType": "Return",
+                  "src": "687:13:68"
+                }
+              ]
+            },
+            "functionSelector": "06fdde03",
+            "id": 17243,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nameLocation": "632:4:68",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17236,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "636:2:68"
+            },
+            "returnParameters": {
+              "id": 17239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17238,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17243,
+                  "src": "662:13:68",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17237,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "662:6:68",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "661:15:68"
+            },
+            "scope": 17244,
+            "src": "623:84:68",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17245,
+        "src": "364:345:68",
+        "usedErrors": [
+          12169,
+          12173,
+          12177
+        ]
+      }
+    ],
+    "src": "32:678:68"
   }
 }

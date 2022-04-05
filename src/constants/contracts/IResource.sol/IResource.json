@@ -12,6 +12,44 @@
       "type": "error"
     },
     {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "planet",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Burn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "planet",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Mint",
+      "type": "event"
+    },
+    {
       "inputs": [
         {
           "internalType": "uint256",
@@ -25,6 +63,19 @@
         }
       ],
       "name": "burn",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "newSanctis",
+          "type": "address"
+        }
+      ],
+      "name": "changeSanctis",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -100,6 +151,19 @@
     },
     {
       "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "symbol",
       "outputs": [
         {
@@ -121,5 +185,707 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/resources/IResource.sol",
+    "exportedSymbols": {
+      "IResource": [
+        17380
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisModule": [
+        11723
+      ]
+    },
+    "id": 17381,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17322,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:70"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisModule.sol",
+        "file": "../ISanctisModule.sol",
+        "id": 17323,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 17381,
+        "sourceUnit": 11724,
+        "src": "60:31:70",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 17324,
+              "name": "ISanctisModule",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11723,
+              "src": "118:14:70"
+            },
+            "id": 17325,
+            "nodeType": "InheritanceSpecifier",
+            "src": "118:14:70"
+          }
+        ],
+        "canonicalName": "IResource",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 17380,
+        "linearizedBaseContracts": [
+          17380,
+          11723
+        ],
+        "name": "IResource",
+        "nameLocation": "105:9:70",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 17329,
+            "name": "Unallowed",
+            "nameLocation": "146:9:70",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 17328,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17327,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "164:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17329,
+                  "src": "156:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17326,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "156:7:70",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "155:16:70"
+            },
+            "src": "140:32:70"
+          },
+          {
+            "anonymous": false,
+            "id": 17335,
+            "name": "Mint",
+            "nameLocation": "186:4:70",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 17334,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17331,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "planet",
+                  "nameLocation": "199:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17335,
+                  "src": "191:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17330,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "191:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17333,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "215:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17335,
+                  "src": "207:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17332,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "207:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "190:32:70"
+            },
+            "src": "180:43:70"
+          },
+          {
+            "anonymous": false,
+            "id": 17341,
+            "name": "Burn",
+            "nameLocation": "237:4:70",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 17340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17337,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "planet",
+                  "nameLocation": "250:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17341,
+                  "src": "242:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17336,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "242:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17339,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "266:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17341,
+                  "src": "258:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17338,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "241:32:70"
+            },
+            "src": "231:43:70"
+          },
+          {
+            "functionSelector": "06fdde03",
+            "id": 17346,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nameLocation": "291:4:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17342,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "295:2:70"
+            },
+            "returnParameters": {
+              "id": 17345,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17344,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17346,
+                  "src": "321:13:70",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17343,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:6:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "320:15:70"
+            },
+            "scope": 17380,
+            "src": "282:54:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "95d89b41",
+            "id": 17351,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "symbol",
+            "nameLocation": "353:6:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17347,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "359:2:70"
+            },
+            "returnParameters": {
+              "id": 17350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17349,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17351,
+                  "src": "385:13:70",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 17348,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "385:6:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "384:15:70"
+            },
+            "scope": 17380,
+            "src": "344:56:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "1b2ef1ca",
+            "id": 17358,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nameLocation": "417:4:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17353,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "430:8:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17358,
+                  "src": "422:16:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17352,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "422:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17355,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "448:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17358,
+                  "src": "440:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17354,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "440:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "421:34:70"
+            },
+            "returnParameters": {
+              "id": 17357,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "464:0:70"
+            },
+            "scope": 17380,
+            "src": "408:57:70",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "b390c0ab",
+            "id": 17365,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nameLocation": "482:4:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17360,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "495:8:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17365,
+                  "src": "487:16:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17359,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "487:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17362,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "513:6:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17365,
+                  "src": "505:14:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17361,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "505:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "486:34:70"
+            },
+            "returnParameters": {
+              "id": 17364,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "529:0:70"
+            },
+            "scope": 17380,
+            "src": "473:57:70",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "73199a7c",
+            "id": 17372,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isAvailableOnPlanet",
+            "nameLocation": "547:19:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17368,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17367,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "575:8:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17372,
+                  "src": "567:16:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17366,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "567:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "566:18:70"
+            },
+            "returnParameters": {
+              "id": 17371,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17370,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17372,
+                  "src": "608:4:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 17369,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "608:4:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "607:6:70"
+            },
+            "scope": 17380,
+            "src": "538:76:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "819b25ba",
+            "id": 17379,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reserve",
+            "nameLocation": "631:7:70",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17375,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17374,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "647:8:70",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17379,
+                  "src": "639:16:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17373,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "639:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "638:18:70"
+            },
+            "returnParameters": {
+              "id": 17378,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17377,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17379,
+                  "src": "680:7:70",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17376,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "680:7:70",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "679:9:70"
+            },
+            "scope": 17380,
+            "src": "622:67:70",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17381,
+        "src": "95:597:70",
+        "usedErrors": [
+          17329
+        ]
+      }
+    ],
+    "src": "33:661:70"
   }
 }

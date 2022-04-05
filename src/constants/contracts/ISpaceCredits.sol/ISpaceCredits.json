@@ -181,6 +181,19 @@
       "type": "function"
     },
     {
+      "inputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "newSanctis",
+          "type": "address"
+        }
+      ],
+      "name": "changeSanctis",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
       "inputs": [],
       "name": "decimals",
       "outputs": [
@@ -326,6 +339,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "key",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "address",
@@ -420,6 +446,19 @@
     },
     {
       "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "symbol",
       "outputs": [
         {
@@ -507,5 +546,313 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/ISpaceCredits.sol",
+    "exportedSymbols": {
+      "Context": [
+        9014
+      ],
+      "Counters": [
+        9088
+      ],
+      "ECDSA": [
+        9912
+      ],
+      "EIP712": [
+        10066
+      ],
+      "ERC20": [
+        6356
+      ],
+      "ERC20Permit": [
+        7265
+      ],
+      "ERC20Votes": [
+        7071
+      ],
+      "IERC20": [
+        6434
+      ],
+      "IERC20Metadata": [
+        7096
+      ],
+      "IERC20Permit": [
+        7301
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ],
+      "ISpaceCredits": [
+        14860
+      ],
+      "IVotes": [
+        5768
+      ],
+      "Math": [
+        10190
+      ],
+      "Ownable": [
+        2178
+      ],
+      "SafeCast": [
+        10583
+      ],
+      "Strings": [
+        9291
+      ]
+    },
+    "id": 14861,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14838,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:53"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+        "file": "openzeppelin-contracts/contracts/access/Ownable.sol",
+        "id": 14839,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 2179,
+        "src": "60:61:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+        "id": 14840,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 6357,
+        "src": "123:64:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/draft-ERC20Permit.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC20/extensions/draft-ERC20Permit.sol",
+        "id": 14841,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 7266,
+        "src": "189:87:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Votes.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Votes.sol",
+        "id": 14842,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 7072,
+        "src": "278:80:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "id": 14843,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 7097,
+        "src": "360:84:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisExtension.sol",
+        "file": "../ISanctisExtension.sol",
+        "id": 14844,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14861,
+        "sourceUnit": 11708,
+        "src": "448:34:53",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 14845,
+              "name": "IERC20Metadata",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7096,
+              "src": "518:14:53"
+            },
+            "id": 14846,
+            "nodeType": "InheritanceSpecifier",
+            "src": "518:14:53"
+          },
+          {
+            "baseName": {
+              "id": 14847,
+              "name": "IERC20Permit",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7301,
+              "src": "539:12:53"
+            },
+            "id": 14848,
+            "nodeType": "InheritanceSpecifier",
+            "src": "539:12:53"
+          },
+          {
+            "baseName": {
+              "id": 14849,
+              "name": "IVotes",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 5768,
+              "src": "558:6:53"
+            },
+            "id": 14850,
+            "nodeType": "InheritanceSpecifier",
+            "src": "558:6:53"
+          },
+          {
+            "baseName": {
+              "id": 14851,
+              "name": "ISanctisExtension",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11707,
+              "src": "571:17:53"
+            },
+            "id": 14852,
+            "nodeType": "InheritanceSpecifier",
+            "src": "571:17:53"
+          }
+        ],
+        "canonicalName": "ISpaceCredits",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 14860,
+        "linearizedBaseContracts": [
+          14860,
+          11707,
+          11723,
+          5768,
+          7301,
+          7096,
+          6434
+        ],
+        "name": "ISpaceCredits",
+        "nameLocation": "496:13:53",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "40c10f19",
+            "id": 14859,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nameLocation": "606:4:53",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14857,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14854,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nameLocation": "619:2:53",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14859,
+                  "src": "611:10:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14853,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "611:7:53",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14856,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "631:6:53",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14859,
+                  "src": "623:14:53",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14855,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "623:7:53",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "610:28:53"
+            },
+            "returnParameters": {
+              "id": 14858,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "647:0:53"
+            },
+            "scope": 14860,
+            "src": "597:51:53",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14861,
+        "src": "486:165:53",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:620:53"
   }
 }

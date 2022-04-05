@@ -607,5 +607,504 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/governance/extensions/GovernorVotes.sol",
+    "exportedSymbols": {
+      "Address": [
+        8992
+      ],
+      "Context": [
+        9014
+      ],
+      "DoubleEndedQueue": [
+        10924
+      ],
+      "ECDSA": [
+        9912
+      ],
+      "EIP712": [
+        10066
+      ],
+      "ERC165": [
+        10090
+      ],
+      "Governor": [
+        3178
+      ],
+      "GovernorVotes": [
+        5542
+      ],
+      "IERC165": [
+        10102
+      ],
+      "IGovernor": [
+        3414
+      ],
+      "IVotes": [
+        5768
+      ],
+      "SafeCast": [
+        10583
+      ],
+      "Strings": [
+        9291
+      ],
+      "Timers": [
+        9505
+      ]
+    },
+    "id": 5543,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5504,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "123:23:10"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/governance/Governor.sol",
+        "file": "../Governor.sol",
+        "id": 5505,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5543,
+        "sourceUnit": 3179,
+        "src": "148:25:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/governance/utils/IVotes.sol",
+        "file": "../utils/IVotes.sol",
+        "id": 5506,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 5543,
+        "sourceUnit": 5769,
+        "src": "174:29:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 5508,
+              "name": "Governor",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 3178,
+              "src": "405:8:10"
+            },
+            "id": 5509,
+            "nodeType": "InheritanceSpecifier",
+            "src": "405:8:10"
+          }
+        ],
+        "canonicalName": "GovernorVotes",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5507,
+          "nodeType": "StructuredDocumentation",
+          "src": "205:164:10",
+          "text": " @dev Extension of {Governor} for voting weight extraction from an {ERC20Votes} token, or since v4.5 an {ERC721Votes} token.\n _Available since v4.3._"
+        },
+        "fullyImplemented": false,
+        "id": 5542,
+        "linearizedBaseContracts": [
+          5542,
+          3178,
+          3414,
+          10066,
+          10090,
+          10102,
+          9014
+        ],
+        "name": "GovernorVotes",
+        "nameLocation": "388:13:10",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "functionSelector": "fc0c546a",
+            "id": 5512,
+            "mutability": "immutable",
+            "name": "token",
+            "nameLocation": "444:5:10",
+            "nodeType": "VariableDeclaration",
+            "scope": 5542,
+            "src": "420:29:10",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_IVotes_$5768",
+              "typeString": "contract IVotes"
+            },
+            "typeName": {
+              "id": 5511,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 5510,
+                "name": "IVotes",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 5768,
+                "src": "420:6:10"
+              },
+              "referencedDeclaration": 5768,
+              "src": "420:6:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IVotes_$5768",
+                "typeString": "contract IVotes"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5522,
+              "nodeType": "Block",
+              "src": "489:37:10",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 5520,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 5518,
+                      "name": "token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5512,
+                      "src": "499:5:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IVotes_$5768",
+                        "typeString": "contract IVotes"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 5519,
+                      "name": "tokenAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5515,
+                      "src": "507:12:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IVotes_$5768",
+                        "typeString": "contract IVotes"
+                      }
+                    },
+                    "src": "499:20:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IVotes_$5768",
+                      "typeString": "contract IVotes"
+                    }
+                  },
+                  "id": 5521,
+                  "nodeType": "ExpressionStatement",
+                  "src": "499:20:10"
+                }
+              ]
+            },
+            "id": 5523,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5516,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5515,
+                  "mutability": "mutable",
+                  "name": "tokenAddress",
+                  "nameLocation": "475:12:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5523,
+                  "src": "468:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IVotes_$5768",
+                    "typeString": "contract IVotes"
+                  },
+                  "typeName": {
+                    "id": 5514,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 5513,
+                      "name": "IVotes",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 5768,
+                      "src": "468:6:10"
+                    },
+                    "referencedDeclaration": 5768,
+                    "src": "468:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IVotes_$5768",
+                      "typeString": "contract IVotes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "467:21:10"
+            },
+            "returnParameters": {
+              "id": 5517,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "489:0:10"
+            },
+            "scope": 5542,
+            "src": "456:70:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              3331
+            ],
+            "body": {
+              "id": 5540,
+              "nodeType": "Block",
+              "src": "754:64:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 5536,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5526,
+                        "src": "790:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 5537,
+                        "name": "blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5528,
+                        "src": "799:11:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "id": 5534,
+                        "name": "token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5512,
+                        "src": "771:5:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IVotes_$5768",
+                          "typeString": "contract IVotes"
+                        }
+                      },
+                      "id": 5535,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getPastVotes",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5729,
+                      "src": "771:18:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (address,uint256) view external returns (uint256)"
+                      }
+                    },
+                    "id": 5538,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "771:40:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 5533,
+                  "id": 5539,
+                  "nodeType": "Return",
+                  "src": "764:47:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5524,
+              "nodeType": "StructuredDocumentation",
+              "src": "532:114:10",
+              "text": " Read the voting weight from the token's built in snapshot mechanism (see {IGovernor-getVotes})."
+            },
+            "functionSelector": "eb9019d4",
+            "id": 5541,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getVotes",
+            "nameLocation": "660:8:10",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5530,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "727:8:10"
+            },
+            "parameters": {
+              "id": 5529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5526,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "677:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5541,
+                  "src": "669:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5525,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "669:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5528,
+                  "mutability": "mutable",
+                  "name": "blockNumber",
+                  "nameLocation": "694:11:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5541,
+                  "src": "686:19:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5527,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "686:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "668:38:10"
+            },
+            "returnParameters": {
+              "id": 5533,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5532,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5541,
+                  "src": "745:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5531,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "745:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "744:9:10"
+            },
+            "scope": 5542,
+            "src": "651:167:10",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5543,
+        "src": "370:450:10",
+        "usedErrors": [
+          10590
+        ]
+      }
+    ],
+    "src": "123:698:10"
   }
 }

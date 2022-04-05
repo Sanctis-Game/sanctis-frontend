@@ -51,9 +51,22 @@
       "name": "key",
       "outputs": [
         {
-          "internalType": "string",
+          "internalType": "bytes32",
           "name": "",
-          "type": "string"
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "s_sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
         }
       ],
       "stateMutability": "view",
@@ -82,5 +95,393 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/SanctisExtension.sol",
+    "exportedSymbols": {
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ],
+      "SanctisExtension": [
+        12160
+      ],
+      "SanctisModule": [
+        12265
+      ]
+    },
+    "id": 12161,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12127,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:45"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisExtension.sol",
+        "file": "./ISanctisExtension.sol",
+        "id": 12128,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 12161,
+        "sourceUnit": 11708,
+        "src": "57:33:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/SanctisModule.sol",
+        "file": "./SanctisModule.sol",
+        "id": 12129,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 12161,
+        "sourceUnit": 12266,
+        "src": "91:29:45",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 12130,
+              "name": "SanctisModule",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 12265,
+              "src": "160:13:45"
+            },
+            "id": 12131,
+            "nodeType": "InheritanceSpecifier",
+            "src": "160:13:45"
+          },
+          {
+            "baseName": {
+              "id": 12132,
+              "name": "ISanctisExtension",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11707,
+              "src": "175:17:45"
+            },
+            "id": 12133,
+            "nodeType": "InheritanceSpecifier",
+            "src": "175:17:45"
+          }
+        ],
+        "canonicalName": "SanctisExtension",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 12160,
+        "linearizedBaseContracts": [
+          12160,
+          11707,
+          12265,
+          11723
+        ],
+        "name": "SanctisExtension",
+        "nameLocation": "140:16:45",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 12135,
+            "mutability": "mutable",
+            "name": "s_key",
+            "nameLocation": "207:5:45",
+            "nodeType": "VariableDeclaration",
+            "scope": 12160,
+            "src": "199:13:45",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 12134,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "199:7:45",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 12150,
+              "nodeType": "Block",
+              "src": "288:29:45",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 12148,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 12146,
+                      "name": "s_key",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12135,
+                      "src": "298:5:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 12147,
+                      "name": "_key",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12137,
+                      "src": "306:4:45",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "298:12:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 12149,
+                  "nodeType": "ExpressionStatement",
+                  "src": "298:12:45"
+                }
+              ]
+            },
+            "id": 12151,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 12143,
+                    "name": "_sanctis",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12140,
+                    "src": "278:8:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISanctis_$11696",
+                      "typeString": "contract ISanctis"
+                    }
+                  }
+                ],
+                "id": 12144,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 12142,
+                  "name": "SanctisModule",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 12265,
+                  "src": "264:13:45"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "264:23:45"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12137,
+                  "mutability": "mutable",
+                  "name": "_key",
+                  "nameLocation": "239:4:45",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12151,
+                  "src": "231:12:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12136,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12140,
+                  "mutability": "mutable",
+                  "name": "_sanctis",
+                  "nameLocation": "254:8:45",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12151,
+                  "src": "245:17:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISanctis_$11696",
+                    "typeString": "contract ISanctis"
+                  },
+                  "typeName": {
+                    "id": 12139,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 12138,
+                      "name": "ISanctis",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 11696,
+                      "src": "245:8:45"
+                    },
+                    "referencedDeclaration": 11696,
+                    "src": "245:8:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISanctis_$11696",
+                      "typeString": "contract ISanctis"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "230:33:45"
+            },
+            "returnParameters": {
+              "id": 12145,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "288:0:45"
+            },
+            "scope": 12160,
+            "src": "219:98:45",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "baseFunctions": [
+              11706
+            ],
+            "body": {
+              "id": 12158,
+              "nodeType": "Block",
+              "src": "370:29:45",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 12156,
+                    "name": "s_key",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 12135,
+                    "src": "387:5:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 12155,
+                  "id": 12157,
+                  "nodeType": "Return",
+                  "src": "380:12:45"
+                }
+              ]
+            },
+            "functionSelector": "3943380c",
+            "id": 12159,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "key",
+            "nameLocation": "332:3:45",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12152,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "335:2:45"
+            },
+            "returnParameters": {
+              "id": 12155,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12154,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12159,
+                  "src": "361:7:45",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12153,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "361:7:45",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "360:9:45"
+            },
+            "scope": 12160,
+            "src": "323:76:45",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12161,
+        "src": "122:279:45",
+        "usedErrors": [
+          12169,
+          12173,
+          12177
+        ]
+      }
+    ],
+    "src": "32:370:45"
   }
 }

@@ -1,4 +1,4 @@
-import { BigNumber } from "ethers"
+import { BigNumber } from 'ethers'
 
 export interface Race {
   address: string
@@ -21,6 +21,7 @@ export interface Infrastructure {
   name: string
   description: string
   level?: number
+  nextUpgrade?: number
   costsResources?: Resource[]
   nextCosts?: BigNumber[]
 }

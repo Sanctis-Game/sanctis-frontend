@@ -142,6 +142,19 @@
     {
       "inputs": [
         {
+          "internalType": "contract ISanctis",
+          "name": "newSanctis",
+          "type": "address"
+        }
+      ],
+      "name": "changeSanctis",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "commanderId",
           "type": "uint256"
@@ -270,6 +283,19 @@
     },
     {
       "inputs": [],
+      "name": "key",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
       "name": "name",
       "outputs": [
         {
@@ -349,6 +375,19 @@
       "name": "safeTransferFrom",
       "outputs": [],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -453,5 +492,655 @@
     "object": "0x",
     "sourceMap": "",
     "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/extensions/ICommanders.sol",
+    "exportedSymbols": {
+      "ICommanders": [
+        14528
+      ],
+      "IERC165": [
+        10102
+      ],
+      "IERC721": [
+        8283
+      ],
+      "IERC721Metadata": [
+        8697
+      ],
+      "IRace": [
+        17206
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisExtension": [
+        11707
+      ],
+      "ISanctisModule": [
+        11723
+      ]
+    },
+    "id": 14529,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14472,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:50"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "file": "openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "id": 14473,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14529,
+        "sourceUnit": 8698,
+        "src": "60:86:50",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/IRace.sol",
+        "file": "../races/IRace.sol",
+        "id": 14474,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14529,
+        "sourceUnit": 17207,
+        "src": "150:28:50",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisExtension.sol",
+        "file": "../ISanctisExtension.sol",
+        "id": 14475,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 14529,
+        "sourceUnit": 11708,
+        "src": "180:34:50",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 14476,
+              "name": "IERC721Metadata",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 8697,
+              "src": "243:15:50"
+            },
+            "id": 14477,
+            "nodeType": "InheritanceSpecifier",
+            "src": "243:15:50"
+          },
+          {
+            "baseName": {
+              "id": 14478,
+              "name": "ISanctisExtension",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11707,
+              "src": "260:17:50"
+            },
+            "id": 14479,
+            "nodeType": "InheritanceSpecifier",
+            "src": "260:17:50"
+          }
+        ],
+        "canonicalName": "ICommanders",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 14528,
+        "linearizedBaseContracts": [
+          14528,
+          11707,
+          11723,
+          8697,
+          8283,
+          10102
+        ],
+        "name": "ICommanders",
+        "nameLocation": "228:11:50",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 14481,
+            "name": "CommanderZero",
+            "nameLocation": "291:13:50",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14480,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "304:2:50"
+            },
+            "src": "285:22:50"
+          },
+          {
+            "id": 14485,
+            "name": "NotTheCitadel",
+            "nameLocation": "319:13:50",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14484,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14483,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "341:6:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14485,
+                  "src": "333:14:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14482,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "333:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "332:16:50"
+            },
+            "src": "313:36:50"
+          },
+          {
+            "id": 14489,
+            "name": "NotApproved",
+            "nameLocation": "361:11:50",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 14488,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14487,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "381:6:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14489,
+                  "src": "373:14:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14486,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "372:16:50"
+            },
+            "src": "355:34:50"
+          },
+          {
+            "canonicalName": "ICommanders.Commander",
+            "id": 14497,
+            "members": [
+              {
+                "constant": false,
+                "id": 14492,
+                "mutability": "mutable",
+                "name": "name",
+                "nameLocation": "473:4:50",
+                "nodeType": "VariableDeclaration",
+                "scope": 14497,
+                "src": "466:11:50",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 14491,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "466:6:50",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14496,
+                "mutability": "mutable",
+                "name": "race",
+                "nameLocation": "544:4:50",
+                "nodeType": "VariableDeclaration",
+                "scope": 14497,
+                "src": "538:10:50",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_IRace_$17206",
+                  "typeString": "contract IRace"
+                },
+                "typeName": {
+                  "id": 14495,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 14494,
+                    "name": "IRace",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 17206,
+                    "src": "538:5:50"
+                  },
+                  "referencedDeclaration": 17206,
+                  "src": "538:5:50",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IRace_$17206",
+                    "typeString": "contract IRace"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Commander",
+            "nameLocation": "404:9:50",
+            "nodeType": "StructDefinition",
+            "scope": 14528,
+            "src": "397:159:50",
+            "visibility": "public"
+          },
+          {
+            "functionSelector": "84b47b0f",
+            "id": 14505,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "create",
+            "nameLocation": "573:6:50",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14503,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14499,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "594:4:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14505,
+                  "src": "580:18:50",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14498,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "580:6:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14502,
+                  "mutability": "mutable",
+                  "name": "race",
+                  "nameLocation": "606:4:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14505,
+                  "src": "600:10:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IRace_$17206",
+                    "typeString": "contract IRace"
+                  },
+                  "typeName": {
+                    "id": 14501,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14500,
+                      "name": "IRace",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 17206,
+                      "src": "600:5:50"
+                    },
+                    "referencedDeclaration": 17206,
+                    "src": "600:5:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IRace_$17206",
+                      "typeString": "contract IRace"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "579:32:50"
+            },
+            "returnParameters": {
+              "id": 14504,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "620:0:50"
+            },
+            "scope": 14528,
+            "src": "564:57:50",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "325a19f1",
+            "id": 14510,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "created",
+            "nameLocation": "638:7:50",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14506,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "645:2:50"
+            },
+            "returnParameters": {
+              "id": 14509,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14508,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "671:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "671:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "670:9:50"
+            },
+            "scope": 14528,
+            "src": "629:51:50",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "e9ffb696",
+            "id": 14518,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "commander",
+            "nameLocation": "697:9:50",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14513,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14512,
+                  "mutability": "mutable",
+                  "name": "commanderId",
+                  "nameLocation": "715:11:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14518,
+                  "src": "707:19:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14511,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "707:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "706:21:50"
+            },
+            "returnParameters": {
+              "id": 14517,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14516,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14518,
+                  "src": "778:16:50",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Commander_$14497_memory_ptr",
+                    "typeString": "struct ICommanders.Commander"
+                  },
+                  "typeName": {
+                    "id": 14515,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 14514,
+                      "name": "Commander",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 14497,
+                      "src": "778:9:50"
+                    },
+                    "referencedDeclaration": 14497,
+                    "src": "778:9:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Commander_$14497_storage_ptr",
+                      "typeString": "struct ICommanders.Commander"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "777:18:50"
+            },
+            "scope": 14528,
+            "src": "688:108:50",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2a16cca4",
+            "id": 14527,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isApproved",
+            "nameLocation": "813:10:50",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14523,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14520,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "832:6:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14527,
+                  "src": "824:14:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14519,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "824:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14522,
+                  "mutability": "mutable",
+                  "name": "commanderId",
+                  "nameLocation": "848:11:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14527,
+                  "src": "840:19:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14521,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "840:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "823:37:50"
+            },
+            "returnParameters": {
+              "id": 14526,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14525,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14527,
+                  "src": "911:4:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 14524,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "911:4:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "910:6:50"
+            },
+            "scope": 14528,
+            "src": "804:113:50",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14529,
+        "src": "218:702:50",
+        "usedErrors": [
+          14481,
+          14485,
+          14489
+        ]
+      }
+    ],
+    "src": "33:889:50"
   }
 }
