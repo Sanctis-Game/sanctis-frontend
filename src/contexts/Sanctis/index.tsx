@@ -1,30 +1,32 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { useToast } from '@chakra-ui/react'
-import { ExternalProvider } from '@ethersproject/providers'
-import { BigNumber, Contract, ethers, providers, utils } from 'ethers'
-import useConfirmationModal from 'hooks/useConfirmationModal'
-import React, { createContext, useCallback, useEffect, useMemo, useState } from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { useToast } from "@chakra-ui/react";
+import { ExternalProvider } from "@ethersproject/providers";
+import { BigNumber, Contract, ethers, providers, utils } from "ethers";
+import useConfirmationModal from "hooks/useConfirmationModal";
+import React, { createContext, useCallback, useEffect, useMemo, useState } from "react";
 
-import { deployedAddresses } from '../../constants'
-import CommandersABI from '../../constants/contracts/Commanders.sol/Commanders.json'
-import InfrastructureABI from '../../constants/contracts/IInfrastructure.sol/IInfrastructure.json'
-import PowerPlantsABI from '../../constants/contracts/IPowerPlants.sol/IPowerPlants.json'
-import ResourceABI from '../../constants/contracts/IResource.sol/IResource.json'
-import ResourceProducerABI from '../../constants/contracts/IResourceProducer.sol/IResourceProducer.json'
-import ShipABI from '../../constants/contracts/IShip.sol/IShip.json'
-import PlanetsABI from '../../constants/contracts/Planets.sol/Planets.json'
-import SanctisABI from '../../constants/contracts/Sanctis.sol/Sanctis.json'
-import CreditsABI from '../../constants/contracts/SpaceCredits.sol/SpaceCredits.json'
-import useApprovedObjects from '../../hooks/useApprovedObjects'
-import useChainPicker from '../../hooks/useChainPicker'
-import { Commander, Planet, Race, Reserve } from './types'
+import { deployedAddresses } from "../../constants";
+import CommandersABI from "../../constants/contracts/Commanders.sol/Commanders.json";
+import InfrastructureABI from "../../constants/contracts/IInfrastructure.sol/IInfrastructure.json";
+import PowerPlantsABI from "../../constants/contracts/IPowerPlants.sol/IPowerPlants.json";
+import ResourceABI from "../../constants/contracts/IResource.sol/IResource.json";
+import ResourceProducerABI from "../../constants/contracts/IResourceProducer.sol/IResourceProducer.json";
+import ShipABI from "../../constants/contracts/IShip.sol/IShip.json";
+import PlanetsABI from "../../constants/contracts/Planets.sol/Planets.json";
+import SanctisABI from "../../constants/contracts/Sanctis.sol/Sanctis.json";
+import CreditsABI from "../../constants/contracts/SpaceCredits.sol/SpaceCredits.json";
+import useApprovedObjects from "../../hooks/useApprovedObjects";
+import useChainPicker from "../../hooks/useChainPicker";
+import { Commander, Planet, Race, Reserve } from "./types";
 
 export interface SanctisContextValues {
   colonizationCost?: BigNumber;
   ownedCredits?: number;
-  ownedCommanders?: number[];
+  ownedCommanders?: Commander[];
+  currentCommander?: Commander;
   commanders: { [commanderId: number]: Commander };
   planets: { [planetId: string]: Planet };
+  setCurrentCommander: (commander: Commander) => void;
   fetchCommander: (commanderId: number) => Promise<Commander | undefined | null>;
   fetchPlanet: (planetId: string) => Promise<Planet | undefined | null>;
   createCommander: (name: string, race: Race) => Promise<void>;
@@ -34,6 +36,7 @@ export interface SanctisContextValues {
 export const SanctisContext = createContext<SanctisContextValues>({
   commanders: {},
   planets: {},
+  setCurrentCommander: (commander: Commander) => {},
   fetchCommander: () => new Promise(() => {}),
   fetchPlanet: () => new Promise(() => {}),
   createCommander: () => new Promise(() => {}),
@@ -79,27 +82,11 @@ export const SanctisProvider: React.FC = ({ children }) => {
   }, [chainId, ethereum]);
 
   const [ownedCredits, setOwnedCredits] = useState<number>();
-  const [ownedCommanders, setOwnedCommanders] = useState<number[]>();
+  const [ownedCommanders, setOwnedCommanders] = useState<Commander[]>();
   const [commanders, setCommanders] = useState<{ [commanderId: string]: Commander }>({});
+  const [currentCommander, setCurrentCommander] = useState<Commander>();
   const [planets, setPlanets] = useState<{ [planetId: string]: Planet }>({});
   const [colonizationCost, setColonizationCost] = useState<BigNumber>();
-
-  const fetchOwnedCommanders = useCallback(async () => {
-    if (!contracts || !account) return;
-
-    const commandersBalance = (await contracts.commanders.balanceOf(account)).toNumber();
-    setOwnedCommanders(
-      await Promise.all(
-        Array(commandersBalance)
-          .fill(0)
-          .map(async (_, i) => (await contracts.commanders.tokenOfOwnerByIndex(account, i)).toNumber())
-      )
-    );
-  }, [account, contracts]);
-
-  useEffect(() => {
-    fetchOwnedCommanders();
-  }, [fetchOwnedCommanders]);
 
   const fetchColonizationCost = useCallback(async () => {
     if (!contracts) return;
@@ -150,6 +137,30 @@ export const SanctisProvider: React.FC = ({ children }) => {
     },
     [approvedObjects, contracts]
   );
+
+  const fetchOwnedCommanders = useCallback(async () => {
+    if (!contracts || !account) return;
+
+    const commandersBalance = (await contracts.commanders.balanceOf(account)).toNumber();
+
+    if (ownedCommanders?.length === commandersBalance) return;
+    setOwnedCommanders(
+      (
+        await Promise.all(
+          Array(commandersBalance)
+            .fill(0)
+            .map(
+              async (_, i) =>
+                (await fetchCommander((await contracts.commanders.tokenOfOwnerByIndex(account, i)).toNumber()))!
+            )
+        )
+      ).filter(Boolean)
+    );
+  }, [account, contracts, ownedCommanders, fetchCommander]);
+
+  useEffect(() => {
+    fetchOwnedCommanders();
+  }, [fetchOwnedCommanders]);
 
   const fetchPlanet = useCallback(
     async (planetId: string) => {
@@ -255,6 +266,8 @@ export const SanctisProvider: React.FC = ({ children }) => {
         ownedCommanders,
         commanders,
         planets,
+        currentCommander,
+        setCurrentCommander,
         fetchCommander,
         fetchPlanet,
         createCommander,

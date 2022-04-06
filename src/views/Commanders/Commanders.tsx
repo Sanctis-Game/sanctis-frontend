@@ -1,9 +1,9 @@
-import { Box, Container, Stack, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Container, Stack, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import React from "react";
 
-import useCommanders from '../../hooks/useSanctis'
-import CommanderCard from './CommanderCard'
-import CreateCommanderCard from './CreateCommanderCard'
+import useCommanders from "../../hooks/useSanctis";
+import CommanderCard from "./CommanderCard";
+import CreateCommanderCard from "./CreateCommanderCard";
 
 const Commanders: React.FC = () => {
   const { ownedCommanders } = useCommanders();
@@ -15,9 +15,9 @@ const Commanders: React.FC = () => {
       <Stack textAlign={"center"} align={"center"} spacing={{ base: 8, md: 10 }}>
         {ownedCommanders && ownedCommanders.length > 0 && (
           <Wrap>
-            {ownedCommanders.map((commanderId, i) => (
-              <WrapItem key={`${commanderId}-${i}`}>
-                <CommanderCard id={commanderId} />
+            {ownedCommanders.map((commander, i) => (
+              <WrapItem key={`${commander.id}-${i}`}>
+                <CommanderCard id={commander.id} />
               </WrapItem>
             ))}
           </Wrap>

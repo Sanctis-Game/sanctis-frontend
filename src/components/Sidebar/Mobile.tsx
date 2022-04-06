@@ -55,9 +55,9 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   useEffect(() => {
     if(!connector) return
     if(autoconnect > Date.now() && !account) {
-      handleConnect(connector)
+      connect(connector as any)
     }
-  }, [account, autoconnect, connector, handleConnect])
+  }, [account, autoconnect, connector, connect, handleConnect])
 
   return (
     <Flex

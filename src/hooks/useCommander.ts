@@ -3,20 +3,20 @@ import { useCallback, useEffect, useState } from "react";
 import useSanctis from "./useSanctis";
 
 export default function useCommander(id: number) {
-  const { commanders, fetchCommander } = useSanctis()
-  const [commander, setCommander] = useState<Commander | null>()
+  const { commanders, fetchCommander } = useSanctis();
+  const [commander, setCommander] = useState<Commander | null>();
 
   const fetch = useCallback(async () => {
-    if(!commanders[id]) {
-      setCommander(await fetchCommander(id))
+    if (!commanders[id]) {
+      setCommander(await fetchCommander(id));
     } else {
-      setCommander(commanders[id])
+      setCommander(commanders[id]);
     }
-  }, [commanders, id, fetchCommander])
+  }, [commanders, id, fetchCommander]);
 
-  useEffect(() =>  {
-    fetch()
-  }, [fetch])
+  useEffect(() => {
+    fetch();
+  }, [fetch]);
 
-  return commander
+  return commander;
 }
