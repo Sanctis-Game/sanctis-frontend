@@ -15,7 +15,7 @@ import {
 import useCommander from "hooks/useCommander";
 import { planetIdToCoordinate } from "utils";
 
-const CommanderCard: React.FC<{ id: number }> = ({ id }) => {
+const CommanderCard: React.FC<{ id: string }> = ({ id }) => {
   const commander = useCommander(id);
 
   return (

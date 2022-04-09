@@ -1,15 +1,15 @@
-import { Button, Container, Flex, Link, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import useCommander from 'hooks/useCommander'
-import React from 'react'
-import { BiArrowBack } from 'react-icons/bi'
-import { useParams } from 'react-router-dom'
+import { Button, Container, Flex, Link, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import useCommander from "hooks/useCommander";
+import React from "react";
+import { BiArrowBack } from "react-icons/bi";
+import { useParams } from "react-router-dom";
 
-import ColonizeCard from './ColonizeCard'
-import PlanetCard from './PlanetCard'
+import ColonizeCard from "./ColonizeCard";
+import PlanetCard from "./PlanetCard";
 
 const Commander: React.FC = () => {
   const { id } = useParams();
-  const commander = useCommander(Number(id));
+  const commander = useCommander(id);
 
   return (
     <Container maxW={"5xl"}>
@@ -38,7 +38,7 @@ const Commander: React.FC = () => {
           ))}
         </Wrap>
       </Flex>
-      {commander && <ColonizeCard colonizer={commander?.id} />}
+      {commander && <ColonizeCard colonizer={commander} />}
     </Container>
   );
 };

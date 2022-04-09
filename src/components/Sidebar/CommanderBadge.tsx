@@ -28,8 +28,9 @@ export const CommanderBadge: React.FC<{ setAutoconnect: (date: number) => void }
 
   const handleReset = useCallback(() => {
     setAutoconnect(Date.now());
+    setCurrentCommander(undefined);
     reset();
-  }, [setAutoconnect, reset]);
+  }, [setAutoconnect, reset, setCurrentCommander]);
 
   return (
     <Flex alignItems={"center"}>

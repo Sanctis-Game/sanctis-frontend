@@ -1,11 +1,11 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Divider, Flex, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import ResourceBadge from 'components/ResourceBadge'
-import { BigNumber } from 'ethers'
-import usePowerPlant from 'hooks/usePowerPlant'
-import React from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { Button, Divider, Flex, Stack, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import ResourceBadge from "components/ResourceBadge";
+import { BigNumber } from "ethers";
+import usePowerPlant from "hooks/usePowerPlant";
+import React from "react";
 
-import { Infrastructure, Planet } from '../../contexts/Sanctis/types'
+import { Infrastructure, Planet } from "../../../contexts/Sanctis/types";
 
 const PowerPlantCard: React.FC<{ infrastructure: Infrastructure; planet: Planet }> = ({ infrastructure, planet }) => {
   const { getBlockNumber } = useWallet();

@@ -1,12 +1,13 @@
-import { Button, Input, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import useChainPicker from 'hooks/useChainPicker'
-import React, { useState } from 'react'
+import { Button, Input, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import useChainPicker from "hooks/useChainPicker";
+import React, { useState } from "react";
 
-import deployedAddresses from '../../constants'
-import useApproval from '../../hooks/useApproval'
-import useSanctis from '../../hooks/useSanctis'
+import deployedAddresses from "../../constants";
+import { Commander } from "../../contexts/Sanctis/types";
+import useApproval from "../../hooks/useApproval";
+import useSanctis from "../../hooks/useSanctis";
 
-const ColonizeCard: React.FC<{ colonizer: number }> = ({ colonizer }) => {
+const ColonizeCard: React.FC<{ colonizer: Commander }> = ({ colonizer }) => {
   const { chainId } = useChainPicker();
   const { colonizationCost, colonizePlanet } = useSanctis();
   const { isApproved, isApproving, onApprove } = useApproval(

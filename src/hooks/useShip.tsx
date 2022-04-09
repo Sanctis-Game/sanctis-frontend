@@ -1,11 +1,11 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { ExternalProvider } from '@ethersproject/providers'
-import { BigNumber, Contract, ethers, providers, utils } from 'ethers'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { ExternalProvider } from "@ethersproject/providers";
+import { BigNumber, Contract, ethers, providers, utils } from "ethers";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-import ShipABI from '../constants/contracts/IShip.sol/IShip.json'
-import { Infrastructure, Resource, Ship } from '../contexts/Sanctis/types'
-import useApprovedObjects from './useApprovedObjects'
+import ShipABI from "../constants/contracts/IShip.sol/IShip.json";
+import { Infrastructure, Planet, Resource, Ship } from "../contexts/Sanctis/types";
+import useApprovedObjects from "./useApprovedObjects";
 
 export interface PowerPlantCharacteristics extends Infrastructure {
   energy?: Resource;
@@ -13,7 +13,7 @@ export interface PowerPlantCharacteristics extends Infrastructure {
   nextProduction?: BigNumber;
 }
 
-const useShip = (ship: Ship) => {
+const useShip = (ship: Ship, planet?: Planet) => {
   const { ethereum } = useWallet<ExternalProvider>();
   const { resources } = useApprovedObjects();
   const [loadedShip, setLoadedShip] = useState<Ship>(ship);
@@ -35,6 +35,7 @@ const useShip = (ship: Ship) => {
       const offensivePower = await contract.offensivePower();
       const defensivePower = await contract.defensivePower();
       const capacity = await contract.capacity();
+      const reserve = planet ? (await contract.reserve(planet.id)).toNumber() : 0;
       setLoadedShip({
         ...ship,
         costsResources: costsResources.map((e: string) =>
@@ -45,12 +46,13 @@ const useShip = (ship: Ship) => {
         offensivePower: offensivePower.toNumber(),
         defensivePower: defensivePower.toNumber(),
         capacity: capacity,
+        reserve,
       });
     } catch (err: any) {
       console.log("Failed fetching ship", err);
     }
     setIsFetching(false);
-  }, [contract, isFetching, ship, resources, setLoadedShip]);
+  }, [contract, isFetching, ship, planet, resources, setLoadedShip]);
 
   useEffect(() => {
     if (!loadedShip.costsResources || loadedShip.address !== ship.address) fetch();

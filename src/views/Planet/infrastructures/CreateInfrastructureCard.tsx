@@ -1,10 +1,10 @@
-import { Button, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import ResourceBadge from 'components/ResourceBadge'
-import React, { ChangeEvent, useCallback, useMemo, useState } from 'react'
+import { Button, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import ResourceBadge from "components/ResourceBadge";
+import React, { ChangeEvent, useCallback, useMemo, useState } from "react";
 
-import { Infrastructure, Planet, Resource } from '../../contexts/Sanctis/types'
-import useApprovedObjects from '../../hooks/useApprovedObjects'
-import useInfrastructure from '../../hooks/useInfrastructure'
+import { Infrastructure, Planet, Resource } from "../../../contexts/Sanctis/types";
+import useApprovedObjects from "../../../hooks/useApprovedObjects";
+import useInfrastructure from "../../../hooks/useInfrastructure";
 
 const CreateInfrastuctureCard: React.FC<{ planet: Planet }> = ({ planet }) => {
   const { infrastructures } = useApprovedObjects();

@@ -1,14 +1,14 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Divider, Flex, Input, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import ResourceBadge from 'components/ResourceBadge'
-import { BigNumber, ethers } from 'ethers'
-import React, { useState } from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { Button, Divider, Flex, Input, Select, Stack, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import ResourceBadge from "components/ResourceBadge";
+import { BigNumber, ethers } from "ethers";
+import React, { useState } from "react";
 
-import ShipStatBadge from '../../components/ShipStatBadge'
-import { Infrastructure, Planet, Ship } from '../../contexts/Sanctis/types'
-import useApprovedObjects from '../../hooks/useApprovedObjects'
-import useShip from '../../hooks/useShip'
-import useSpatioport from '../../hooks/useSpatioport'
+import ShipStatBadge from "../../../components/ShipStatBadge";
+import { Infrastructure, Planet, Ship } from "../../../contexts/Sanctis/types";
+import useApprovedObjects from "../../../hooks/useApprovedObjects";
+import useShip from "../../../hooks/useShip";
+import useSpatioport from "../../../hooks/useSpatioport";
 
 const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet }> = ({ infrastructure, planet }) => {
   const { ships } = useApprovedObjects();
@@ -17,7 +17,6 @@ const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet 
   const [choice, setChoice] = useState<Ship>(ships[0]);
   const { ship } = useShip(choice);
   const [quantity, setQuantity] = useState<number>(0);
-  console.log(spatioport);
 
   return (
     <Stack spacing={3} background={useColorModeValue("white", "gray.800")} p="5" rounded="xl" shadow={"xl"}>

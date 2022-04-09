@@ -1,11 +1,11 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Button, Divider, Stack, Text, useColorModeValue, Wrap, WrapItem } from '@chakra-ui/react'
-import ResourceBadge from 'components/ResourceBadge'
-import { BigNumber } from 'ethers'
-import useResourceProducer from 'hooks/useResourceProducer'
-import React from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { Button, Divider, Stack, Text, useColorModeValue, Wrap, WrapItem } from "@chakra-ui/react";
+import ResourceBadge from "components/ResourceBadge";
+import { BigNumber } from "ethers";
+import useResourceProducer from "hooks/useResourceProducer";
+import React from "react";
 
-import { Infrastructure, Planet } from '../../contexts/Sanctis/types'
+import { Infrastructure, Planet } from "../../../contexts/Sanctis/types";
 
 const ResourceProducerCard: React.FC<{ infrastructure: Infrastructure; planet: Planet }> = ({
   infrastructure,

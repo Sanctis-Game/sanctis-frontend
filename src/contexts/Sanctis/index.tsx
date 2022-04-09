@@ -17,6 +17,7 @@ import SanctisABI from "../../constants/contracts/Sanctis.sol/Sanctis.json";
 import CreditsABI from "../../constants/contracts/SpaceCredits.sol/SpaceCredits.json";
 import useApprovedObjects from "../../hooks/useApprovedObjects";
 import useChainPicker from "../../hooks/useChainPicker";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { Commander, Planet, Race, Reserve } from "./types";
 
 export interface SanctisContextValues {
@@ -24,19 +25,19 @@ export interface SanctisContextValues {
   ownedCredits?: number;
   ownedCommanders?: Commander[];
   currentCommander?: Commander;
-  commanders: { [commanderId: number]: Commander };
+  commanders: { [commanderId: string]: Commander };
   planets: { [planetId: string]: Planet };
-  setCurrentCommander: (commander: Commander) => void;
-  fetchCommander: (commanderId: number) => Promise<Commander | undefined | null>;
+  setCurrentCommander: (commander?: Commander) => void;
+  fetchCommander: (commanderId: string) => Promise<Commander | undefined | null>;
   fetchPlanet: (planetId: string) => Promise<Planet | undefined | null>;
   createCommander: (name: string, race: Race) => Promise<void>;
-  colonizePlanet: (commanderId: number, x: number, y: number, z: number) => Promise<void>;
+  colonizePlanet: (commander: Commander, x: number, y: number, z: number) => Promise<void>;
 }
 
 export const SanctisContext = createContext<SanctisContextValues>({
   commanders: {},
   planets: {},
-  setCurrentCommander: (commander: Commander) => {},
+  setCurrentCommander: (commander?: Commander) => {},
   fetchCommander: () => new Promise(() => {}),
   fetchPlanet: () => new Promise(() => {}),
   createCommander: () => new Promise(() => {}),
@@ -84,9 +85,21 @@ export const SanctisProvider: React.FC = ({ children }) => {
   const [ownedCredits, setOwnedCredits] = useState<number>();
   const [ownedCommanders, setOwnedCommanders] = useState<Commander[]>();
   const [commanders, setCommanders] = useState<{ [commanderId: string]: Commander }>({});
-  const [currentCommander, setCurrentCommander] = useState<Commander>();
+  const [memorizedCommander, setMemorizedCommander] = useLocalStorage<Commander | undefined>(
+    "memorized_commander",
+    undefined
+  );
+  const [currentCommander, setCurrentCommanderState] = useState<Commander | undefined>(memorizedCommander);
   const [planets, setPlanets] = useState<{ [planetId: string]: Planet }>({});
   const [colonizationCost, setColonizationCost] = useState<BigNumber>();
+
+  const setCurrentCommander = useCallback(
+    (commander?: Commander) => {
+      setMemorizedCommander(commander);
+      setCurrentCommanderState(commander);
+    },
+    [setMemorizedCommander, setCurrentCommanderState]
+  );
 
   const fetchColonizationCost = useCallback(async () => {
     if (!contracts) return;
@@ -107,7 +120,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
   }, [fetchOwnedCredits]);
 
   const fetchCommander = useCallback(
-    async (commanderId: number) => {
+    async (commanderId: string) => {
       if (!contracts) return;
 
       try {
@@ -119,7 +132,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
             .fill(0)
             .map(async (_, i) => (await contracts.planets.commanderPlanetByIndex(commanderId, i)).toString())
         );
-        const commander = {
+        const commander: Commander = {
           id: commanderId,
           name,
           race: approvedObjects.races.find((e) => e.address === race),
@@ -144,19 +157,23 @@ export const SanctisProvider: React.FC = ({ children }) => {
     const commandersBalance = (await contracts.commanders.balanceOf(account)).toNumber();
 
     if (ownedCommanders?.length === commandersBalance) return;
-    setOwnedCommanders(
-      (
-        await Promise.all(
-          Array(commandersBalance)
-            .fill(0)
-            .map(
-              async (_, i) =>
-                (await fetchCommander((await contracts.commanders.tokenOfOwnerByIndex(account, i)).toNumber()))!
-            )
-        )
-      ).filter(Boolean)
-    );
-  }, [account, contracts, ownedCommanders, fetchCommander]);
+
+    const commanders = (
+      await Promise.all(
+        Array(commandersBalance)
+          .fill(0)
+          .map(
+            async (_, i) =>
+              (await fetchCommander((await contracts.commanders.tokenOfOwnerByIndex(account, i)).toString()))!
+          )
+      )
+    ).filter(Boolean);
+
+    if (memorizedCommander && commanders.includes(memorizedCommander)) {
+      setCurrentCommanderState(memorizedCommander);
+    }
+    setOwnedCommanders(commanders);
+  }, [account, contracts, ownedCommanders, memorizedCommander, fetchCommander]);
 
   useEffect(() => {
     fetchOwnedCommanders();
@@ -237,17 +254,17 @@ export const SanctisProvider: React.FC = ({ children }) => {
   );
 
   const colonizePlanet = useCallback(
-    async (commanderId: number, x: number, y: number, z: number) => {
+    async (commander: Commander, x: number, y: number, z: number) => {
       if (!contracts) return;
 
       open(async () => {
         try {
           const planetId = BigNumber.from(z).shl(80).add(y).shl(80).add(x);
-          const result = await contracts.planets.colonize(commanderId, planetId);
+          const result = await contracts.planets.colonize(commander.id, planetId);
           await result.wait();
           await fetchPlanet(planetId.toString());
           await fetchOwnedCredits();
-          await fetchCommander(commanderId);
+          await fetchCommander(commander.id);
           toast({ status: "success", title: "Created", description: `A new planet has been colonized` });
         } catch (err: any) {
           console.log(err);

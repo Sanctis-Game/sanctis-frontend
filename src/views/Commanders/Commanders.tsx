@@ -17,7 +17,7 @@ const Commanders: React.FC = () => {
           <Wrap>
             {ownedCommanders.map((commander, i) => (
               <WrapItem key={`${commander.id}-${i}`}>
-                <CommanderCard id={commander.id} />
+                <CommanderCard commander={commander} />
               </WrapItem>
             ))}
           </Wrap>

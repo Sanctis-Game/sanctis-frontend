@@ -1,8 +1,9 @@
-import { Box, Flex, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react'
-import { BigNumber, ethers } from 'ethers'
-import React, { useMemo } from 'react'
+import { Box, Flex, Image, Text, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import { BigNumber, ethers } from "ethers";
+import numeral from "numeral";
+import React, { useMemo } from "react";
 
-import { Resource } from '../contexts/Sanctis/types'
+import { Resource } from "../contexts/Sanctis/types";
 
 const ResourceBadge: React.FC<{ resource: Resource; amount?: BigNumber; size?: "sm" | "md" | "lg" }> = ({
   resource,
@@ -46,7 +47,7 @@ const ResourceBadge: React.FC<{ resource: Resource; amount?: BigNumber; size?: "
         <Image src={resource.icon} background="black" maxW={iconSize} maxH={iconSize} p={2} rounded="full" />
         <Box ml="1" minW={width} justifyContent={size !== "sm" ? "center" : "start"}>
           <Text fontWeight="bold" fontSize={size} width="fit-content">
-            {amount ? ethers.utils.formatEther(amount) : "???"}
+            {amount ? numeral(ethers.utils.formatEther(amount)).format("0.0a") : "???"}
           </Text>
           {size !== "sm" && (
             <Text fontSize={size} width="fit-content">

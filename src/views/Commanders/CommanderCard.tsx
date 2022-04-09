@@ -12,12 +12,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import useCommander from "hooks/useCommander";
 import { planetIdToCoordinate } from "utils";
 import useSanctis from "../../hooks/useSanctis";
+import { Commander } from "../../contexts/Sanctis/types";
 
-const CommanderCard: React.FC<{ id: number }> = ({ id }) => {
-  const commander = useCommander(id);
+const CommanderCard: React.FC<{ commander: Commander }> = ({ commander }) => {
   const { currentCommander, setCurrentCommander } = useSanctis();
 
   return (
