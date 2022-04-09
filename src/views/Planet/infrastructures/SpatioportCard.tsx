@@ -87,8 +87,6 @@ const SpatioportCard: React.FC<{ infrastructure: Infrastructure; planet: Planet 
           rounded={"full"}
           px={6}
           colorScheme={"blue"}
-          bg={useColorModeValue("gray.300", "gray.500")}
-          _hover={{ bg: useColorModeValue("gray.400", "gray.400") }}
           onClick={() => upgrade(planet.id)}
           disabled={getBlockNumber() < spatioport.nextUpgrade!}
         >

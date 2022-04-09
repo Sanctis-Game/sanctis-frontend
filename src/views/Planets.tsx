@@ -22,18 +22,18 @@ const Planets: React.FC = () => {
         boxShadow="inner"
       >
         {currentCommander ? (
-          [
+          <>
             <Text fontSize="lg" fontWeight="bold">
               {currentCommander?.name}'s planets
-            </Text>,
+            </Text>
             <Wrap spacing={5} mt="2">
               {currentCommander?.planets?.map((e) => (
                 <WrapItem key={e} shadow="xl">
                   <PlanetCard planetId={e} />
                 </WrapItem>
               ))}
-            </Wrap>,
-          ]
+            </Wrap>
+          </>
         ) : (
           <Stack spacing={6} p={3}>
             <Heading>You have not chosen a commander</Heading>

@@ -34,16 +34,16 @@ const CommanderCard: React.FC<{ commander: Commander }> = ({ commander }) => {
               {!commander.planets || commander.planets.length === 0 ? (
                 <Text my="3">This commander has no planet</Text>
               ) : (
-                [
-                  <Text fontSize="xl">Planets:</Text>,
+                <>
+                  <Text fontSize="xl">Planets:</Text>
                   <List>
-                    {commander.planets.map((planet) => (
-                      <ListItem key={planet}>
+                    {commander.planets.map((planet, i) => (
+                      <ListItem key={planet + i}>
                         <Link href={`/planet/${planet}`}>{planetIdToCoordinate(planet)}</Link>
                       </ListItem>
                     ))}
-                  </List>,
-                ]
+                  </List>
+                </>
               )}
             </Box>
             <Button
@@ -56,7 +56,6 @@ const CommanderCard: React.FC<{ commander: Commander }> = ({ commander }) => {
               as={Link}
               href={`#/commander/${commander.id}`}
               onClick={() => setCurrentCommander(commander)}
-              disabled={currentCommander?.name === commander.name}
             >
               {currentCommander?.name !== commander.name
                 ? `Play as ${commander.name}`

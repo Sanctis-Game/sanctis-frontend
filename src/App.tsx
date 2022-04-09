@@ -14,6 +14,7 @@ import Commanders from "views/Commanders";
 import Commander from "views/Commander";
 import Documentation from "./views/Documentation";
 import Planets from "./views/Planets";
+import Fleets from "./views/Fleets";
 
 const WalletProvider: React.FC = ({ children }) => {
   const { chainId } = useChainPicker();
@@ -46,7 +47,7 @@ function App() {
             <Route path="/commander/:id" element={<Commander />} />
             <Route path="/planet/:id" element={<Planet />} />
             <Route path="/planets" element={<Planets />} />
-            <Route path="/fleets" element={<Planet />} />
+            <Route path="/fleets" element={<Fleets />} />
             <Route path="/documentation" element={<Documentation />} />
           </Routes>
         </Router>

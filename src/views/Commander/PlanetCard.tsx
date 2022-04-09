@@ -1,6 +1,6 @@
-import { Button, Link, Spinner, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import usePlanet from 'hooks/usePlanet'
-import React from 'react'
+import { Button, Link, Spinner, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import usePlanet from "hooks/usePlanet";
+import React from "react";
 
 const PlanetCard: React.FC<{ planetId: string }> = ({ planetId }) => {
   const planet = usePlanet(planetId);
@@ -9,9 +9,7 @@ const PlanetCard: React.FC<{ planetId: string }> = ({ planetId }) => {
       {planet ? (
         <>
           <Text fontWeight="bold" fontSize="xl">{`Coordinate: (X=${planet.x}; Y=${planet.y}; Z=${planet.z})`}</Text>
-          <Text fontWeight="bold" fontSize="xl">
-            Humidity: {planet.humidity}
-          </Text>
+          <Text fontSize="md">Humidity: {planet.humidity}</Text>
           <Button
             rounded={"full"}
             px={6}

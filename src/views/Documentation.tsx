@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Container, Heading, Link, Stack, useColorModeValue } from "@chakra-ui/react";
+import { Container, Heading, Link, List, ListItem, Stack, useColorModeValue } from "@chakra-ui/react";
 
 const Documentation: React.FC = () => {
   return (
@@ -12,14 +12,18 @@ const Documentation: React.FC = () => {
         p="3"
         rounded="xl"
       >
-        <Heading>Sanctis</Heading>
-        <Box>
-          A commander is free to create and you can have as many as you want. However, the game is designed to encourage
-          players to have few commanders with a big empire rather than many commanders with smaller empires.
-        </Box>
-        <Button as={Link} href={"#/commanders"}>
-          Choose a commander
-        </Button>
+        <Heading>Documentation and resources</Heading>
+        <List>
+          <ListItem>
+            <Link href="https://docs.sanctis.xyz/">Official documentation</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://discord.gg/RzW8Eptb3g">Discord</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="https://github.com/Sanctis-Game">Github</Link>
+          </ListItem>
+        </List>
       </Stack>
     </Container>
   );

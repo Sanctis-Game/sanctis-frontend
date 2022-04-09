@@ -8,8 +8,6 @@ import CreateCommanderCard from "./CreateCommanderCard";
 const Commanders: React.FC = () => {
   const { ownedCommanders } = useCommanders();
 
-  console.log(ownedCommanders);
-
   return (
     <Container maxW={"5xl"}>
       <Stack textAlign={"center"} align={"center"} spacing={{ base: 8, md: 10 }}>
