@@ -54,7 +54,7 @@
     "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/IRace.sol",
     "exportedSymbols": {
       "IRace": [
-        17206
+        17340
       ],
       "ISanctis": [
         11696
@@ -63,12 +63,12 @@
         11723
       ]
     },
-    "id": 17207,
+    "id": 17341,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17197,
+        "id": 17331,
         "literals": [
           "solidity",
           "0.8",
@@ -80,10 +80,10 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisModule.sol",
         "file": "../ISanctisModule.sol",
-        "id": 17198,
+        "id": 17332,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17207,
+        "scope": 17341,
         "sourceUnit": 11724,
         "src": "60:31:67",
         "symbolAliases": [],
@@ -94,13 +94,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 17199,
+              "id": 17333,
               "name": "ISanctisModule",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 11723,
               "src": "114:14:67"
             },
-            "id": 17200,
+            "id": 17334,
             "nodeType": "InheritanceSpecifier",
             "src": "114:14:67"
           }
@@ -109,9 +109,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 17206,
+        "id": 17340,
         "linearizedBaseContracts": [
-          17206,
+          17340,
           11723
         ],
         "name": "IRace",
@@ -120,7 +120,7 @@
         "nodes": [
           {
             "functionSelector": "06fdde03",
-            "id": 17205,
+            "id": 17339,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -128,23 +128,23 @@
             "nameLocation": "145:4:67",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17201,
+              "id": 17335,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "149:2:67"
             },
             "returnParameters": {
-              "id": 17204,
+              "id": 17338,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17203,
+                  "id": 17337,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17205,
+                  "scope": 17339,
                   "src": "175:13:67",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -153,7 +153,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 17202,
+                    "id": 17336,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "175:6:67",
@@ -167,14 +167,14 @@
               ],
               "src": "174:15:67"
             },
-            "scope": 17206,
+            "scope": 17340,
             "src": "136:54:67",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 17207,
+        "scope": 17341,
         "src": "95:98:67",
         "usedErrors": []
       }

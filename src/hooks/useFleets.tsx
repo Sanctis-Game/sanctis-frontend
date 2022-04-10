@@ -126,7 +126,7 @@ const useFleets = (planetId?: string) => {
       if (!contract) return;
       open(async () => {
         try {
-          const result = await contract.createFleet(Math.round(Math.random() * 1000000), commander.id, planetId);
+          const result = await contract.createFleet(commander.id, planetId);
           await result.wait();
           await fetchPlanetFleets(planetId);
           toast({

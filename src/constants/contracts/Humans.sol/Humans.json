@@ -126,7 +126,7 @@
         8639
       ],
       "Humans": [
-        17195
+        17329
       ],
       "IERC165": [
         10102
@@ -144,7 +144,7 @@
         8301
       ],
       "IRace": [
-        17206
+        17340
       ],
       "ISanctis": [
         11696
@@ -153,7 +153,7 @@
         11723
       ],
       "Race": [
-        17244
+        17378
       ],
       "SanctisModule": [
         12265
@@ -162,12 +162,12 @@
         9291
       ]
     },
-    "id": 17196,
+    "id": 17330,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17180,
+        "id": 17314,
         "literals": [
           "solidity",
           "0.8",
@@ -179,11 +179,11 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/Race.sol",
         "file": "./Race.sol",
-        "id": 17181,
+        "id": 17315,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17196,
-        "sourceUnit": 17245,
+        "scope": 17330,
+        "sourceUnit": 17379,
         "src": "57:20:66",
         "symbolAliases": [],
         "unitAlias": ""
@@ -193,13 +193,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 17182,
+              "id": 17316,
               "name": "Race",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 17244,
+              "referencedDeclaration": 17378,
               "src": "98:4:66"
             },
-            "id": 17183,
+            "id": 17317,
             "nodeType": "InheritanceSpecifier",
             "src": "98:4:66"
           }
@@ -208,12 +208,12 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 17195,
+        "id": 17329,
         "linearizedBaseContracts": [
-          17195,
-          17244,
+          17329,
+          17378,
           12265,
-          17206,
+          17340,
           11723
         ],
         "name": "Humans",
@@ -222,23 +222,23 @@
         "nodes": [
           {
             "body": {
-              "id": 17193,
+              "id": 17327,
               "nodeType": "Block",
               "src": "165:2:66",
               "statements": []
             },
-            "id": 17194,
+            "id": 17328,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 17189,
+                    "id": 17323,
                     "name": "_sanctis",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 17186,
+                    "referencedDeclaration": 17320,
                     "src": "145:8:66",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_ISanctis_$11696",
@@ -247,7 +247,7 @@
                   },
                   {
                     "hexValue": "48756d616e73",
-                    "id": 17190,
+                    "id": 17324,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -262,13 +262,13 @@
                     "value": "Humans"
                   }
                 ],
-                "id": 17191,
+                "id": 17325,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 17188,
+                  "id": 17322,
                   "name": "Race",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 17244,
+                  "referencedDeclaration": 17378,
                   "src": "140:4:66"
                 },
                 "nodeType": "ModifierInvocation",
@@ -279,17 +279,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17187,
+              "id": 17321,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17186,
+                  "id": 17320,
                   "mutability": "mutable",
                   "name": "_sanctis",
                   "nameLocation": "130:8:66",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17194,
+                  "scope": 17328,
                   "src": "121:17:66",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -298,10 +298,10 @@
                     "typeString": "contract ISanctis"
                   },
                   "typeName": {
-                    "id": 17185,
+                    "id": 17319,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 17184,
+                      "id": 17318,
                       "name": "ISanctis",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 11696,
@@ -320,19 +320,19 @@
               "src": "120:19:66"
             },
             "returnParameters": {
-              "id": 17192,
+              "id": 17326,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "165:0:66"
             },
-            "scope": 17195,
+            "scope": 17329,
             "src": "109:58:66",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 17196,
+        "scope": 17330,
         "src": "79:90:66",
         "usedErrors": [
           12169,

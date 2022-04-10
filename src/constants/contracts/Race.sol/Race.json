@@ -130,7 +130,7 @@
         8301
       ],
       "IRace": [
-        17206
+        17340
       ],
       "ISanctis": [
         11696
@@ -139,7 +139,7 @@
         11723
       ],
       "Race": [
-        17244
+        17378
       ],
       "SanctisModule": [
         12265
@@ -148,12 +148,12 @@
         9291
       ]
     },
-    "id": 17245,
+    "id": 17379,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17208,
+        "id": 17342,
         "literals": [
           "solidity",
           "0.8",
@@ -165,10 +165,10 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
         "file": "openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
-        "id": 17209,
+        "id": 17343,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17245,
+        "scope": 17379,
         "sourceUnit": 10103,
         "src": "57:74:68",
         "symbolAliases": [],
@@ -177,10 +177,10 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
         "file": "openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
-        "id": 17210,
+        "id": 17344,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17245,
+        "scope": 17379,
         "sourceUnit": 8671,
         "src": "132:88:68",
         "symbolAliases": [],
@@ -189,10 +189,10 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
         "file": "openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
-        "id": 17211,
+        "id": 17345,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17245,
+        "scope": 17379,
         "sourceUnit": 8640,
         "src": "221:87:68",
         "symbolAliases": [],
@@ -201,10 +201,10 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/SanctisModule.sol",
         "file": "../SanctisModule.sol",
-        "id": 17212,
+        "id": 17346,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17245,
+        "scope": 17379,
         "sourceUnit": 12266,
         "src": "310:30:68",
         "symbolAliases": [],
@@ -213,11 +213,11 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/IRace.sol",
         "file": "./IRace.sol",
-        "id": 17213,
+        "id": 17347,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17245,
-        "sourceUnit": 17207,
+        "scope": 17379,
+        "sourceUnit": 17341,
         "src": "341:21:68",
         "symbolAliases": [],
         "unitAlias": ""
@@ -227,25 +227,25 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 17214,
+              "id": 17348,
               "name": "IRace",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 17206,
+              "referencedDeclaration": 17340,
               "src": "390:5:68"
             },
-            "id": 17215,
+            "id": 17349,
             "nodeType": "InheritanceSpecifier",
             "src": "390:5:68"
           },
           {
             "baseName": {
-              "id": 17216,
+              "id": 17350,
               "name": "SanctisModule",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 12265,
               "src": "397:13:68"
             },
-            "id": 17217,
+            "id": 17351,
             "nodeType": "InheritanceSpecifier",
             "src": "397:13:68"
           }
@@ -254,11 +254,11 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 17244,
+        "id": 17378,
         "linearizedBaseContracts": [
-          17244,
+          17378,
           12265,
-          17206,
+          17340,
           11723
         ],
         "name": "Race",
@@ -267,12 +267,12 @@
         "nodes": [
           {
             "constant": false,
-            "id": 17219,
+            "id": 17353,
             "mutability": "mutable",
             "name": "s_name",
             "nameLocation": "433:6:68",
             "nodeType": "VariableDeclaration",
-            "scope": 17244,
+            "scope": 17378,
             "src": "417:22:68",
             "stateVariable": true,
             "storageLocation": "default",
@@ -281,7 +281,7 @@
               "typeString": "string"
             },
             "typeName": {
-              "id": 17218,
+              "id": 17352,
               "name": "string",
               "nodeType": "ElementaryTypeName",
               "src": "417:6:68",
@@ -294,23 +294,23 @@
           },
           {
             "body": {
-              "id": 17234,
+              "id": 17368,
               "nodeType": "Block",
               "src": "534:31:68",
               "statements": [
                 {
                   "expression": {
-                    "id": 17232,
+                    "id": 17366,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 17230,
+                      "id": 17364,
                       "name": "s_name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17219,
+                      "referencedDeclaration": 17353,
                       "src": "544:6:68",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -320,11 +320,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 17231,
+                      "id": 17365,
                       "name": "name_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17224,
+                      "referencedDeclaration": 17358,
                       "src": "553:5:68",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -337,24 +337,24 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 17233,
+                  "id": 17367,
                   "nodeType": "ExpressionStatement",
                   "src": "544:14:68"
                 }
               ]
             },
-            "id": 17235,
+            "id": 17369,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 17227,
+                    "id": 17361,
                     "name": "sanctis_",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 17222,
+                    "referencedDeclaration": 17356,
                     "src": "520:8:68",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_ISanctis_$11696",
@@ -362,10 +362,10 @@
                     }
                   }
                 ],
-                "id": 17228,
+                "id": 17362,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 17226,
+                  "id": 17360,
                   "name": "SanctisModule",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 12265,
@@ -379,17 +379,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17225,
+              "id": 17359,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17222,
+                  "id": 17356,
                   "mutability": "mutable",
                   "name": "sanctis_",
                   "nameLocation": "467:8:68",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17235,
+                  "scope": 17369,
                   "src": "458:17:68",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -398,10 +398,10 @@
                     "typeString": "contract ISanctis"
                   },
                   "typeName": {
-                    "id": 17221,
+                    "id": 17355,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 17220,
+                      "id": 17354,
                       "name": "ISanctis",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 11696,
@@ -418,12 +418,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 17224,
+                  "id": 17358,
                   "mutability": "mutable",
                   "name": "name_",
                   "nameLocation": "491:5:68",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17235,
+                  "scope": 17369,
                   "src": "477:19:68",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -432,7 +432,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 17223,
+                    "id": 17357,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "477:6:68",
@@ -447,12 +447,12 @@
               "src": "457:40:68"
             },
             "returnParameters": {
-              "id": 17229,
+              "id": 17363,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "534:0:68"
             },
-            "scope": 17244,
+            "scope": 17378,
             "src": "446:119:68",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -460,35 +460,35 @@
           },
           {
             "baseFunctions": [
-              17205
+              17339
             ],
             "body": {
-              "id": 17242,
+              "id": 17376,
               "nodeType": "Block",
               "src": "677:30:68",
               "statements": [
                 {
                   "expression": {
-                    "id": 17240,
+                    "id": 17374,
                     "name": "s_name",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 17219,
+                    "referencedDeclaration": 17353,
                     "src": "694:6:68",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "functionReturnParameters": 17239,
-                  "id": 17241,
+                  "functionReturnParameters": 17373,
+                  "id": 17375,
                   "nodeType": "Return",
                   "src": "687:13:68"
                 }
               ]
             },
             "functionSelector": "06fdde03",
-            "id": 17243,
+            "id": 17377,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -496,23 +496,23 @@
             "nameLocation": "632:4:68",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17236,
+              "id": 17370,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "636:2:68"
             },
             "returnParameters": {
-              "id": 17239,
+              "id": 17373,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17238,
+                  "id": 17372,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17243,
+                  "scope": 17377,
                   "src": "662:13:68",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -521,7 +521,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 17237,
+                    "id": 17371,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "662:6:68",
@@ -535,14 +535,14 @@
               ],
               "src": "661:15:68"
             },
-            "scope": 17244,
+            "scope": 17378,
             "src": "623:84:68",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 17245,
+        "scope": 17379,
         "src": "364:345:68",
         "usedErrors": [
           12169,

@@ -262,7 +262,7 @@
         8639
       ],
       "Energy": [
-        17320
+        17454
       ],
       "IERC165": [
         10102
@@ -280,7 +280,7 @@
         8301
       ],
       "IResource": [
-        17380
+        17514
       ],
       "ISanctis": [
         11696
@@ -289,7 +289,7 @@
         11723
       ],
       "Resource": [
-        17505
+        17639
       ],
       "SanctisModule": [
         12265
@@ -298,12 +298,12 @@
         9291
       ]
     },
-    "id": 17321,
+    "id": 17455,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17246,
+        "id": 17380,
         "literals": [
           "solidity",
           "0.8",
@@ -315,11 +315,11 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/resources/Resource.sol",
         "file": "./Resource.sol",
-        "id": 17247,
+        "id": 17381,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17321,
-        "sourceUnit": 17506,
+        "scope": 17455,
+        "sourceUnit": 17640,
         "src": "57:24:69",
         "symbolAliases": [],
         "unitAlias": ""
@@ -329,13 +329,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 17248,
+              "id": 17382,
               "name": "Resource",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 17505,
+              "referencedDeclaration": 17639,
               "src": "102:8:69"
             },
-            "id": 17249,
+            "id": 17383,
             "nodeType": "InheritanceSpecifier",
             "src": "102:8:69"
           }
@@ -344,11 +344,11 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 17320,
+        "id": 17454,
         "linearizedBaseContracts": [
-          17320,
-          17505,
-          17380,
+          17454,
+          17639,
+          17514,
           12265,
           11723
         ],
@@ -358,12 +358,12 @@
         "nodes": [
           {
             "constant": true,
-            "id": 17252,
+            "id": 17386,
             "mutability": "constant",
             "name": "FLEETS",
             "nameLocation": "190:6:69",
             "nodeType": "VariableDeclaration",
-            "scope": 17320,
+            "scope": 17454,
             "src": "173:34:69",
             "stateVariable": true,
             "storageLocation": "default",
@@ -372,7 +372,7 @@
               "typeString": "bytes32"
             },
             "typeName": {
-              "id": 17250,
+              "id": 17384,
               "name": "bytes32",
               "nodeType": "ElementaryTypeName",
               "src": "173:7:69",
@@ -383,7 +383,7 @@
             },
             "value": {
               "hexValue": "464c45455453",
-              "id": 17251,
+              "id": 17385,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -401,23 +401,23 @@
           },
           {
             "body": {
-              "id": 17263,
+              "id": 17397,
               "nodeType": "Block",
               "src": "281:2:69",
               "statements": []
             },
-            "id": 17264,
+            "id": 17398,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [
               {
                 "arguments": [
                   {
-                    "id": 17258,
+                    "id": 17392,
                     "name": "_sanctis",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 17255,
+                    "referencedDeclaration": 17389,
                     "src": "254:8:69",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_ISanctis_$11696",
@@ -426,7 +426,7 @@
                   },
                   {
                     "hexValue": "456e65726779",
-                    "id": 17259,
+                    "id": 17393,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -442,7 +442,7 @@
                   },
                   {
                     "hexValue": "4e5247",
-                    "id": 17260,
+                    "id": 17394,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -457,13 +457,13 @@
                     "value": "NRG"
                   }
                 ],
-                "id": 17261,
+                "id": 17395,
                 "kind": "baseConstructorSpecifier",
                 "modifierName": {
-                  "id": 17257,
+                  "id": 17391,
                   "name": "Resource",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 17505,
+                  "referencedDeclaration": 17639,
                   "src": "245:8:69"
                 },
                 "nodeType": "ModifierInvocation",
@@ -474,17 +474,17 @@
             "nameLocation": "-1:-1:-1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17256,
+              "id": 17390,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17255,
+                  "id": 17389,
                   "mutability": "mutable",
                   "name": "_sanctis",
                   "nameLocation": "235:8:69",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17264,
+                  "scope": 17398,
                   "src": "226:17:69",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -493,10 +493,10 @@
                     "typeString": "contract ISanctis"
                   },
                   "typeName": {
-                    "id": 17254,
+                    "id": 17388,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 17253,
+                      "id": 17387,
                       "name": "ISanctis",
                       "nodeType": "IdentifierPath",
                       "referencedDeclaration": 11696,
@@ -515,12 +515,12 @@
               "src": "225:19:69"
             },
             "returnParameters": {
-              "id": 17262,
+              "id": 17396,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "281:0:69"
             },
-            "scope": 17320,
+            "scope": 17454,
             "src": "214:69:69",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -528,40 +528,40 @@
           },
           {
             "baseFunctions": [
-              17460
+              17594
             ],
             "body": {
-              "id": 17285,
+              "id": 17419,
               "nodeType": "Block",
               "src": "395:84:69",
               "statements": [
                 {
                   "expression": {
-                    "id": 17278,
+                    "id": 17412,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 17274,
+                        "id": 17408,
                         "name": "s_reserves",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17396,
+                        "referencedDeclaration": 17530,
                         "src": "405:10:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 17276,
+                      "id": 17410,
                       "indexExpression": {
-                        "id": 17275,
+                        "id": 17409,
                         "name": "planetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17266,
+                        "referencedDeclaration": 17400,
                         "src": "416:8:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -582,11 +582,11 @@
                     "nodeType": "Assignment",
                     "operator": "+=",
                     "rightHandSide": {
-                      "id": 17277,
+                      "id": 17411,
                       "name": "amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17268,
+                      "referencedDeclaration": 17402,
                       "src": "429:6:69",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -599,7 +599,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 17279,
+                  "id": 17413,
                   "nodeType": "ExpressionStatement",
                   "src": "405:30:69"
                 },
@@ -607,11 +607,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 17281,
+                        "id": 17415,
                         "name": "planetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17266,
+                        "referencedDeclaration": 17400,
                         "src": "455:8:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -619,11 +619,11 @@
                         }
                       },
                       {
-                        "id": 17282,
+                        "id": 17416,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17268,
+                        "referencedDeclaration": 17402,
                         "src": "465:6:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -642,18 +642,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 17280,
+                      "id": 17414,
                       "name": "Mint",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17335,
+                      "referencedDeclaration": 17469,
                       "src": "450:4:69",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 17283,
+                    "id": 17417,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -668,22 +668,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 17284,
+                  "id": 17418,
                   "nodeType": "EmitStatement",
                   "src": "445:27:69"
                 }
               ]
             },
             "functionSelector": "1b2ef1ca",
-            "id": 17286,
+            "id": 17420,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 17272,
+                "id": 17406,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 17271,
+                  "id": 17405,
                   "name": "onlyAllowed",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 12240,
@@ -697,23 +697,23 @@
             "nameLocation": "298:4:69",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 17270,
+              "id": 17404,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "362:8:69"
             },
             "parameters": {
-              "id": 17269,
+              "id": 17403,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17266,
+                  "id": 17400,
                   "mutability": "mutable",
                   "name": "planetId",
                   "nameLocation": "311:8:69",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17286,
+                  "scope": 17420,
                   "src": "303:16:69",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -722,7 +722,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17265,
+                    "id": 17399,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "303:7:69",
@@ -735,12 +735,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 17268,
+                  "id": 17402,
                   "mutability": "mutable",
                   "name": "amount",
                   "nameLocation": "329:6:69",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17286,
+                  "scope": 17420,
                   "src": "321:14:69",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -749,7 +749,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17267,
+                    "id": 17401,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "321:7:69",
@@ -764,12 +764,12 @@
               "src": "302:34:69"
             },
             "returnParameters": {
-              "id": 17273,
+              "id": 17407,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "395:0:69"
             },
-            "scope": 17320,
+            "scope": 17454,
             "src": "289:190:69",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -777,10 +777,10 @@
           },
           {
             "baseFunctions": [
-              17481
+              17615
             ],
             "body": {
-              "id": 17318,
+              "id": 17452,
               "nodeType": "Block",
               "src": "591:165:69",
               "statements": [
@@ -792,14 +792,14 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 17303,
+                        "id": 17437,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
                         "lValueRequested": false,
                         "leftExpression": {
                           "expression": {
-                            "id": 17297,
+                            "id": 17431,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -810,7 +810,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 17298,
+                          "id": 17432,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -828,11 +828,11 @@
                         "rightExpression": {
                           "arguments": [
                             {
-                              "id": 17301,
+                              "id": 17435,
                               "name": "FLEETS",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 17252,
+                              "referencedDeclaration": 17386,
                               "src": "643:6:69",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
@@ -848,7 +848,7 @@
                               }
                             ],
                             "expression": {
-                              "id": 17299,
+                              "id": 17433,
                               "name": "s_sanctis",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
@@ -859,7 +859,7 @@
                                 "typeString": "contract ISanctis"
                               }
                             },
-                            "id": 17300,
+                            "id": 17434,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -873,7 +873,7 @@
                               "typeString": "function (bytes32) view external returns (address)"
                             }
                           },
-                          "id": 17302,
+                          "id": 17436,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -896,7 +896,7 @@
                       },
                       {
                         "hexValue": "4e6f20666c656574207472616e73666572",
-                        "id": 17304,
+                        "id": 17438,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -922,7 +922,7 @@
                           "typeString": "literal_string \"No fleet transfer\""
                         }
                       ],
-                      "id": 17296,
+                      "id": 17430,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
@@ -936,7 +936,7 @@
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 17305,
+                    "id": 17439,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -951,37 +951,37 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 17306,
+                  "id": 17440,
                   "nodeType": "ExpressionStatement",
                   "src": "601:71:69"
                 },
                 {
                   "expression": {
-                    "id": 17311,
+                    "id": 17445,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "baseExpression": {
-                        "id": 17307,
+                        "id": 17441,
                         "name": "s_reserves",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17396,
+                        "referencedDeclaration": 17530,
                         "src": "682:10:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_uint256_$_t_uint256_$",
                           "typeString": "mapping(uint256 => uint256)"
                         }
                       },
-                      "id": 17309,
+                      "id": 17443,
                       "indexExpression": {
-                        "id": 17308,
+                        "id": 17442,
                         "name": "planetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17288,
+                        "referencedDeclaration": 17422,
                         "src": "693:8:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1002,11 +1002,11 @@
                     "nodeType": "Assignment",
                     "operator": "-=",
                     "rightHandSide": {
-                      "id": 17310,
+                      "id": 17444,
                       "name": "amount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17290,
+                      "referencedDeclaration": 17424,
                       "src": "706:6:69",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1019,7 +1019,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 17312,
+                  "id": 17446,
                   "nodeType": "ExpressionStatement",
                   "src": "682:30:69"
                 },
@@ -1027,11 +1027,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 17314,
+                        "id": 17448,
                         "name": "planetId",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17288,
+                        "referencedDeclaration": 17422,
                         "src": "732:8:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1039,11 +1039,11 @@
                         }
                       },
                       {
-                        "id": 17315,
+                        "id": 17449,
                         "name": "amount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 17290,
+                        "referencedDeclaration": 17424,
                         "src": "742:6:69",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -1062,18 +1062,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 17313,
+                      "id": 17447,
                       "name": "Burn",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 17341,
+                      "referencedDeclaration": 17475,
                       "src": "727:4:69",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (uint256,uint256)"
                       }
                     },
-                    "id": 17316,
+                    "id": 17450,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1088,22 +1088,22 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 17317,
+                  "id": 17451,
                   "nodeType": "EmitStatement",
                   "src": "722:27:69"
                 }
               ]
             },
             "functionSelector": "b390c0ab",
-            "id": 17319,
+            "id": 17453,
             "implemented": true,
             "kind": "function",
             "modifiers": [
               {
-                "id": 17294,
+                "id": 17428,
                 "kind": "modifierInvocation",
                 "modifierName": {
-                  "id": 17293,
+                  "id": 17427,
                   "name": "onlyAllowed",
                   "nodeType": "IdentifierPath",
                   "referencedDeclaration": 12240,
@@ -1117,23 +1117,23 @@
             "nameLocation": "494:4:69",
             "nodeType": "FunctionDefinition",
             "overrides": {
-              "id": 17292,
+              "id": 17426,
               "nodeType": "OverrideSpecifier",
               "overrides": [],
               "src": "558:8:69"
             },
             "parameters": {
-              "id": 17291,
+              "id": 17425,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17288,
+                  "id": 17422,
                   "mutability": "mutable",
                   "name": "planetId",
                   "nameLocation": "507:8:69",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17319,
+                  "scope": 17453,
                   "src": "499:16:69",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1142,7 +1142,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17287,
+                    "id": 17421,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "499:7:69",
@@ -1155,12 +1155,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 17290,
+                  "id": 17424,
                   "mutability": "mutable",
                   "name": "amount",
                   "nameLocation": "525:6:69",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17319,
+                  "scope": 17453,
                   "src": "517:14:69",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1169,7 +1169,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 17289,
+                    "id": 17423,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "517:7:69",
@@ -1184,25 +1184,25 @@
               "src": "498:34:69"
             },
             "returnParameters": {
-              "id": 17295,
+              "id": 17429,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "591:0:69"
             },
-            "scope": 17320,
+            "scope": 17454,
             "src": "485:271:69",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 17321,
+        "scope": 17455,
         "src": "83:675:69",
         "usedErrors": [
           12169,
           12173,
           12177,
-          17329
+          17463
         ]
       }
     ],
