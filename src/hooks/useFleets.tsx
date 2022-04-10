@@ -1,12 +1,12 @@
 import { useWallet } from "@binance-chain/bsc-use-wallet";
 import { useToast } from "@chakra-ui/react";
 import { ExternalProvider } from "@ethersproject/providers";
-import { BigNumber, Contract, providers, utils } from "ethers";
+import { BigNumber, Contract, ethers, providers, utils } from "ethers";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import deployedAddresses from "../constants";
 
 import FleetsABI from "../constants/contracts/IFleets.sol/IFleets.json";
-import { Commander, Fleet, FleetStatus, Planet, Ship } from "../contexts/Sanctis/types";
+import { Commander, Fleet, FleetStatus, Planet, Reserve, Resource, Ship } from "../contexts/Sanctis/types";
 import useApprovedObjects from "./useApprovedObjects";
 import useChainPicker from "./useChainPicker";
 import useConfirmationModal from "./useConfirmationModal";
@@ -71,10 +71,10 @@ const useFleets = (planetId?: string) => {
         })
       );
 
-      const resourcesInFleet: { [address: string]: BigNumber } = {};
+      const resourcesInFleet: Reserve[] = [];
       await Promise.all(
         approvedResources.map(async (resource) => {
-          resourcesInFleet[resource.address] = await contract.shipsInFleet(resource.address, fleetId);
+          resourcesInFleet.push({ resource: resource, amount: await contract.shipsInFleet(resource.address, fleetId) });
         })
       );
 
@@ -247,6 +247,50 @@ const useFleets = (planetId?: string) => {
     [contract, fetchPlanetFleets, open, toast]
   );
 
+  const loadResource = useCallback(
+    async (fleet: Fleet, resource: Resource, quantity: BigNumber) => {
+      if (!contract) return;
+      open(async () => {
+        try {
+          const result = await contract.load(fleet.id, resource.address, quantity);
+          await result.wait();
+          await fetchPlanetFleets(fleet.fromPlanet?.id);
+          await fetchPlanet(fleet.fromPlanet!.id);
+          toast({
+            status: "success",
+            title: "Loaded",
+            description: `Fleet ${fleet.id} loaded ${ethers.utils.formatEther(quantity)} ${resource.name}`,
+          });
+        } catch (err: any) {
+          toast({ status: "error", title: "Error", description: `Failed loading: ${err.message}` });
+        }
+      });
+    },
+    [contract, fetchPlanetFleets, fetchPlanet, open, toast]
+  );
+
+  const unloadResource = useCallback(
+    async (fleet: Fleet, resource: Resource, quantity: BigNumber) => {
+      if (!contract) return;
+      open(async () => {
+        try {
+          const result = await contract.unload(fleet.id, resource.address, quantity);
+          await result.wait();
+          await fetchPlanetFleets(fleet.fromPlanet?.id);
+          await fetchPlanet(fleet.fromPlanet!.id);
+          toast({
+            status: "success",
+            title: "Unloaded",
+            description: `Fleet ${fleet.id} unloaded ${ethers.utils.formatEther(quantity)} ${resource.name}`,
+          });
+        } catch (err: any) {
+          toast({ status: "error", title: "Error", description: `Failed unloading: ${err.message}` });
+        }
+      });
+    },
+    [contract, fetchPlanetFleets, fetchPlanet, open, toast]
+  );
+
   return {
     fleets,
     create,
@@ -255,6 +299,8 @@ const useFleets = (planetId?: string) => {
     removeFromFleet,
     putInOrbit,
     land,
+    loadResource,
+    unloadResource,
   };
 };
 

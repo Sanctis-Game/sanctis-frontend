@@ -66,7 +66,7 @@ export interface Fleet {
   arrivalBlock: number;
   status: FleetStatus;
   shipsInFleet: { [address: string]: number };
-  resources: { [address: string]: BigNumber };
+  resources: Reserve[];
 }
 
 export enum PlanetStatus {

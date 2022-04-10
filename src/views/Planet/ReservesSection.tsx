@@ -12,6 +12,7 @@ import {
 import React from "react";
 
 import ResourceBadge from "../../components/ResourceBadge";
+import DocumentationButton from "../../contexts/DocumentationButton";
 import { Planet } from "../../contexts/Sanctis/types";
 
 const ReservesSection: React.FC<{ planet: Planet }> = ({ planet }) => {
@@ -26,6 +27,7 @@ const ReservesSection: React.FC<{ planet: Planet }> = ({ planet }) => {
         rounded="lg"
       >
         <AccordionButton justifyContent="center">
+          <DocumentationButton href="https://docs.sanctis.xyz/sections/game/resources" />
           <Text margin="auto" mb="3" fontSize="xl" fontWeight="bold">
             Planet's reserves
           </Text>

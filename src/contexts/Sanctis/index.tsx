@@ -89,6 +89,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
     "memorized_commander",
     undefined
   );
+  const [owner, setOwner] = useLocalStorage<string | null>("memorized_owner", null);
   const [currentCommander, setCurrentCommanderState] = useState<Commander | undefined>(memorizedCommander);
   const [planets, setPlanets] = useState<{ [planetId: string]: Planet }>({});
   const [colonizationCost, setColonizationCost] = useState<BigNumber>();
@@ -96,10 +97,19 @@ export const SanctisProvider: React.FC = ({ children }) => {
   const setCurrentCommander = useCallback(
     (commander?: Commander) => {
       setMemorizedCommander(commander);
+      setOwner(account);
       setCurrentCommanderState(commander);
     },
-    [setMemorizedCommander, setCurrentCommanderState]
+    [account, setOwner, setMemorizedCommander, setCurrentCommanderState]
   );
+
+  useEffect(() => {
+    if (memorizedCommander && ownedCommanders && ownedCommanders.includes(memorizedCommander) && owner === account) {
+      setCurrentCommander(memorizedCommander);
+    } else if (account && account !== owner) {
+      setCurrentCommander(undefined);
+    }
+  }, [memorizedCommander, owner, account, ownedCommanders, setCurrentCommander]);
 
   const fetchColonizationCost = useCallback(async () => {
     if (!contracts) return;
@@ -169,11 +179,8 @@ export const SanctisProvider: React.FC = ({ children }) => {
       )
     ).filter(Boolean);
 
-    if (memorizedCommander && commanders.includes(memorizedCommander)) {
-      setCurrentCommanderState(memorizedCommander);
-    }
     setOwnedCommanders(commanders);
-  }, [account, contracts, ownedCommanders, memorizedCommander, fetchCommander]);
+  }, [account, contracts, ownedCommanders, fetchCommander]);
 
   useEffect(() => {
     fetchOwnedCommanders();
@@ -215,7 +222,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
         const planet = {
           id: planetId,
           status: status,
-          ruler: ruler.toNumber(),
+          ruler: ruler.toString(),
           x: x.toNumber(),
           y: y.toNumber(),
           z: z.toNumber(),

@@ -5,6 +5,7 @@ import {
   Container,
   Link,
   List,
+  ListIcon,
   ListItem,
   Spinner,
   Stack,
@@ -15,6 +16,7 @@ import {
 import { planetIdToCoordinate } from "utils";
 import useSanctis from "../../hooks/useSanctis";
 import { Commander } from "../../contexts/Sanctis/types";
+import { BiPlanet } from "react-icons/bi";
 
 const CommanderCard: React.FC<{ commander: Commander }> = ({ commander }) => {
   const { currentCommander, setCurrentCommander } = useSanctis();
@@ -39,6 +41,7 @@ const CommanderCard: React.FC<{ commander: Commander }> = ({ commander }) => {
                   <List>
                     {commander.planets.map((planet, i) => (
                       <ListItem key={planet + i}>
+                        <ListIcon as={BiPlanet} fontSize="2xl" />
                         <Link href={`/planet/${planet}`}>{planetIdToCoordinate(planet)}</Link>
                       </ListItem>
                     ))}

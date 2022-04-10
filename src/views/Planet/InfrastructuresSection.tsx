@@ -13,6 +13,7 @@ import {
 import React, { ReactChild, useMemo } from "react";
 
 import deployedAddresses from "../../constants";
+import DocumentationButton from "../../contexts/DocumentationButton";
 import { Planet } from "../../contexts/Sanctis/types";
 import useChainPicker from "../../hooks/useChainPicker";
 import CreateInfrastuctureCard from "./infrastructures/CreateInfrastructureCard";
@@ -67,6 +68,7 @@ const InfrastructuresSection: React.FC<{ planet: Planet }> = ({ planet }) => {
         boxShadow="inner"
       >
         <AccordionButton justifyContent="center">
+          <DocumentationButton href="https://docs.sanctis.xyz/sections/game/infrastructures" />
           <Text margin="auto" fontSize="xl" fontWeight="bold" mb="3">
             Planet's infrastructures
           </Text>

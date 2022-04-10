@@ -1,4 +1,4 @@
-import { Accordion, Button, Container, Link, useColorModeValue } from "@chakra-ui/react";
+import { Accordion, Box, Button, Link, useColorModeValue } from "@chakra-ui/react";
 import usePlanet from "hooks/usePlanet";
 import React from "react";
 import { BiArrowBack } from "react-icons/bi";
@@ -21,7 +21,7 @@ const Planet: React.FC = () => {
   ) : null;
 
   return (
-    <Container maxW={"5xl"}>
+    <Box w="100%">
       <Button
         rightIcon={<BiArrowBack />}
         as={Link}
@@ -34,7 +34,7 @@ const Planet: React.FC = () => {
       <Accordion allowMultiple allowToggle>
         {sections}
       </Accordion>
-    </Container>
+    </Box>
   );
 };
 

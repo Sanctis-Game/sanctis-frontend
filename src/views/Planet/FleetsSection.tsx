@@ -6,11 +6,13 @@ import {
   Button,
   Divider,
   Flex,
+  Stack,
   Text,
   useColorModeValue,
   Wrap,
 } from "@chakra-ui/react";
 import React from "react";
+import DocumentationButton from "../../contexts/DocumentationButton";
 import { Planet } from "../../contexts/Sanctis/types";
 
 import useFleets from "../../hooks/useFleets";
@@ -35,27 +37,30 @@ const FleetsSection: React.FC<{ planet: Planet }> = ({ planet }) => {
         boxShadow="inner"
       >
         <AccordionButton justifyContent="center">
+          <DocumentationButton href="https://docs.sanctis.xyz/sections/game/fleets" />
           <Text margin="auto" fontSize="xl" fontWeight="bold" mb="3">
             Planet's fleets
           </Text>
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel>
-          <Wrap justify={"center"} m={2}>
-            {fleets && fleets.length > 0 ? (
-              fleets.map((fleet) => <FleetCard key={fleet.id} fleet={fleet} />)
-            ) : (
-              <Text>There are no fleets on this planet</Text>
+          <Stack spacing={4}>
+            <Wrap justify={"center"} m={2}>
+              {fleets && fleets.length > 0 ? (
+                fleets.map((fleet) => <FleetCard key={fleet.id} fleet={fleet} />)
+              ) : (
+                <Text>There are no fleets on this planet</Text>
+              )}
+            </Wrap>
+            {currentCommander && currentCommander?.id === planet.ruler && (
+              <>
+                <Divider mt={7} w="100%" />
+                <Flex justify={"center"} mt={5}>
+                  <Button onClick={() => create(currentCommander, planet.id)}>Create a new fleet</Button>
+                </Flex>
+              </>
             )}
-          </Wrap>
-          {currentCommander && currentCommander?.id === planet.ruler && (
-            <>
-              <Divider mt={7} w="100%" />
-              <Flex justify={"center"} mt={5}>
-                <Button onClick={() => create(currentCommander, planet.id)}>Create a new fleet</Button>
-              </Flex>
-            </>
-          )}
+          </Stack>
         </AccordionPanel>
       </Flex>
     </AccordionItem>
