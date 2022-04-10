@@ -5,10 +5,15 @@ export interface Network {
 }
 
 export const supportedNetworks: Network[] = [
+  // {
+  //   name: "Fantom Testnet",
+  //   rpcUrl: "https://xapi.testnet.fantom.network/lachesis",
+  //   chainId: 4002,
+  // },
   {
-    name: "Fantom Testnet",
-    rpcUrl: "https://xapi.testnet.fantom.network/lachesis",
-    chainId: 4002,
+    name: "Polygon Testnet (Mumbai)",
+    rpcUrl: "https://matic-mumbai.chainstacklabs.com",
+    chainId: 80001,
   },
   // {
   //   name: "Fantom Mainnet",
@@ -41,6 +46,30 @@ export const deployedAddresses: { [id: number]: { [contract: string]: string } }
     destroyers: "0xceacea7a31c308f082cf7cb0273d6b22948bfa22",
     plundering: "0x8febd06842530cbc196178630a6d3708f886b075",
     resourceWrapper: "0x43d37eb9f543bc45dab093ecae13f899e637ceec",
+  },
+  80001: {
+    sanctis: "0x668f9757cc3b99ea15493a204d3499a944298d45",
+    credits: "0x26466c41c505be988a55b01b999d1472743b8935",
+    parliament: "0xd4cd11d88e7a199fe829be923bd4d238e55a0f73",
+    commanders: "0x77c3e082a27117aba44a77be1839ed8d80951050",
+    planets: "0x97745b5a7c3c130aecc9602d9d948aee82af2f86",
+    fleets: "0x934f4f1d8c646e5624553f4f93fa5a406e40b661",
+    humans: "0x57d267e0616b2556380b2a7098fb6da850238e30",
+    energy: "0xa65bdda4d8b9b713148a83e22bfdca2310a19292",
+    iron: "0x186281c4f12bdd9322e7231a2df54859fbebf0f1",
+    deuterium: "0xfb2b326ed3f3e29431a62e47eab52498867cf7e4",
+    silicon: "0xd561741cc2acce2a08389a786adcd535bd186049",
+    ironMines: "0xdbfd99cdae2458d87963a92acab1643182dca5ba",
+    siliconFurnaces: "0x2f26bad1c73ac3229fafa046dfc318962518e7aa",
+    heavyWaterPlants: "0xbe9ca39a7c1f56f086d59c8b5c8e659c8ce1bcfa",
+    solarPanels: "0x84704afe8234d8255d4d473bdec59258676a8b70",
+    fusionReactors: "0x4a8417f0684a97896fee7d4eb8d6fc22f8bf8a48",
+    spatioports: "0xf830c264bc30293d1adbec82bcabad0b30eb16c9",
+    transporters: "0x25a471c7b60ae3ce475400d2e24f6a11219436a2",
+    scouts: "0xbfec4d314cf68644a45a3bb6531895f8e7bb3179",
+    destroyers: "0x0eb5f5f085c0575f4ee03b92938fedb214b4464f",
+    plundering: "0x56b07dc2d28e31d2e08958ef4feeea19e0134b33",
+    resourceWrapper: "0x9cc76cc5abd2cc9dd4532fb969bfd8869325b01c",
   },
 };
 
