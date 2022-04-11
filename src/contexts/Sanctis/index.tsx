@@ -104,7 +104,13 @@ export const SanctisProvider: React.FC = ({ children }) => {
   );
 
   useEffect(() => {
-    if (memorizedCommander && ownedCommanders && ownedCommanders.includes(memorizedCommander) && owner === account) {
+    if (
+      account &&
+      memorizedCommander &&
+      ownedCommanders &&
+      ownedCommanders.includes(memorizedCommander) &&
+      owner === account
+    ) {
       setCurrentCommander(memorizedCommander);
     } else if (account && account !== owner) {
       setCurrentCommander(undefined);

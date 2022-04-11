@@ -31,11 +31,12 @@ interface MobileProps extends FlexProps {
 const validConnectors = [{ name: "MetaMask", id: "injected" }];
 
 const autoconnectPeriod = 86400000;
+const startAutoconnect = Date.now();
 
 export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const { account, connect } = useWallet();
   const { isOpen, onOpen: openModal, onClose } = useDisclosure();
-  const [autoconnect, setAutoconnect] = useLocalStorage("autoconnectExpirationDate", Date.now());
+  const [autoconnect, setAutoconnect] = useLocalStorage("autoconnectExpirationDate", startAutoconnect);
   const [connector, setConnector] = useLocalStorage<string | undefined>("connector", undefined);
 
   const handleChooseWallet = useCallback(async () => {

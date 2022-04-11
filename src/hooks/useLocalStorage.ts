@@ -18,19 +18,22 @@ export default function useLocalStorage<T>(key: string, initialValue: T) {
 
   // Return a wrapped version of useState's setter function that ...
   // ... persists the new value to localStorage.
-  const setValue = useCallback((value: T | ((value: T) => T)) => {
-    try {
-      // Allow value to be a function so we have same API as useState
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      // Save state
-      setStoredValue(valueToStore);
-      // Save to local storage
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      // A more advanced implementation would handle the error case
-      console.log(error);
-    }
-  }, [key, storedValue]);
+  const setValue = useCallback(
+    (value: T | ((value: T) => T)) => {
+      try {
+        // Allow value to be a function so we have same API as useState
+        const valueToStore = value instanceof Function ? value(storedValue) : value;
+        // Save state
+        setStoredValue(valueToStore);
+        // Save to local storage
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      } catch (error) {
+        // A more advanced implementation would handle the error case
+        console.log(error);
+      }
+    },
+    [key, storedValue]
+  );
 
   // Update the stored value if the key is updated
   useEffect(() => {
@@ -41,10 +44,10 @@ export default function useLocalStorage<T>(key: string, initialValue: T) {
       setStoredValue(item ? JSON.parse(item) : initialValue);
     } catch (error) {
       // If error also return initialValue
-      console.log(error);
+      console.log(error, initialValue);
       setStoredValue(initialValue);
     }
-  }, [key, initialValue])
+  }, [key, initialValue]);
 
   return [storedValue, setValue] as [T, (value: T | ((value: T) => T)) => void];
 }
