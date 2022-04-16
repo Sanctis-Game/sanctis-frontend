@@ -1,3 +1,4 @@
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 import { useWallet } from "@binance-chain/bsc-use-wallet";
 import { useToast } from "@chakra-ui/react";
 import { ExternalProvider } from "@ethersproject/providers";
@@ -11,6 +12,19 @@ import useApprovedObjects from "./useApprovedObjects";
 import useChainPicker from "./useChainPicker";
 import useConfirmationModal from "./useConfirmationModal";
 import useSanctis from "./useSanctis";
+
+const APIURL = "https://api.thegraph.com/subgraphs/name/sanctis-game/fleets";
+
+const tokensQuery = `
+  query {
+    fleets(first: 5) {
+      id
+      status
+      to
+      from
+    }
+  }
+`;
 
 const useFleets = (planetId?: string) => {
   const toast = useToast();
@@ -32,7 +46,29 @@ const useFleets = (planetId?: string) => {
     );
   }, [ethereum, chainId]);
 
-  const fetch = useCallback(
+  const client = useMemo(
+    () =>
+      new ApolloClient({
+        uri: APIURL,
+        cache: new InMemoryCache(),
+      }),
+    []
+  );
+
+  const fetchFleets = useCallback(async () => {
+    const result = await client.query({
+      query: gql(tokensQuery),
+    });
+
+    console.log("Subgraph fleets: ", result);
+    setFleets(result.data.fleets.map((e: any) => ({ id: e.id, shipsInFleet: {}, resources: [] })));
+  }, [client]);
+
+  useEffect(() => {
+    fetchFleets();
+  }, [fetchFleets]);
+
+  const fetchFleet = useCallback(
     async (fleetId: BigNumber) => {
       if (!contract) return;
 
@@ -107,14 +143,14 @@ const useFleets = (planetId?: string) => {
       const fleets: Fleet[] = await Promise.all(
         Array(fleetsOnPlanet.toNumber())
           .fill(0)
-          .map(async (_, i) => (await fetch(await contract.fleetOnPlanetByIndex(planetId, i)))!)
+          .map(async (_, i) => (await fetchFleet(await contract.fleetOnPlanetByIndex(planetId, i)))!)
       );
 
       // Assign it to the planets fleets
       setFleets(fleets.filter(Boolean));
       setIsFetching(false);
     },
-    [isFetching, contract, fetch]
+    [isFetching, contract, fetchFleet]
   );
 
   useEffect(() => {

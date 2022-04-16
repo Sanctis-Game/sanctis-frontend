@@ -10,6 +10,7 @@ const DocumentationButton: React.FC<{ href: string }> = ({ href }) => {
       icon={<BiHelpCircle />}
       aria-label="See the docs"
       w="48px"
+      m="1"
       rounded="full"
     />
   );

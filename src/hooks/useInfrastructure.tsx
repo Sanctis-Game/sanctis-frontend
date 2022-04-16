@@ -1,14 +1,14 @@
-import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { useToast } from '@chakra-ui/react'
-import { ExternalProvider } from '@ethersproject/providers'
-import { Contract, ethers, providers, utils } from 'ethers'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useWallet } from "@binance-chain/bsc-use-wallet";
+import { useToast } from "@chakra-ui/react";
+import { ExternalProvider } from "@ethersproject/providers";
+import { Contract, ethers, providers, utils } from "ethers";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-import ResourceProducerABI from '../constants/contracts/IResourceProducer.sol/IResourceProducer.json'
-import { Infrastructure } from '../contexts/Sanctis/types'
-import useApprovedObjects from './useApprovedObjects'
-import useConfirmationModal from './useConfirmationModal'
-import useSanctis from './useSanctis'
+import ResourceProducerABI from "../constants/contracts/IResourceProducer.sol/IResourceProducer.json";
+import { Infrastructure } from "../contexts/Sanctis/types";
+import useApprovedObjects from "./useApprovedObjects";
+import useConfirmationModal from "./useConfirmationModal";
+import useSanctis from "./useSanctis";
 
 const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => {
   const toast = useToast();
@@ -82,8 +82,10 @@ const useInfrastructure = (infrastructure: Infrastructure, planetId: string) => 
         try {
           const result = await contract.upgrade(planetId);
           await result.wait();
-          await fetch();
-          await fetchPlanet(planetId);
+          setTimeout(() => {
+            fetch();
+            fetchPlanet(planetId);
+          }, 3000);
           toast({
             status: "success",
             title: "Upgraded",

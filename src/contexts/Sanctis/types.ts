@@ -55,16 +55,16 @@ export enum FleetStatus {
 
 export interface Fleet {
   id: string;
-  commander: BigNumber;
+  commander?: BigNumber;
   fromPlanet?: Planet;
   toPlanet?: Planet;
-  totalSpeed: BigNumber;
-  totalOffensivePower: BigNumber;
-  totalDefensivePower: BigNumber;
-  capacity: BigNumber;
-  ships: BigNumber;
-  arrivalBlock: number;
-  status: FleetStatus;
+  totalSpeed?: BigNumber;
+  totalOffensivePower?: BigNumber;
+  totalDefensivePower?: BigNumber;
+  capacity?: BigNumber;
+  ships?: BigNumber;
+  arrivalBlock?: number;
+  status?: FleetStatus;
   shipsInFleet: { [address: string]: number };
   resources: Reserve[];
 }
