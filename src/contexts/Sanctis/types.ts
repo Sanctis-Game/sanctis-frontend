@@ -81,9 +81,9 @@ export interface Planet {
   id: string;
   status: PlanetStatus;
   ruler: string;
-  x: number;
-  y: number;
-  z: number;
+  x: BigNumber;
+  y: BigNumber;
+  z: BigNumber;
   humidity: number;
   infrastructures: Infrastructure[];
   reserves: Reserve[];

@@ -54,7 +54,7 @@
     "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/races/IRace.sol",
     "exportedSymbols": {
       "IRace": [
-        17340
+        17257
       ],
       "ISanctis": [
         11696
@@ -63,29 +63,29 @@
         11723
       ]
     },
-    "id": 17341,
+    "id": 17258,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 17331,
+        "id": 17248,
         "literals": [
           "solidity",
           "0.8",
           ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:67"
+        "src": "33:23:69"
       },
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisModule.sol",
         "file": "../ISanctisModule.sol",
-        "id": 17332,
+        "id": 17249,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 17341,
+        "scope": 17258,
         "sourceUnit": 11724,
-        "src": "60:31:67",
+        "src": "60:31:69",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -94,58 +94,58 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 17333,
+              "id": 17250,
               "name": "ISanctisModule",
               "nodeType": "IdentifierPath",
               "referencedDeclaration": 11723,
-              "src": "114:14:67"
+              "src": "114:14:69"
             },
-            "id": 17334,
+            "id": 17251,
             "nodeType": "InheritanceSpecifier",
-            "src": "114:14:67"
+            "src": "114:14:69"
           }
         ],
         "canonicalName": "IRace",
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 17340,
+        "id": 17257,
         "linearizedBaseContracts": [
-          17340,
+          17257,
           11723
         ],
         "name": "IRace",
-        "nameLocation": "105:5:67",
+        "nameLocation": "105:5:69",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "functionSelector": "06fdde03",
-            "id": 17339,
+            "id": 17256,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "name",
-            "nameLocation": "145:4:67",
+            "nameLocation": "145:4:69",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17335,
+              "id": 17252,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "149:2:67"
+              "src": "149:2:69"
             },
             "returnParameters": {
-              "id": 17338,
+              "id": 17255,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 17337,
+                  "id": 17254,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 17339,
-                  "src": "175:13:67",
+                  "scope": 17256,
+                  "src": "175:13:69",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -153,10 +153,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 17336,
+                    "id": 17253,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "175:6:67",
+                    "src": "175:6:69",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -165,20 +165,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "174:15:67"
+              "src": "174:15:69"
             },
-            "scope": 17340,
-            "src": "136:54:67",
+            "scope": 17257,
+            "src": "136:54:69",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 17341,
-        "src": "95:98:67",
+        "scope": 17258,
+        "src": "95:98:69",
         "usedErrors": []
       }
     ],
-    "src": "33:162:67"
+    "src": "33:162:69"
   }
 }

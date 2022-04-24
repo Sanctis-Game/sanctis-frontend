@@ -26,7 +26,7 @@ const tokensQuery = `
   }
 `;
 
-const useFleets = (planetId?: string) => {
+const useFleets = ({ planet }: { planet?: Planet } = {}) => {
   const toast = useToast();
   const { open } = useConfirmationModal();
   const { chainId } = useChainPicker();
@@ -154,8 +154,8 @@ const useFleets = (planetId?: string) => {
   );
 
   useEffect(() => {
-    if (!fleets && planetId) fetchPlanetFleets(planetId);
-  }, [fleets, planetId, fetchPlanetFleets]);
+    if (!fleets && planet) fetchPlanetFleets(planet.id);
+  }, [fleets, planet, fetchPlanetFleets]);
 
   const create = useCallback(
     async (commander: Commander, planetId: string) => {

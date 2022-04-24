@@ -3,39 +3,6 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "NotAllowed",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "NotTheExecutor",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "sender",
-          "type": "address"
-        }
-      ],
-      "name": "NotTheSanctis",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "contract ISanctis",
           "name": "newSanctis",
           "type": "address"
@@ -112,7 +79,7 @@
         12160
       ],
       "SanctisModule": [
-        12265
+        12246
       ]
     },
     "id": 12161,
@@ -148,7 +115,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 12161,
-        "sourceUnit": 12266,
+        "sourceUnit": 12247,
         "src": "91:29:45",
         "symbolAliases": [],
         "unitAlias": ""
@@ -161,7 +128,7 @@
               "id": 12130,
               "name": "SanctisModule",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 12265,
+              "referencedDeclaration": 12246,
               "src": "160:13:45"
             },
             "id": 12131,
@@ -189,7 +156,7 @@
         "linearizedBaseContracts": [
           12160,
           11707,
-          12265,
+          12246,
           11723
         ],
         "name": "SanctisExtension",
@@ -299,7 +266,7 @@
                   "id": 12142,
                   "name": "SanctisModule",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 12265,
+                  "referencedDeclaration": 12246,
                   "src": "264:13:45"
                 },
                 "nodeType": "ModifierInvocation",
@@ -475,11 +442,7 @@
         ],
         "scope": 12161,
         "src": "122:279:45",
-        "usedErrors": [
-          12169,
-          12173,
-          12177
-        ]
+        "usedErrors": []
       }
     ],
     "src": "32:370:45"

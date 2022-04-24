@@ -3,6 +3,7 @@ import useCommander from "hooks/useCommander";
 import React from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { useParams } from "react-router-dom";
+import usePlanets from "../../hooks/usePlanets";
 
 import ColonizeCard from "./ColonizeCard";
 import PlanetCard from "./PlanetCard";
@@ -10,6 +11,7 @@ import PlanetCard from "./PlanetCard";
 const Commander: React.FC = () => {
   const { id } = useParams();
   const commander = useCommander(id);
+  const planets = usePlanets({ ruler: commander?.id });
 
   return (
     <Container maxW={"5xl"}>
@@ -31,11 +33,12 @@ const Commander: React.FC = () => {
           {commander?.name}'s planets
         </Text>
         <Wrap spacing={5} mt="2">
-          {commander?.planets?.map((e) => (
-            <WrapItem key={e} shadow="xl">
-              <PlanetCard planetId={e} />
-            </WrapItem>
-          ))}
+          {planets &&
+            planets.map((e) => (
+              <WrapItem key={e.id} shadow="xl">
+                <PlanetCard planetId={e.id} />
+              </WrapItem>
+            ))}
         </Wrap>
       </Flex>
       {commander && <ColonizeCard colonizer={commander} />}

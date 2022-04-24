@@ -1,0 +1,358 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "newSanctis",
+          "type": "address"
+        }
+      ],
+      "name": "changeSanctis",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "colonizationCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "ruler",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "planetId",
+          "type": "uint256"
+        }
+      ],
+      "name": "colonize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "sanctis",
+      "outputs": [
+        {
+          "internalType": "contract ISanctis",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newCost",
+          "type": "uint256"
+        }
+      ],
+      "name": "setColonizationCost",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "ast": {
+    "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/modules/IColonize.sol",
+    "exportedSymbols": {
+      "IColonize": [
+        16828
+      ],
+      "ISanctis": [
+        11696
+      ],
+      "ISanctisModule": [
+        11723
+      ]
+    },
+    "id": 16829,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16806,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:65"
+      },
+      {
+        "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/ISanctisModule.sol",
+        "file": "../ISanctisModule.sol",
+        "id": 16807,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 16829,
+        "sourceUnit": 11724,
+        "src": "60:31:65",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 16808,
+              "name": "ISanctisModule",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 11723,
+              "src": "118:14:65"
+            },
+            "id": 16809,
+            "nodeType": "InheritanceSpecifier",
+            "src": "118:14:65"
+          }
+        ],
+        "canonicalName": "IColonize",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 16828,
+        "linearizedBaseContracts": [
+          16828,
+          11723
+        ],
+        "name": "IColonize",
+        "nameLocation": "105:9:65",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 16810,
+              "nodeType": "StructuredDocumentation",
+              "src": "140:219:65",
+              "text": "@notice Unknown planets have never been explored\n @notice Uncharted planets have been explored but are unoccupied\n @notice Colonized planets are controlled by a commander\n @notice The Sanctis"
+            },
+            "functionSelector": "2794ff70",
+            "id": 16817,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "colonize",
+            "nameLocation": "588:8:65",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16812,
+                  "mutability": "mutable",
+                  "name": "ruler",
+                  "nameLocation": "605:5:65",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16817,
+                  "src": "597:13:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16811,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "597:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16814,
+                  "mutability": "mutable",
+                  "name": "planetId",
+                  "nameLocation": "620:8:65",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16817,
+                  "src": "612:16:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16813,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "612:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "596:33:65"
+            },
+            "returnParameters": {
+              "id": 16816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "638:0:65"
+            },
+            "scope": 16828,
+            "src": "579:60:65",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "67ad59d5",
+            "id": 16822,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setColonizationCost",
+            "nameLocation": "656:19:65",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16820,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16819,
+                  "mutability": "mutable",
+                  "name": "newCost",
+                  "nameLocation": "684:7:65",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16822,
+                  "src": "676:15:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16818,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "676:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "675:17:65"
+            },
+            "returnParameters": {
+              "id": 16821,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "701:0:65"
+            },
+            "scope": 16828,
+            "src": "647:55:65",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0904b2ac",
+            "id": 16827,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "colonizationCost",
+            "nameLocation": "719:16:65",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16823,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "735:2:65"
+            },
+            "returnParameters": {
+              "id": 16826,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16825,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16827,
+                  "src": "761:7:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16824,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "761:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "760:9:65"
+            },
+            "scope": 16828,
+            "src": "710:60:65",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 16829,
+        "src": "95:678:65",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:742:65"
+  }
+}

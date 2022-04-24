@@ -15,6 +15,7 @@ import ShipABI from "../../constants/contracts/IShip.sol/IShip.json";
 import PlanetsABI from "../../constants/contracts/Planets.sol/Planets.json";
 import SanctisABI from "../../constants/contracts/Sanctis.sol/Sanctis.json";
 import CreditsABI from "../../constants/contracts/SpaceCredits.sol/SpaceCredits.json";
+import ColonizeABI from "../../constants/contracts/Colonize.sol/Colonize.json";
 import useApprovedObjects from "../../hooks/useApprovedObjects";
 import useChainPicker from "../../hooks/useChainPicker";
 import useLocalStorage from "../../hooks/useLocalStorage";
@@ -61,6 +62,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
     const PowerPlantsInterface = new utils.Interface(PowerPlantsABI.abi);
     const ResourceProducerInterface = new utils.Interface(ResourceProducerABI.abi);
     const ShipInterface = new utils.Interface(ShipABI.abi);
+    const ColonizeInterface = new utils.Interface(ColonizeABI.abi);
     const signer = new providers.Web3Provider(ethereum).getSigner();
     return {
       sanctis: new Contract(deployedAddresses[chainId].sanctis, SanctisInterface, signer),
@@ -79,6 +81,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
       transporters: new Contract(deployedAddresses[chainId].transporters, ShipInterface, signer),
       scouts: new Contract(deployedAddresses[chainId].scouts, ShipInterface, signer),
       destroyers: new Contract(deployedAddresses[chainId].destroyers, ShipInterface, signer),
+      colonize: new Contract(deployedAddresses[chainId].colonize, ColonizeInterface, signer),
     };
   }, [chainId, ethereum]);
 
@@ -90,7 +93,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
     undefined
   );
   const [owner, setOwner] = useLocalStorage<string | null>("memorized_owner", null);
-  const [currentCommander, setCurrentCommanderState] = useState<Commander | undefined>(memorizedCommander);
+  const [currentCommander, setCurrentCommanderState] = useState<Commander | undefined>();
   const [planets, setPlanets] = useState<{ [planetId: string]: Planet }>({});
   const [colonizationCost, setColonizationCost] = useState<BigNumber>();
 
@@ -108,7 +111,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
       account &&
       memorizedCommander &&
       ownedCommanders &&
-      ownedCommanders.includes(memorizedCommander) &&
+      ownedCommanders.find((e) => e.id === memorizedCommander.id) &&
       owner === account
     ) {
       setCurrentCommander(memorizedCommander);
@@ -119,7 +122,7 @@ export const SanctisProvider: React.FC = ({ children }) => {
 
   const fetchColonizationCost = useCallback(async () => {
     if (!contracts) return;
-    setColonizationCost(await contracts.planets.colonizationCost());
+    setColonizationCost(await contracts.colonize.colonizationCost());
   }, [contracts]);
 
   useEffect(() => {
@@ -141,18 +144,12 @@ export const SanctisProvider: React.FC = ({ children }) => {
 
       try {
         const [name, race] = await contracts.commanders.commander(commanderId);
-        const empireSize = (await contracts.planets.empireSize(commanderId)).toNumber();
-        // TODO: Fetch only planet IDs
-        const commanderPlanets = await Promise.all(
-          Array(empireSize)
-            .fill(0)
-            .map(async (_, i) => (await contracts.planets.commanderPlanetByIndex(commanderId, i)).toString())
-        );
+        // TODO: Fetch planets using The Graph
         const commander: Commander = {
           id: commanderId,
           name,
           race: approvedObjects.races.find((e) => e.address === race),
-          planets: commanderPlanets,
+          planets: [],
         };
         setCommanders((old) => {
           old[commanderId] = commander;
@@ -272,8 +269,8 @@ export const SanctisProvider: React.FC = ({ children }) => {
 
       open(async () => {
         try {
-          const planetId = BigNumber.from(z).shl(80).add(y).shl(80).add(x);
-          const result = await contracts.planets.colonize(commander.id, planetId);
+          const planetId = BigNumber.from(z).toTwos(80).shl(80).add(y).shl(80).add(x);
+          const result = await contracts.colonize.colonize(commander.id, planetId);
           await result.wait();
           await fetchPlanet(planetId.toString());
           await fetchOwnedCredits();

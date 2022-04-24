@@ -1,10 +1,8 @@
 import {
-  Accordion,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Box,
   Button,
   Divider,
   Flex,
@@ -12,16 +10,17 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import FleetsList from "../../components/FleetsList";
 import DocumentationButton from "../../contexts/DocumentationButton";
 import { Planet } from "../../contexts/Sanctis/types";
 
 import useFleets from "../../hooks/useFleets";
 import useSanctis from "../../hooks/useSanctis";
-import FleetCard from "./fleets/FleetCard";
 
 const FleetsSection: React.FC<{ planet: Planet }> = ({ planet }) => {
   const { currentCommander } = useSanctis();
-  const { fleets, create } = useFleets(planet?.id);
+  const { fleets, create } = useFleets({ planet });
+  console.log(planet, currentCommander, fleets);
 
   return (
     <AccordionItem w="100%" bg={useColorModeValue("gray.300", "gray.700")} rounded="lg">
@@ -35,25 +34,7 @@ const FleetsSection: React.FC<{ planet: Planet }> = ({ planet }) => {
         </AccordionButton>
       </Flex>
       <AccordionPanel w="100%">
-        <Accordion
-          w="100%"
-          background={useColorModeValue("white", "gray.800")}
-          p="2"
-          rounded="xl"
-          shadow={"xl"}
-          allowMultiple
-          allowToggle
-        >
-          <Flex justify="space-between" p="5">
-            <Box fontWeight="bold">ID</Box> <Box fontWeight="bold">Commander</Box> <Box fontWeight="bold">Status</Box>{" "}
-            <Box fontWeight="bold">Chracteristics</Box>
-          </Flex>
-          {fleets && fleets.length > 0 ? (
-            fleets.map((fleet) => <FleetCard key={fleet.id} fleet={fleet} />)
-          ) : (
-            <Text>There are no fleets on this planet</Text>
-          )}
-        </Accordion>
+        {fleets && <FleetsList fleets={fleets} />}
 
         {currentCommander && currentCommander?.id === planet.ruler && (
           <>

@@ -3,81 +3,6 @@
     {
       "inputs": [
         {
-          "internalType": "address",
-          "name": "infrastructure",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        }
-      ],
-      "name": "InfrastructureDoesNotExist",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "contract IResource",
-          "name": "resource",
-          "type": "address"
-        }
-      ],
-      "name": "NotEnoughResource",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        }
-      ],
-      "name": "PlanetNotOwned",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "contract IResource",
-          "name": "resource",
-          "type": "address"
-        }
-      ],
-      "name": "ResourceNotOnPlanet",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "planetId",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "soonestUpgrade",
-          "type": "uint256"
-        }
-      ],
-      "name": "TooSoonToUpgrade",
-      "type": "error"
-    },
-    {
-      "inputs": [
-        {
           "internalType": "contract ISanctis",
           "name": "newSanctis",
           "type": "address"
@@ -255,13 +180,13 @@
     "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/infrastructures/IPowerPlants.sol",
     "exportedSymbols": {
       "IInfrastructure": [
-        15613
+        15404
       ],
       "IPowerPlants": [
-        15656
+        15447
       ],
       "IResource": [
-        17514
+        17427
       ],
       "ISanctis": [
         11696
@@ -270,12 +195,12 @@
         11723
       ]
     },
-    "id": 15657,
+    "id": 15448,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 15615,
+        "id": 15406,
         "literals": [
           "solidity",
           "0.8",
@@ -287,11 +212,11 @@
       {
         "absolutePath": "/mnt/c/Users/jumic/Projets/foundry/sanctis/src/infrastructures/IInfrastructure.sol",
         "file": "./IInfrastructure.sol",
-        "id": 15616,
+        "id": 15407,
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
-        "scope": 15657,
-        "sourceUnit": 15614,
+        "scope": 15448,
+        "sourceUnit": 15405,
         "src": "60:31:57",
         "symbolAliases": [],
         "unitAlias": ""
@@ -301,13 +226,13 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 15617,
+              "id": 15408,
               "name": "IInfrastructure",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 15613,
+              "referencedDeclaration": 15404,
               "src": "121:15:57"
             },
-            "id": 15618,
+            "id": 15409,
             "nodeType": "InheritanceSpecifier",
             "src": "121:15:57"
           }
@@ -316,10 +241,10 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 15656,
+        "id": 15447,
         "linearizedBaseContracts": [
-          15656,
-          15613,
+          15447,
+          15404,
           11723
         ],
         "name": "IPowerPlants",
@@ -328,16 +253,16 @@
         "nodes": [
           {
             "canonicalName": "IPowerPlants.PowerPlant",
-            "id": 15635,
+            "id": 15426,
             "members": [
               {
                 "constant": false,
-                "id": 15620,
+                "id": 15411,
                 "mutability": "mutable",
                 "name": "level",
                 "nameLocation": "181:5:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "173:13:57",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -346,7 +271,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 15619,
+                  "id": 15410,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "173:7:57",
@@ -359,33 +284,33 @@
               },
               {
                 "constant": false,
-                "id": 15623,
+                "id": 15414,
                 "mutability": "mutable",
                 "name": "energy",
                 "nameLocation": "207:6:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "197:16:57",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_contract$_IResource_$17514",
+                  "typeIdentifier": "t_contract$_IResource_$17427",
                   "typeString": "contract IResource"
                 },
                 "typeName": {
-                  "id": 15622,
+                  "id": 15413,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 15621,
+                    "id": 15412,
                     "name": "IResource",
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 17514,
+                    "referencedDeclaration": 17427,
                     "src": "197:9:57"
                   },
-                  "referencedDeclaration": 17514,
+                  "referencedDeclaration": 17427,
                   "src": "197:9:57",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IResource_$17514",
+                    "typeIdentifier": "t_contract$_IResource_$17427",
                     "typeString": "contract IResource"
                   }
                 },
@@ -393,12 +318,12 @@
               },
               {
                 "constant": false,
-                "id": 15625,
+                "id": 15416,
                 "mutability": "mutable",
                 "name": "production",
                 "nameLocation": "232:10:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "224:18:57",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -407,7 +332,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 15624,
+                  "id": 15415,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "224:7:57",
@@ -420,42 +345,42 @@
               },
               {
                 "constant": false,
-                "id": 15629,
+                "id": 15420,
                 "mutability": "mutable",
                 "name": "costsResources",
                 "nameLocation": "265:14:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "253:26:57",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_array$_t_contract$_IResource_$17514_$dyn_storage_ptr",
+                  "typeIdentifier": "t_array$_t_contract$_IResource_$17427_$dyn_storage_ptr",
                   "typeString": "contract IResource[]"
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 15627,
+                    "id": 15418,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 15626,
+                      "id": 15417,
                       "name": "IResource",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 17514,
+                      "referencedDeclaration": 17427,
                       "src": "253:9:57"
                     },
-                    "referencedDeclaration": 17514,
+                    "referencedDeclaration": 17427,
                     "src": "253:9:57",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IResource_$17514",
+                      "typeIdentifier": "t_contract$_IResource_$17427",
                       "typeString": "contract IResource"
                     }
                   },
-                  "id": 15628,
+                  "id": 15419,
                   "nodeType": "ArrayTypeName",
                   "src": "253:11:57",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_contract$_IResource_$17514_$dyn_storage_ptr",
+                    "typeIdentifier": "t_array$_t_contract$_IResource_$17427_$dyn_storage_ptr",
                     "typeString": "contract IResource[]"
                   }
                 },
@@ -463,12 +388,12 @@
               },
               {
                 "constant": false,
-                "id": 15632,
+                "id": 15423,
                 "mutability": "mutable",
                 "name": "nextCosts",
                 "nameLocation": "300:9:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "290:19:57",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -478,7 +403,7 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 15630,
+                    "id": 15421,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "290:7:57",
@@ -487,7 +412,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 15631,
+                  "id": 15422,
                   "nodeType": "ArrayTypeName",
                   "src": "290:9:57",
                   "typeDescriptions": {
@@ -499,12 +424,12 @@
               },
               {
                 "constant": false,
-                "id": 15634,
+                "id": 15425,
                 "mutability": "mutable",
                 "name": "nextUpgrade",
                 "nameLocation": "328:11:57",
                 "nodeType": "VariableDeclaration",
-                "scope": 15635,
+                "scope": 15426,
                 "src": "320:19:57",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -513,7 +438,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 15633,
+                  "id": 15424,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "320:7:57",
@@ -528,13 +453,13 @@
             "name": "PowerPlant",
             "nameLocation": "151:10:57",
             "nodeType": "StructDefinition",
-            "scope": 15656,
+            "scope": 15447,
             "src": "144:203:57",
             "visibility": "public"
           },
           {
             "functionSelector": "aa849244",
-            "id": 15641,
+            "id": 15432,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -542,44 +467,44 @@
             "nameLocation": "364:6:57",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 15636,
+              "id": 15427,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "370:2:57"
             },
             "returnParameters": {
-              "id": 15640,
+              "id": 15431,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15639,
+                  "id": 15430,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 15641,
+                  "scope": 15432,
                   "src": "396:9:57",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IResource_$17514",
+                    "typeIdentifier": "t_contract$_IResource_$17427",
                     "typeString": "contract IResource"
                   },
                   "typeName": {
-                    "id": 15638,
+                    "id": 15429,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 15637,
+                      "id": 15428,
                       "name": "IResource",
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 17514,
+                      "referencedDeclaration": 17427,
                       "src": "396:9:57"
                     },
-                    "referencedDeclaration": 17514,
+                    "referencedDeclaration": 17427,
                     "src": "396:9:57",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IResource_$17514",
+                      "typeIdentifier": "t_contract$_IResource_$17427",
                       "typeString": "contract IResource"
                     }
                   },
@@ -588,7 +513,7 @@
               ],
               "src": "395:11:57"
             },
-            "scope": 15656,
+            "scope": 15447,
             "src": "355:52:57",
             "stateMutability": "view",
             "virtual": false,
@@ -596,7 +521,7 @@
           },
           {
             "functionSelector": "e8b78615",
-            "id": 15648,
+            "id": 15439,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -604,17 +529,17 @@
             "nameLocation": "424:17:57",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 15644,
+              "id": 15435,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15643,
+                  "id": 15434,
                   "mutability": "mutable",
                   "name": "planetId",
                   "nameLocation": "450:8:57",
                   "nodeType": "VariableDeclaration",
-                  "scope": 15648,
+                  "scope": 15439,
                   "src": "442:16:57",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -623,7 +548,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 15642,
+                    "id": 15433,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "442:7:57",
@@ -638,17 +563,17 @@
               "src": "441:18:57"
             },
             "returnParameters": {
-              "id": 15647,
+              "id": 15438,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15646,
+                  "id": 15437,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 15648,
+                  "scope": 15439,
                   "src": "510:7:57",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -657,7 +582,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 15645,
+                    "id": 15436,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "510:7:57",
@@ -671,7 +596,7 @@
               ],
               "src": "509:9:57"
             },
-            "scope": 15656,
+            "scope": 15447,
             "src": "415:104:57",
             "stateMutability": "view",
             "virtual": false,
@@ -679,7 +604,7 @@
           },
           {
             "functionSelector": "d024b162",
-            "id": 15655,
+            "id": 15446,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -687,17 +612,17 @@
             "nameLocation": "536:14:57",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 15651,
+              "id": 15442,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15650,
+                  "id": 15441,
                   "mutability": "mutable",
                   "name": "planetId",
                   "nameLocation": "559:8:57",
                   "nodeType": "VariableDeclaration",
-                  "scope": 15655,
+                  "scope": 15446,
                   "src": "551:16:57",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -706,7 +631,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 15649,
+                    "id": 15440,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "551:7:57",
@@ -721,17 +646,17 @@
               "src": "550:18:57"
             },
             "returnParameters": {
-              "id": 15654,
+              "id": 15445,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15653,
+                  "id": 15444,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 15655,
+                  "scope": 15446,
                   "src": "592:7:57",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -740,7 +665,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 15652,
+                    "id": 15443,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "592:7:57",
@@ -754,22 +679,16 @@
               ],
               "src": "591:9:57"
             },
-            "scope": 15656,
+            "scope": 15447,
             "src": "527:74:57",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 15657,
+        "scope": 15448,
         "src": "95:509:57",
-        "usedErrors": [
-          15553,
-          15557,
-          15564,
-          15570,
-          15576
-        ]
+        "usedErrors": []
       }
     ],
     "src": "33:573:57"
